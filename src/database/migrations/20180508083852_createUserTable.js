@@ -1,3 +1,6 @@
+// DO NOT TOUCH THIS FILE. 
+// ITS IMPORTANT FOR THE CORRECT PERFORMANCE OF AUTHENTICATION
+
 exports.up = function(knex, Promise) {
   return knex.schema
   .createTable('user', (jobTable)=>{
