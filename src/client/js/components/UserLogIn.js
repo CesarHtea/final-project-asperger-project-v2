@@ -46,7 +46,7 @@ class UserLogin extends Component {
                   floatingLabelText='Your user (email)'
                   type='text'
                   name='email'
-                  defaultValue='enrique@muktek.com'
+                  defaultValue='admin@aspergerproject.com'
                 />
               </div>
               <div>
@@ -55,7 +55,7 @@ class UserLogin extends Component {
                   floatingLabelText='Password'
                   type='password'
                   name='password'
-                  defaultValue='enrique'
+                  defaultValue='admin'
                 />
               </div>
                 <RaisedButton

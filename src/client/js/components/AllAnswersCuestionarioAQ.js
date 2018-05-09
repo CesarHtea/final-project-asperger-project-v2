@@ -55,23 +55,20 @@ class AllAnswersCuestionarioAQ extends Component {
   render() {
     // console.log(this.state.allAnswersCuestionarioAQ)
 
-   const tdStyle = {
-     textAlign: 'center'
-   }
-
     return (
       <div className='all-answers-cuestionario-AQ-container'>
         
-        <h1>All answers to AQ Questionnaire</h1>
+        <h1>All answers to AQ Questionnaire - Coeficiente del Espectro </h1>
 
         <table className='table'>
           <thead>
             <tr>
-              <td style={tdStyle}>Id Answer</td>
-              <td style={tdStyle}>Time Stamp</td>
-              <td style={tdStyle}>Pregunta 1</td>
-              <td style={tdStyle}>Pregunta 2</td>
-              <td style={tdStyle}>Resultado</td>
+              <td className='tdStyle'>Id Answer</td>
+              <td className='tdStyle'>Time Stamp</td>
+              <td className='tdStyle'>User Id (Px)</td>
+              <td className='tdStyle'>Cociente de autismo</td>
+              <td>Interpretacion</td>
+              
             </tr>
           </thead>
           <tbody>

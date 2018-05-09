@@ -2,6 +2,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  /*background: url("/images/Trees.png") ;*/
+}
+
 /* DISPLAY */
 
 .none {
@@ -168,4 +172,8 @@ ALL ANSWERS CUESTIONARIO AQ
 .table thead {
   border: 1px solid #c8e1ff;
   background-color: #f1f8ff;
+}
+
+.tdStyle {
+  text-align: center;
 }

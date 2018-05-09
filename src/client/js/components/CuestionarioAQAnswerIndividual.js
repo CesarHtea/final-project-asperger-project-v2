@@ -6,19 +6,17 @@ class CuestionarioAQAnswerIndividual extends Component {
 
   render() {
 
-   const tdStyle = {
-     textAlign: 'center'
-   }
-
   	const { info } = this.props
 
   	return (
   	  <tr>
-        <td style={tdStyle}>{info.id}</td>
-        <td style={tdStyle}>{info.createdAt}</td>
-        <td style={tdStyle}>{info.pregunta1}</td>
-        <td style={tdStyle}>{info.pregunta2}</td>
-        <td style={tdStyle}>{info.sumaTotal}</td>
+        <td className='tdStyle'>{info.id}</td>
+        <td className='tdStyle'>{info.createdAt}</td>
+        <td className='tdStyle'>{info.userId}</td>
+        <td className='tdStyle'>{info.sumaTotal}</td>
+        <td>{info.interpretacionAQ}</td>
+
+        
       </tr>
   	)
   }

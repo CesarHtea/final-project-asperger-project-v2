@@ -26,6 +26,7 @@ class NewUserSignIn extends Component {
       })
       .catch(function(e) {
         console.log(e)
+        alert('Al parecer el usuario ya esta registrado. Intenta Log In o intenta registrarte con otro mail')
       })
   }
 
@@ -40,7 +41,7 @@ class NewUserSignIn extends Component {
                 <TextField
                   hintText='Your email'
                   floatingLabelText='Your email'
-                  defaultValue='enrique@muktek.com'
+                  defaultValue='admin@aspergerproject.com'
                   name='signinEmail'
                 />
               </div>
@@ -49,7 +50,7 @@ class NewUserSignIn extends Component {
                   hintText='Password Field'
                   floatingLabelText='Password'
                   type='password'
-                  defaultValue='enrique'
+                  defaultValue='admin'
                   name='signinPassword'
                 />
               </div>

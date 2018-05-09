@@ -6982,7 +6982,7 @@ var App = function (_Component4) {
   App.prototype.render = function render() {
     // console.log(this.state)
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      __WEBPACK_IMPORTED_MODULE_4_material_ui_styles_MuiThemeProvider___default.a,
+      'div',
       null,
       this.state.loggedOut === !true ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
@@ -7060,7 +7060,11 @@ var App = function (_Component4) {
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
   __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["a" /* BrowserRouter */],
   null,
-  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, null)
+  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    __WEBPACK_IMPORTED_MODULE_4_material_ui_styles_MuiThemeProvider___default.a,
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, null)
+  )
 ), document.getElementById('app-container'));
 
 // ############################ DEFAULT #########################33
@@ -31893,17 +31897,13 @@ var AllAnswersCuestionarioAQ = function (_Component) {
   AllAnswersCuestionarioAQ.prototype.render = function render() {
     // console.log(this.state.allAnswersCuestionarioAQ)
 
-    var tdStyle = {
-      textAlign: 'center'
-    };
-
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'all-answers-cuestionario-AQ-container' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h1',
         null,
-        'All answers to AQ Questionnaire'
+        'All answers to AQ Questionnaire - Coeficiente del Espectro '
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'table',
@@ -31916,28 +31916,28 @@ var AllAnswersCuestionarioAQ = function (_Component) {
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'td',
-              { style: tdStyle },
+              { className: 'tdStyle' },
               'Id Answer'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'td',
-              { style: tdStyle },
+              { className: 'tdStyle' },
               'Time Stamp'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'td',
-              { style: tdStyle },
-              'Pregunta 1'
+              { className: 'tdStyle' },
+              'User Id (Px)'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'td',
-              { style: tdStyle },
-              'Pregunta 2'
+              { className: 'tdStyle' },
+              'Cociente de autismo'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'td',
-              { style: tdStyle },
-              'Resultado'
+              null,
+              'Interpretacion'
             )
           )
         ),
@@ -31985,11 +31985,6 @@ var CuestionarioAQAnswerIndividual = function (_Component) {
   }
 
   CuestionarioAQAnswerIndividual.prototype.render = function render() {
-
-    var tdStyle = {
-      textAlign: 'center'
-    };
-
     var info = this.props.info;
 
 
@@ -31998,28 +31993,28 @@ var CuestionarioAQAnswerIndividual = function (_Component) {
       null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'td',
-        { style: tdStyle },
+        { className: 'tdStyle' },
         info.id
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'td',
-        { style: tdStyle },
+        { className: 'tdStyle' },
         info.createdAt
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'td',
-        { style: tdStyle },
-        info.pregunta1
+        { className: 'tdStyle' },
+        info.userId
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'td',
-        { style: tdStyle },
-        info.pregunta2
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'td',
-        { style: tdStyle },
+        { className: 'tdStyle' },
         info.sumaTotal
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'td',
+        null,
+        info.interpretacionAQ
       )
     );
   };
@@ -32371,6 +32366,7 @@ var NewUserSignIn = function (_Component) {
         alert('Nuevo usuario registrado. Intenta Log In');
       }).catch(function (e) {
         console.log(e);
+        alert('Al parecer el usuario ya esta registrado. Intenta Log In o intenta registrarte con otro mail');
       });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -32403,7 +32399,7 @@ var NewUserSignIn = function (_Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default.a, {
                 hintText: 'Your email',
                 floatingLabelText: 'Your email',
-                defaultValue: 'enrique@muktek.com',
+                defaultValue: 'admin@aspergerproject.com',
                 name: 'signinEmail'
               })
             ),
@@ -32414,7 +32410,7 @@ var NewUserSignIn = function (_Component) {
                 hintText: 'Password Field',
                 floatingLabelText: 'Password',
                 type: 'password',
-                defaultValue: 'enrique',
+                defaultValue: 'admin',
                 name: 'signinPassword'
               })
             ),
@@ -33849,7 +33845,7 @@ var UserLogin = function (_Component) {
                 floatingLabelText: 'Your user (email)',
                 type: 'text',
                 name: 'email',
-                defaultValue: 'enrique@muktek.com'
+                defaultValue: 'admin@aspergerproject.com'
               })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -33860,7 +33856,7 @@ var UserLogin = function (_Component) {
                 floatingLabelText: 'Password',
                 type: 'password',
                 name: 'password',
-                defaultValue: 'enrique'
+                defaultValue: 'admin'
               })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton___default.a, {
@@ -33915,53 +33911,887 @@ var CuestionarioAQ = function (_Component) {
     var _this = _possibleConstructorReturn(this, _Component.call(this));
 
     _this.pregunta1botonA = function () {
-      _this.setState({ pregunta1: { pregunta1opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+      _this.setState({ pregunta1: { pregunta1opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
     };
 
     _this.pregunta1botonB = function () {
-      _this.setState({ pregunta1: { pregunta1opcionElegida: 2, valor: 2, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+      _this.setState({ pregunta1: { pregunta1opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
     };
 
     _this.pregunta1botonC = function () {
-      _this.setState({ pregunta1: { pregunta1opcionElegida: 3, valor: 3, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+      _this.setState({ pregunta1: { pregunta1opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
     };
 
     _this.pregunta1botonD = function () {
-      _this.setState({ pregunta1: { pregunta1opcionElegida: 4, valor: 4, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+      _this.setState({ pregunta1: { pregunta1opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
     };
 
     _this.pregunta2botonA = function () {
-      _this.setState({ pregunta2: { pregunta2opcionElegida: 1, valor: 10, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+      _this.setState({ pregunta2: { pregunta2opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
     };
 
     _this.pregunta2botonB = function () {
-      _this.setState({ pregunta2: { pregunta2opcionElegida: 2, valor: 20, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+      _this.setState({ pregunta2: { pregunta2opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
     };
 
     _this.pregunta2botonC = function () {
-      _this.setState({ pregunta2: { pregunta2opcionElegida: 3, valor: 30, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+      _this.setState({ pregunta2: { pregunta2opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
     };
 
     _this.pregunta2botonD = function () {
-      _this.setState({ pregunta2: { pregunta2opcionElegida: 4, valor: 40, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+      _this.setState({ pregunta2: { pregunta2opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta3botonA = function () {
+      _this.setState({ pregunta3: { pregunta3opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta3botonB = function () {
+      _this.setState({ pregunta3: { pregunta3opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta3botonC = function () {
+      _this.setState({ pregunta3: { pregunta3opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta3botonD = function () {
+      _this.setState({ pregunta3: { pregunta3opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta4botonA = function () {
+      _this.setState({ pregunta4: { pregunta4opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta4botonB = function () {
+      _this.setState({ pregunta4: { pregunta4opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta4botonC = function () {
+      _this.setState({ pregunta4: { pregunta4opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta4botonD = function () {
+      _this.setState({ pregunta4: { pregunta4opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta5botonA = function () {
+      _this.setState({ pregunta5: { pregunta5opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta5botonB = function () {
+      _this.setState({ pregunta5: { pregunta5opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta5botonC = function () {
+      _this.setState({ pregunta5: { pregunta5opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta5botonD = function () {
+      _this.setState({ pregunta5: { pregunta5opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta6botonA = function () {
+      _this.setState({ pregunta6: { pregunta6opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta6botonB = function () {
+      _this.setState({ pregunta6: { pregunta6opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta6botonC = function () {
+      _this.setState({ pregunta6: { pregunta6opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta6botonD = function () {
+      _this.setState({ pregunta6: { pregunta6opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta7botonA = function () {
+      _this.setState({ pregunta7: { pregunta7opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta7botonB = function () {
+      _this.setState({ pregunta7: { pregunta7opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta7botonC = function () {
+      _this.setState({ pregunta7: { pregunta7opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta7botonD = function () {
+      _this.setState({ pregunta7: { pregunta7opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta8botonA = function () {
+      _this.setState({ pregunta8: { pregunta8opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta8botonB = function () {
+      _this.setState({ pregunta8: { pregunta8opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta8botonC = function () {
+      _this.setState({ pregunta8: { pregunta8opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta8botonD = function () {
+      _this.setState({ pregunta8: { pregunta8opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta9botonA = function () {
+      _this.setState({ pregunta9: { pregunta9opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta9botonB = function () {
+      _this.setState({ pregunta9: { pregunta9opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta9botonC = function () {
+      _this.setState({ pregunta9: { pregunta9opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta9botonD = function () {
+      _this.setState({ pregunta9: { pregunta9opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta10botonA = function () {
+      _this.setState({ pregunta10: { pregunta10opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta10botonB = function () {
+      _this.setState({ pregunta10: { pregunta10opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta10botonC = function () {
+      _this.setState({ pregunta10: { pregunta10opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta10botonD = function () {
+      _this.setState({ pregunta10: { pregunta10opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta11botonA = function () {
+      _this.setState({ pregunta11: { pregunta11opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta11botonB = function () {
+      _this.setState({ pregunta11: { pregunta11opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta11botonC = function () {
+      _this.setState({ pregunta11: { pregunta11opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta11botonD = function () {
+      _this.setState({ pregunta11: { pregunta11opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta12botonA = function () {
+      _this.setState({ pregunta12: { pregunta12opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta12botonB = function () {
+      _this.setState({ pregunta12: { pregunta12opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta12botonC = function () {
+      _this.setState({ pregunta12: { pregunta12opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta12botonD = function () {
+      _this.setState({ pregunta12: { pregunta12opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta13botonA = function () {
+      _this.setState({ pregunta13: { pregunta13opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta13botonB = function () {
+      _this.setState({ pregunta13: { pregunta13opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta13botonC = function () {
+      _this.setState({ pregunta13: { pregunta13opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta13botonD = function () {
+      _this.setState({ pregunta13: { pregunta13opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta14botonA = function () {
+      _this.setState({ pregunta14: { pregunta14opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta14botonB = function () {
+      _this.setState({ pregunta14: { pregunta14opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta14botonC = function () {
+      _this.setState({ pregunta14: { pregunta14opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta14botonD = function () {
+      _this.setState({ pregunta14: { pregunta14opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta15botonA = function () {
+      _this.setState({ pregunta15: { pregunta15opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta15botonB = function () {
+      _this.setState({ pregunta15: { pregunta15opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta15botonC = function () {
+      _this.setState({ pregunta15: { pregunta15opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta15botonD = function () {
+      _this.setState({ pregunta15: { pregunta15opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta16botonA = function () {
+      _this.setState({ pregunta16: { pregunta16opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta16botonB = function () {
+      _this.setState({ pregunta16: { pregunta16opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta16botonC = function () {
+      _this.setState({ pregunta16: { pregunta16opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta16botonD = function () {
+      _this.setState({ pregunta16: { pregunta16opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta17botonA = function () {
+      _this.setState({ pregunta17: { pregunta17opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta17botonB = function () {
+      _this.setState({ pregunta17: { pregunta17opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta17botonC = function () {
+      _this.setState({ pregunta17: { pregunta17opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta17botonD = function () {
+      _this.setState({ pregunta17: { pregunta17opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta18botonA = function () {
+      _this.setState({ pregunta18: { pregunta18opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta18botonB = function () {
+      _this.setState({ pregunta18: { pregunta18opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta18botonC = function () {
+      _this.setState({ pregunta18: { pregunta18opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta18botonD = function () {
+      _this.setState({ pregunta18: { pregunta18opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta19botonA = function () {
+      _this.setState({ pregunta19: { pregunta19opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta19botonB = function () {
+      _this.setState({ pregunta19: { pregunta19opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta19botonC = function () {
+      _this.setState({ pregunta19: { pregunta19opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta19botonD = function () {
+      _this.setState({ pregunta19: { pregunta19opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta20botonA = function () {
+      _this.setState({ pregunta20: { pregunta20opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta20botonB = function () {
+      _this.setState({ pregunta20: { pregunta20opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta20botonC = function () {
+      _this.setState({ pregunta20: { pregunta20opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta20botonD = function () {
+      _this.setState({ pregunta20: { pregunta20opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta21botonA = function () {
+      _this.setState({ pregunta21: { pregunta21opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta21botonB = function () {
+      _this.setState({ pregunta21: { pregunta21opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta21botonC = function () {
+      _this.setState({ pregunta21: { pregunta21opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta21botonD = function () {
+      _this.setState({ pregunta21: { pregunta21opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta22botonA = function () {
+      _this.setState({ pregunta22: { pregunta22opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta22botonB = function () {
+      _this.setState({ pregunta22: { pregunta22opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta22botonC = function () {
+      _this.setState({ pregunta22: { pregunta22opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta22botonD = function () {
+      _this.setState({ pregunta22: { pregunta22opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta23botonA = function () {
+      _this.setState({ pregunta23: { pregunta23opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta23botonB = function () {
+      _this.setState({ pregunta23: { pregunta23opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta23botonC = function () {
+      _this.setState({ pregunta23: { pregunta23opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta23botonD = function () {
+      _this.setState({ pregunta23: { pregunta23opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta24botonA = function () {
+      _this.setState({ pregunta24: { pregunta24opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta24botonB = function () {
+      _this.setState({ pregunta24: { pregunta24opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta24botonC = function () {
+      _this.setState({ pregunta24: { pregunta24opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta24botonD = function () {
+      _this.setState({ pregunta24: { pregunta24opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta25botonA = function () {
+      _this.setState({ pregunta25: { pregunta25opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta25botonB = function () {
+      _this.setState({ pregunta25: { pregunta25opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta25botonC = function () {
+      _this.setState({ pregunta25: { pregunta25opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta25botonD = function () {
+      _this.setState({ pregunta25: { pregunta25opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta26botonA = function () {
+      _this.setState({ pregunta26: { pregunta26opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta26botonB = function () {
+      _this.setState({ pregunta26: { pregunta26opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta26botonC = function () {
+      _this.setState({ pregunta26: { pregunta26opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta26botonD = function () {
+      _this.setState({ pregunta26: { pregunta26opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta27botonA = function () {
+      _this.setState({ pregunta27: { pregunta27opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta27botonB = function () {
+      _this.setState({ pregunta27: { pregunta27opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta27botonC = function () {
+      _this.setState({ pregunta27: { pregunta27opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta27botonD = function () {
+      _this.setState({ pregunta27: { pregunta27opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta28botonA = function () {
+      _this.setState({ pregunta28: { pregunta28opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta28botonB = function () {
+      _this.setState({ pregunta28: { pregunta28opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta28botonC = function () {
+      _this.setState({ pregunta28: { pregunta28opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta28botonD = function () {
+      _this.setState({ pregunta28: { pregunta28opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta29botonA = function () {
+      _this.setState({ pregunta29: { pregunta29opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta29botonB = function () {
+      _this.setState({ pregunta29: { pregunta29opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta29botonC = function () {
+      _this.setState({ pregunta29: { pregunta29opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta29botonD = function () {
+      _this.setState({ pregunta29: { pregunta29opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta30botonA = function () {
+      _this.setState({ pregunta30: { pregunta30opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta30botonB = function () {
+      _this.setState({ pregunta30: { pregunta30opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta30botonC = function () {
+      _this.setState({ pregunta30: { pregunta30opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta30botonD = function () {
+      _this.setState({ pregunta30: { pregunta30opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta31botonA = function () {
+      _this.setState({ pregunta31: { pregunta31opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta31botonB = function () {
+      _this.setState({ pregunta31: { pregunta31opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta31botonC = function () {
+      _this.setState({ pregunta31: { pregunta31opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta31botonD = function () {
+      _this.setState({ pregunta31: { pregunta31opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta32botonA = function () {
+      _this.setState({ pregunta32: { pregunta32opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta32botonB = function () {
+      _this.setState({ pregunta32: { pregunta32opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta32botonC = function () {
+      _this.setState({ pregunta32: { pregunta32opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta32botonD = function () {
+      _this.setState({ pregunta32: { pregunta32opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta33botonA = function () {
+      _this.setState({ pregunta33: { pregunta33opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta33botonB = function () {
+      _this.setState({ pregunta33: { pregunta33opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta33botonC = function () {
+      _this.setState({ pregunta33: { pregunta33opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta33botonD = function () {
+      _this.setState({ pregunta33: { pregunta33opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta34botonA = function () {
+      _this.setState({ pregunta34: { pregunta34opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta34botonB = function () {
+      _this.setState({ pregunta34: { pregunta34opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta34botonC = function () {
+      _this.setState({ pregunta34: { pregunta34opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta34botonD = function () {
+      _this.setState({ pregunta34: { pregunta34opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta35botonA = function () {
+      _this.setState({ pregunta35: { pregunta35opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta35botonB = function () {
+      _this.setState({ pregunta35: { pregunta35opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta35botonC = function () {
+      _this.setState({ pregunta35: { pregunta35opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta35botonD = function () {
+      _this.setState({ pregunta35: { pregunta35opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta36botonA = function () {
+      _this.setState({ pregunta36: { pregunta36opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta36botonB = function () {
+      _this.setState({ pregunta36: { pregunta36opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta36botonC = function () {
+      _this.setState({ pregunta36: { pregunta36opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta36botonD = function () {
+      _this.setState({ pregunta36: { pregunta36opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta37botonA = function () {
+      _this.setState({ pregunta37: { pregunta37opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta37botonB = function () {
+      _this.setState({ pregunta37: { pregunta37opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta37botonC = function () {
+      _this.setState({ pregunta37: { pregunta37opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta37botonD = function () {
+      _this.setState({ pregunta37: { pregunta37opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta38botonA = function () {
+      _this.setState({ pregunta38: { pregunta38opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta38botonB = function () {
+      _this.setState({ pregunta38: { pregunta38opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta38botonC = function () {
+      _this.setState({ pregunta38: { pregunta38opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta38botonD = function () {
+      _this.setState({ pregunta38: { pregunta38opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta39botonA = function () {
+      _this.setState({ pregunta39: { pregunta39opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta39botonB = function () {
+      _this.setState({ pregunta39: { pregunta39opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta39botonC = function () {
+      _this.setState({ pregunta39: { pregunta39opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta39botonD = function () {
+      _this.setState({ pregunta39: { pregunta39opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta40botonA = function () {
+      _this.setState({ pregunta40: { pregunta40opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta40botonB = function () {
+      _this.setState({ pregunta40: { pregunta40opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta40botonC = function () {
+      _this.setState({ pregunta40: { pregunta40opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta40botonD = function () {
+      _this.setState({ pregunta40: { pregunta40opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta41botonA = function () {
+      _this.setState({ pregunta41: { pregunta41opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta41botonB = function () {
+      _this.setState({ pregunta41: { pregunta41opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta41botonC = function () {
+      _this.setState({ pregunta41: { pregunta41opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta41botonD = function () {
+      _this.setState({ pregunta41: { pregunta41opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta42botonA = function () {
+      _this.setState({ pregunta42: { pregunta42opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta42botonB = function () {
+      _this.setState({ pregunta42: { pregunta42opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta42botonC = function () {
+      _this.setState({ pregunta42: { pregunta42opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta42botonD = function () {
+      _this.setState({ pregunta42: { pregunta42opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta43botonA = function () {
+      _this.setState({ pregunta43: { pregunta43opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta43botonB = function () {
+      _this.setState({ pregunta43: { pregunta43opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta43botonC = function () {
+      _this.setState({ pregunta43: { pregunta43opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta43botonD = function () {
+      _this.setState({ pregunta43: { pregunta43opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta44botonA = function () {
+      _this.setState({ pregunta44: { pregunta44opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta44botonB = function () {
+      _this.setState({ pregunta44: { pregunta44opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta44botonC = function () {
+      _this.setState({ pregunta44: { pregunta44opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta44botonD = function () {
+      _this.setState({ pregunta44: { pregunta44opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta45botonA = function () {
+      _this.setState({ pregunta45: { pregunta45opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta45botonB = function () {
+      _this.setState({ pregunta45: { pregunta45opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta45botonC = function () {
+      _this.setState({ pregunta45: { pregunta45opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta45botonD = function () {
+      _this.setState({ pregunta45: { pregunta45opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta46botonA = function () {
+      _this.setState({ pregunta46: { pregunta46opcionElegida: 1, valor: 1, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta46botonB = function () {
+      _this.setState({ pregunta46: { pregunta46opcionElegida: 2, valor: 1, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta46botonC = function () {
+      _this.setState({ pregunta46: { pregunta46opcionElegida: 3, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta46botonD = function () {
+      _this.setState({ pregunta46: { pregunta46opcionElegida: 4, valor: 0, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta47botonA = function () {
+      _this.setState({ pregunta47: { pregunta47opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta47botonB = function () {
+      _this.setState({ pregunta47: { pregunta47opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta47botonC = function () {
+      _this.setState({ pregunta47: { pregunta47opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta47botonD = function () {
+      _this.setState({ pregunta47: { pregunta47opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta48botonA = function () {
+      _this.setState({ pregunta48: { pregunta48opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta48botonB = function () {
+      _this.setState({ pregunta48: { pregunta48opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta48botonC = function () {
+      _this.setState({ pregunta48: { pregunta48opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta48botonD = function () {
+      _this.setState({ pregunta48: { pregunta48opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta49botonA = function () {
+      _this.setState({ pregunta49: { pregunta49opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta49botonB = function () {
+      _this.setState({ pregunta49: { pregunta49opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta49botonC = function () {
+      _this.setState({ pregunta49: { pregunta49opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta49botonD = function () {
+      _this.setState({ pregunta49: { pregunta49opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
+    };
+
+    _this.pregunta50botonA = function () {
+      _this.setState({ pregunta50: { pregunta50opcionElegida: 1, valor: 0, botonASeleccionado: true, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta50botonB = function () {
+      _this.setState({ pregunta50: { pregunta50opcionElegida: 2, valor: 0, botonASeleccionado: false, botonBSeleccionado: true, botonCSeleccionado: false, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta50botonC = function () {
+      _this.setState({ pregunta50: { pregunta50opcionElegida: 3, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: true, botonDSeleccionado: false } });
+    };
+
+    _this.pregunta50botonD = function () {
+      _this.setState({ pregunta50: { pregunta50opcionElegida: 4, valor: 1, botonASeleccionado: false, botonBSeleccionado: false, botonCSeleccionado: false, botonDSeleccionado: true } });
     };
 
     _this.sumarYEnviarDatoAState = function () {
 
       var objetoParaExportarATablaCuestionarioAQ = void 0;
       var sumaTotal = void 0;
+      var interpretacionCuestionarioAQ = void 0;
 
-      sumaTotal = _this.state.pregunta1.valor + _this.state.pregunta2.valor;
+      sumaTotal = _this.state.pregunta1.valor + _this.state.pregunta2.valor + _this.state.pregunta3.valor + _this.state.pregunta4.valor + _this.state.pregunta5.valor + _this.state.pregunta6.valor + _this.state.pregunta7.valor + _this.state.pregunta8.valor + _this.state.pregunta9.valor + _this.state.pregunta10.valor + _this.state.pregunta11.valor + _this.state.pregunta12.valor + _this.state.pregunta13.valor + _this.state.pregunta14.valor + _this.state.pregunta15.valor + _this.state.pregunta16.valor + _this.state.pregunta17.valor + _this.state.pregunta18.valor + _this.state.pregunta19.valor + _this.state.pregunta20.valor + _this.state.pregunta21.valor + _this.state.pregunta22.valor + _this.state.pregunta23.valor + _this.state.pregunta24.valor + _this.state.pregunta25.valor + _this.state.pregunta26.valor + _this.state.pregunta27.valor + _this.state.pregunta28.valor + _this.state.pregunta29.valor + _this.state.pregunta30.valor + _this.state.pregunta31.valor + _this.state.pregunta32.valor + _this.state.pregunta33.valor + _this.state.pregunta34.valor + _this.state.pregunta35.valor + _this.state.pregunta36.valor + _this.state.pregunta37.valor + _this.state.pregunta38.valor + _this.state.pregunta39.valor + _this.state.pregunta40.valor + _this.state.pregunta41.valor + _this.state.pregunta42.valor + _this.state.pregunta43.valor + _this.state.pregunta44.valor + _this.state.pregunta45.valor + _this.state.pregunta46.valor + _this.state.pregunta47.valor + _this.state.pregunta48.valor + _this.state.pregunta49.valor + _this.state.pregunta50.valor;
+
+      if (sumaTotal <= 10) {
+        interpretacionCuestionarioAQ = '0-10 = Número bajo de características autistas.';
+      } else if (sumaTotal <= 22) {
+        interpretacionCuestionarioAQ = '11-22 = Número promedio de características autistas. (Promedio para hombres 17, promedio para mujeres 15).';
+      } else if (sumaTotal <= 31) {
+        interpretacionCuestionarioAQ = '23-31 = Número de características autistas por encima del promedio.';
+      } else if (sumaTotal <= 50) {
+        interpretacionCuestionarioAQ = '32-50 = Número alto de características autistas (Promedio de la mayoría para el espectro de la condición de autismo es de 35). ';
+      }
+
+      // 0-10= Número bajo de características autistas.
+      // 11-22= Número promedio de características autistas. (Promedio para hombres 17, promedio para mujeres 15).
+      // 23-31= Número de características autistas por encima del promedio.
+      // 32-50= Número alto de características autistas (Promedio de la mayoría para el espectro de la condición de autismo es de 35). 
 
       objetoParaExportarATablaCuestionarioAQ = {
         userId: _this.state.userId,
         pregunta1: _this.state.pregunta1.pregunta1opcionElegida,
         pregunta2: _this.state.pregunta2.pregunta2opcionElegida,
-        sumaTotal: sumaTotal
+        pregunta3: _this.state.pregunta3.pregunta3opcionElegida,
+        pregunta4: _this.state.pregunta4.pregunta4opcionElegida,
+        pregunta5: _this.state.pregunta5.pregunta5opcionElegida,
+        pregunta6: _this.state.pregunta6.pregunta6opcionElegida,
+        pregunta7: _this.state.pregunta7.pregunta7opcionElegida,
+        pregunta8: _this.state.pregunta8.pregunta8opcionElegida,
+        pregunta9: _this.state.pregunta9.pregunta9opcionElegida,
+        pregunta10: _this.state.pregunta10.pregunta10opcionElegida,
+        pregunta11: _this.state.pregunta11.pregunta11opcionElegida,
+        pregunta12: _this.state.pregunta12.pregunta12opcionElegida,
+        pregunta13: _this.state.pregunta13.pregunta13opcionElegida,
+        pregunta14: _this.state.pregunta14.pregunta14opcionElegida,
+        pregunta15: _this.state.pregunta15.pregunta15opcionElegida,
+        pregunta16: _this.state.pregunta16.pregunta16opcionElegida,
+        pregunta17: _this.state.pregunta17.pregunta17opcionElegida,
+        pregunta18: _this.state.pregunta18.pregunta18opcionElegida,
+        pregunta19: _this.state.pregunta19.pregunta19opcionElegida,
+        pregunta20: _this.state.pregunta20.pregunta20opcionElegida,
+        pregunta21: _this.state.pregunta21.pregunta21opcionElegida,
+        pregunta22: _this.state.pregunta22.pregunta22opcionElegida,
+        pregunta23: _this.state.pregunta23.pregunta23opcionElegida,
+        pregunta24: _this.state.pregunta24.pregunta24opcionElegida,
+        pregunta25: _this.state.pregunta25.pregunta25opcionElegida,
+        pregunta26: _this.state.pregunta26.pregunta26opcionElegida,
+        pregunta27: _this.state.pregunta27.pregunta27opcionElegida,
+        pregunta28: _this.state.pregunta28.pregunta28opcionElegida,
+        pregunta29: _this.state.pregunta29.pregunta29opcionElegida,
+        pregunta30: _this.state.pregunta30.pregunta30opcionElegida,
+        pregunta31: _this.state.pregunta31.pregunta31opcionElegida,
+        pregunta32: _this.state.pregunta32.pregunta32opcionElegida,
+        pregunta33: _this.state.pregunta33.pregunta33opcionElegida,
+        pregunta34: _this.state.pregunta34.pregunta34opcionElegida,
+        pregunta35: _this.state.pregunta35.pregunta35opcionElegida,
+        pregunta36: _this.state.pregunta36.pregunta36opcionElegida,
+        pregunta37: _this.state.pregunta37.pregunta37opcionElegida,
+        pregunta38: _this.state.pregunta38.pregunta38opcionElegida,
+        pregunta39: _this.state.pregunta39.pregunta39opcionElegida,
+        pregunta40: _this.state.pregunta40.pregunta40opcionElegida,
+        pregunta41: _this.state.pregunta41.pregunta41opcionElegida,
+        pregunta42: _this.state.pregunta42.pregunta42opcionElegida,
+        pregunta43: _this.state.pregunta43.pregunta43opcionElegida,
+        pregunta44: _this.state.pregunta44.pregunta44opcionElegida,
+        pregunta45: _this.state.pregunta45.pregunta45opcionElegida,
+        pregunta46: _this.state.pregunta46.pregunta46opcionElegida,
+        pregunta47: _this.state.pregunta47.pregunta47opcionElegida,
+        pregunta48: _this.state.pregunta48.pregunta48opcionElegida,
+        pregunta49: _this.state.pregunta49.pregunta49opcionElegida,
+        pregunta50: _this.state.pregunta50.pregunta50opcionElegida,
+        sumaTotal: sumaTotal,
+        interpretacionAQ: interpretacionCuestionarioAQ
       };
 
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/api/allAnswersCuestionarioAQ').send(objetoParaExportarATablaCuestionarioAQ).then(function () {
         alert('Enviando informacion de CuestionarioAQ...');
+        console.log(objetoParaExportarATablaCuestionarioAQ);
       }).catch(function (e) {
         console.log(e);
       });
@@ -33972,7 +34802,55 @@ var CuestionarioAQ = function (_Component) {
     _this.state = {
       userId: 0,
       pregunta1: { pregunta1opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
-      pregunta2: { pregunta1opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta2: { pregunta2opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta3: { pregunta3opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta4: { pregunta4opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta5: { pregunta5opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta6: { pregunta6opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta7: { pregunta7opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta8: { pregunta8opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta9: { pregunta9opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta10: { pregunta10opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta11: { pregunta11opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta12: { pregunta12opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta13: { pregunta13opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta14: { pregunta14opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta15: { pregunta15opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta16: { pregunta16opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta17: { pregunta17opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta18: { pregunta18opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta19: { pregunta19opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta20: { pregunta20opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta21: { pregunta21opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta22: { pregunta22opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta23: { pregunta23opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta24: { pregunta24opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta25: { pregunta25opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta26: { pregunta26opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta27: { pregunta27opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta28: { pregunta28opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta29: { pregunta29opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta30: { pregunta30opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta31: { pregunta31opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta32: { pregunta32opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta33: { pregunta33opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta34: { pregunta34opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta35: { pregunta35opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta36: { pregunta36opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta37: { pregunta37opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta38: { pregunta38opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta39: { pregunta39opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta40: { pregunta40opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta41: { pregunta41opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta42: { pregunta42opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta43: { pregunta43opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta44: { pregunta44opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta45: { pregunta45opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta46: { pregunta46opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta47: { pregunta47opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta48: { pregunta48opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta49: { pregunta49opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
+      pregunta50: { pregunta50opcionElegida: 0, valor: 0, botonASeleccionado: '', botonBSeleccionado: '', botonCSeleccionado: '', botonDSeleccionado: '' },
       sumaTotal: 0
     };
     return _this;
@@ -34018,10 +34896,10 @@ var CuestionarioAQ = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'aq-box-2' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-1-boton-A aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta1.botonASeleccionado === true ? true : false, onClick: this.pregunta1botonA }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-1-boton-B aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta1.botonBSeleccionado === true ? true : false, onClick: this.pregunta1botonB }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-1-boton-C aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta1.botonCSeleccionado === true ? true : false, onClick: this.pregunta1botonC }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-1-boton-D aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta1.botonDSeleccionado === true ? true : false, onClick: this.pregunta1botonD })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta1.botonASeleccionado === true ? true : false, onClick: this.pregunta1botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta1.botonBSeleccionado === true ? true : false, onClick: this.pregunta1botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta1.botonCSeleccionado === true ? true : false, onClick: this.pregunta1botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta1.botonDSeleccionado === true ? true : false, onClick: this.pregunta1botonD })
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -34035,10 +34913,826 @@ var CuestionarioAQ = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'aq-box-2' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-2-boton-A aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta2.botonASeleccionado === true ? true : false, onClick: this.pregunta2botonA }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-2-boton-B aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta2.botonBSeleccionado === true ? true : false, onClick: this.pregunta2botonB }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-2-boton-C aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta2.botonCSeleccionado === true ? true : false, onClick: this.pregunta2botonC }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'pregunta-2-boton-D aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta2.botonDSeleccionado === true ? true : false, onClick: this.pregunta2botonD })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta2.botonASeleccionado === true ? true : false, onClick: this.pregunta2botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta2.botonBSeleccionado === true ? true : false, onClick: this.pregunta2botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta2.botonCSeleccionado === true ? true : false, onClick: this.pregunta2botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta2.botonDSeleccionado === true ? true : false, onClick: this.pregunta2botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-3 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '3. Al imaginar algo me es muy f\xE1cil crear la imagen en mi mente.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta3.botonASeleccionado === true ? true : false, onClick: this.pregunta3botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta3.botonBSeleccionado === true ? true : false, onClick: this.pregunta3botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta3.botonCSeleccionado === true ? true : false, onClick: this.pregunta3botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta3.botonDSeleccionado === true ? true : false, onClick: this.pregunta3botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-4 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '4. Frecuentemente me encierro tanto en una idea que pierdo de vista otras cosas.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta4.botonASeleccionado === true ? true : false, onClick: this.pregunta4botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta4.botonBSeleccionado === true ? true : false, onClick: this.pregunta4botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta4.botonCSeleccionado === true ? true : false, onClick: this.pregunta4botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta4.botonDSeleccionado === true ? true : false, onClick: this.pregunta4botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-5 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '5. A menudo percibo sonidos leves que otras personas no pueden percibir.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta5.botonASeleccionado === true ? true : false, onClick: this.pregunta5botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta5.botonBSeleccionado === true ? true : false, onClick: this.pregunta5botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta5.botonCSeleccionado === true ? true : false, onClick: this.pregunta5botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta5.botonDSeleccionado === true ? true : false, onClick: this.pregunta5botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-6 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '6. Frecuentemente pongo atenci\xF3n a n\xFAmeros de placa de auto o alguna otra informaci\xF3n similar.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta6.botonASeleccionado === true ? true : false, onClick: this.pregunta6botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta6.botonBSeleccionado === true ? true : false, onClick: this.pregunta6botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta6.botonCSeleccionado === true ? true : false, onClick: this.pregunta6botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta6.botonDSeleccionado === true ? true : false, onClick: this.pregunta6botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-7 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '7. Frecuentemente otras personas me indican que digo cosas de forma grosera pero yo no lo siento as\xED.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta7.botonASeleccionado === true ? true : false, onClick: this.pregunta7botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta7.botonBSeleccionado === true ? true : false, onClick: this.pregunta7botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta7.botonCSeleccionado === true ? true : false, onClick: this.pregunta7botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta7.botonDSeleccionado === true ? true : false, onClick: this.pregunta7botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-8 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '8. Cuando leo una historia, f\xE1cilmente puedo imaginar como se ven los personajes.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta8.botonASeleccionado === true ? true : false, onClick: this.pregunta8botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta8.botonBSeleccionado === true ? true : false, onClick: this.pregunta8botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta8.botonCSeleccionado === true ? true : false, onClick: this.pregunta8botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta8.botonDSeleccionado === true ? true : false, onClick: this.pregunta8botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-9 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '9. Me encantan las fechas.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta9.botonASeleccionado === true ? true : false, onClick: this.pregunta9botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta9.botonBSeleccionado === true ? true : false, onClick: this.pregunta9botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta9.botonCSeleccionado === true ? true : false, onClick: this.pregunta9botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta9.botonDSeleccionado === true ? true : false, onClick: this.pregunta9botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-10 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '10. En una reuni\xF3n, f\xE1cilmente puedo dar seguimiento a las conversaciones de otras personas.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta10.botonASeleccionado === true ? true : false, onClick: this.pregunta10botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta10.botonBSeleccionado === true ? true : false, onClick: this.pregunta10botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta10.botonCSeleccionado === true ? true : false, onClick: this.pregunta10botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta10.botonDSeleccionado === true ? true : false, onClick: this.pregunta10botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-11 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '11. Se me facilitan las situaciones sociales.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta11.botonASeleccionado === true ? true : false, onClick: this.pregunta11botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta11.botonBSeleccionado === true ? true : false, onClick: this.pregunta11botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta11.botonCSeleccionado === true ? true : false, onClick: this.pregunta11botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta11.botonDSeleccionado === true ? true : false, onClick: this.pregunta11botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-12 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '12. Tiendo a notar detalles que otros no notan.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta12.botonASeleccionado === true ? true : false, onClick: this.pregunta12botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta12.botonBSeleccionado === true ? true : false, onClick: this.pregunta12botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta12.botonCSeleccionado === true ? true : false, onClick: this.pregunta12botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta12.botonDSeleccionado === true ? true : false, onClick: this.pregunta12botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-13 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '13. Prefiero ir a una biblioteca que a una fiesta.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta13.botonASeleccionado === true ? true : false, onClick: this.pregunta13botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta13.botonBSeleccionado === true ? true : false, onClick: this.pregunta13botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta13.botonCSeleccionado === true ? true : false, onClick: this.pregunta13botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta13.botonDSeleccionado === true ? true : false, onClick: this.pregunta13botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-14 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '14. Se me facilita inventar historias.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta14.botonASeleccionado === true ? true : false, onClick: this.pregunta14botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta14.botonBSeleccionado === true ? true : false, onClick: this.pregunta14botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta14.botonCSeleccionado === true ? true : false, onClick: this.pregunta14botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta14.botonDSeleccionado === true ? true : false, onClick: this.pregunta14botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-15 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '15. Me siento mas fuertemente atra\xEDdo a las personas que a los objetos.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta15.botonASeleccionado === true ? true : false, onClick: this.pregunta15botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta15.botonBSeleccionado === true ? true : false, onClick: this.pregunta15botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta15.botonCSeleccionado === true ? true : false, onClick: this.pregunta15botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta15.botonDSeleccionado === true ? true : false, onClick: this.pregunta15botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-16 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '16. Tiendo a tener metas e intereses s\xF3lidos y me molestas no poder alcanzarlos.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta16.botonASeleccionado === true ? true : false, onClick: this.pregunta16botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta16.botonBSeleccionado === true ? true : false, onClick: this.pregunta16botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta16.botonCSeleccionado === true ? true : false, onClick: this.pregunta16botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta16.botonDSeleccionado === true ? true : false, onClick: this.pregunta16botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-17 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '17. Disfruto de las conversaciones informales.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta17.botonASeleccionado === true ? true : false, onClick: this.pregunta17botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta17.botonBSeleccionado === true ? true : false, onClick: this.pregunta17botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta17.botonCSeleccionado === true ? true : false, onClick: this.pregunta17botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta17.botonDSeleccionado === true ? true : false, onClick: this.pregunta17botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-18 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '18. Cuando hablo frecuentemente no dejo hablar a otros.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta18.botonASeleccionado === true ? true : false, onClick: this.pregunta18botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta18.botonBSeleccionado === true ? true : false, onClick: this.pregunta18botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta18.botonCSeleccionado === true ? true : false, onClick: this.pregunta18botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta18.botonDSeleccionado === true ? true : false, onClick: this.pregunta18botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-19 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '19. Me encantan los n\xFAmeros.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta19.botonASeleccionado === true ? true : false, onClick: this.pregunta19botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta19.botonBSeleccionado === true ? true : false, onClick: this.pregunta19botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta19.botonCSeleccionado === true ? true : false, onClick: this.pregunta19botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta19.botonDSeleccionado === true ? true : false, onClick: this.pregunta19botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-20 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '20. Cuando leo una historia se me dificulta identificar las intenciones de los personajes.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta20.botonASeleccionado === true ? true : false, onClick: this.pregunta20botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta20.botonBSeleccionado === true ? true : false, onClick: this.pregunta20botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta20.botonCSeleccionado === true ? true : false, onClick: this.pregunta20botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta20.botonDSeleccionado === true ? true : false, onClick: this.pregunta20botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-21 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '21. No disfruto leer obras de ficci\xF3n.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta21.botonASeleccionado === true ? true : false, onClick: this.pregunta21botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta21.botonBSeleccionado === true ? true : false, onClick: this.pregunta21botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta21.botonCSeleccionado === true ? true : false, onClick: this.pregunta21botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta21.botonDSeleccionado === true ? true : false, onClick: this.pregunta21botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-22 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '22. Se me dificulta hacer nuevos amigos.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta22.botonASeleccionado === true ? true : false, onClick: this.pregunta22botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta22.botonBSeleccionado === true ? true : false, onClick: this.pregunta22botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta22.botonCSeleccionado === true ? true : false, onClick: this.pregunta22botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta22.botonDSeleccionado === true ? true : false, onClick: this.pregunta22botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-23 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '23. Percibo modelos en las cosas todo el tiempo.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta23.botonASeleccionado === true ? true : false, onClick: this.pregunta23botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta23.botonBSeleccionado === true ? true : false, onClick: this.pregunta23botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta23.botonCSeleccionado === true ? true : false, onClick: this.pregunta23botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta23.botonDSeleccionado === true ? true : false, onClick: this.pregunta23botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-24 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '24. Prefiero ir al teatro que a un museo.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta24.botonASeleccionado === true ? true : false, onClick: this.pregunta24botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta24.botonBSeleccionado === true ? true : false, onClick: this.pregunta24botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta24.botonCSeleccionado === true ? true : false, onClick: this.pregunta24botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta24.botonDSeleccionado === true ? true : false, onClick: this.pregunta24botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-25 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '25. No me molesta si mi rutina diaria es interrumpida.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta25.botonASeleccionado === true ? true : false, onClick: this.pregunta25botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta25.botonBSeleccionado === true ? true : false, onClick: this.pregunta25botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta25.botonCSeleccionado === true ? true : false, onClick: this.pregunta25botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta25.botonDSeleccionado === true ? true : false, onClick: this.pregunta25botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-26 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '26. Frecuentemente no s\xE9 c\xF3mo continuar con una conversaci\xF3n.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta26.botonASeleccionado === true ? true : false, onClick: this.pregunta26botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta26.botonBSeleccionado === true ? true : false, onClick: this.pregunta26botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta26.botonCSeleccionado === true ? true : false, onClick: this.pregunta26botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta26.botonDSeleccionado === true ? true : false, onClick: this.pregunta26botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-27 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '27. Es f\xE1cil para mi leer entre l\xEDneas cuando hablo con otras personas.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta27.botonASeleccionado === true ? true : false, onClick: this.pregunta27botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta27.botonBSeleccionado === true ? true : false, onClick: this.pregunta27botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta27.botonCSeleccionado === true ? true : false, onClick: this.pregunta27botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta27.botonDSeleccionado === true ? true : false, onClick: this.pregunta27botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-28 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '28. A menudo me concentro m\xE1s en el todo que en los detalles.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta28.botonASeleccionado === true ? true : false, onClick: this.pregunta28botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta28.botonBSeleccionado === true ? true : false, onClick: this.pregunta28botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta28.botonCSeleccionado === true ? true : false, onClick: this.pregunta28botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta28.botonDSeleccionado === true ? true : false, onClick: this.pregunta28botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-29 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '29. No soy muy bueno recordando n\xFAmeros telef\xF3nicos.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta29.botonASeleccionado === true ? true : false, onClick: this.pregunta29botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta29.botonBSeleccionado === true ? true : false, onClick: this.pregunta29botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta29.botonCSeleccionado === true ? true : false, onClick: this.pregunta29botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta29.botonDSeleccionado === true ? true : false, onClick: this.pregunta29botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-30 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '30. Normalmente no noto ligeros cambios generados en una situaci\xF3n o en una persona.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta30.botonASeleccionado === true ? true : false, onClick: this.pregunta30botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta30.botonBSeleccionado === true ? true : false, onClick: this.pregunta30botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta30.botonCSeleccionado === true ? true : false, onClick: this.pregunta30botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta30.botonDSeleccionado === true ? true : false, onClick: this.pregunta30botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-31 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '31. Puedo notar cuando alguien se aburre al escucharme.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta31.botonASeleccionado === true ? true : false, onClick: this.pregunta31botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta31.botonBSeleccionado === true ? true : false, onClick: this.pregunta31botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta31.botonCSeleccionado === true ? true : false, onClick: this.pregunta31botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta31.botonDSeleccionado === true ? true : false, onClick: this.pregunta31botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-32 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '32. Se me facilita realizar m\xE1s de una actividad a la vez.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta32.botonASeleccionado === true ? true : false, onClick: this.pregunta32botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta32.botonBSeleccionado === true ? true : false, onClick: this.pregunta32botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta32.botonCSeleccionado === true ? true : false, onClick: this.pregunta32botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta32.botonDSeleccionado === true ? true : false, onClick: this.pregunta32botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-33 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '33. Cuando hablo por tel\xE9fono es d\xEDficil identificar el momento en que me toca hablar.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta33.botonASeleccionado === true ? true : false, onClick: this.pregunta33botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta33.botonBSeleccionado === true ? true : false, onClick: this.pregunta33botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta33.botonCSeleccionado === true ? true : false, onClick: this.pregunta33botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta33.botonDSeleccionado === true ? true : false, onClick: this.pregunta33botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-34 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '34. Disfruto hacer cosas de manera espont\xE1nea.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta34.botonASeleccionado === true ? true : false, onClick: this.pregunta34botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta34.botonBSeleccionado === true ? true : false, onClick: this.pregunta34botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta34.botonCSeleccionado === true ? true : false, onClick: this.pregunta34botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta34.botonDSeleccionado === true ? true : false, onClick: this.pregunta34botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-35 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '35. Por lo general soy el \xFAltimo en entender un chiste.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta35.botonASeleccionado === true ? true : false, onClick: this.pregunta35botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta35.botonBSeleccionado === true ? true : false, onClick: this.pregunta35botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta35.botonCSeleccionado === true ? true : false, onClick: this.pregunta35botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta35.botonDSeleccionado === true ? true : false, onClick: this.pregunta35botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-36 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '36. Me es f\xE1cil identificar lo que alguien piensa o siente con solo mirarlo al rostro.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta36.botonASeleccionado === true ? true : false, onClick: this.pregunta36botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta36.botonBSeleccionado === true ? true : false, onClick: this.pregunta36botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta36.botonCSeleccionado === true ? true : false, onClick: this.pregunta36botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta36.botonDSeleccionado === true ? true : false, onClick: this.pregunta36botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-37 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '37. Despu\xE9s de una interrupci\xF3n puedo regresar a lo que estaba haciendo r\xE1pidamente.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta37.botonASeleccionado === true ? true : false, onClick: this.pregunta37botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta37.botonBSeleccionado === true ? true : false, onClick: this.pregunta37botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta37.botonCSeleccionado === true ? true : false, onClick: this.pregunta37botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta37.botonDSeleccionado === true ? true : false, onClick: this.pregunta37botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-38 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '38. Se me facilitan las conversaciones informales.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta38.botonASeleccionado === true ? true : false, onClick: this.pregunta38botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta38.botonBSeleccionado === true ? true : false, onClick: this.pregunta38botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta38.botonCSeleccionado === true ? true : false, onClick: this.pregunta38botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta38.botonDSeleccionado === true ? true : false, onClick: this.pregunta38botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-39 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '39. La gente a menudo me dice que doy vueltas sobre el mismo asunto.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta39.botonASeleccionado === true ? true : false, onClick: this.pregunta39botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta39.botonBSeleccionado === true ? true : false, onClick: this.pregunta39botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta39.botonCSeleccionado === true ? true : false, onClick: this.pregunta39botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta39.botonDSeleccionado === true ? true : false, onClick: this.pregunta39botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-40 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '40. En mi ni\xF1ez disfrutaba con otros ni\xF1os los juegos donde se fing\xEDa ser alguien m\xE1s.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta40.botonASeleccionado === true ? true : false, onClick: this.pregunta40botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta40.botonBSeleccionado === true ? true : false, onClick: this.pregunta40botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta40.botonCSeleccionado === true ? true : false, onClick: this.pregunta40botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta40.botonDSeleccionado === true ? true : false, onClick: this.pregunta40botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-41 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '41. Me gusta compilar informaci\xF3n acerca de categor\xEDas (ejemplo: tipos de plantas, tipos de autos, etc.)'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta41.botonASeleccionado === true ? true : false, onClick: this.pregunta41botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta41.botonBSeleccionado === true ? true : false, onClick: this.pregunta41botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta41.botonCSeleccionado === true ? true : false, onClick: this.pregunta41botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta41.botonDSeleccionado === true ? true : false, onClick: this.pregunta41botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-42 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '42. Se me dificulta imaginar ser otra persona.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta42.botonASeleccionado === true ? true : false, onClick: this.pregunta42botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta42.botonBSeleccionado === true ? true : false, onClick: this.pregunta42botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta42.botonCSeleccionado === true ? true : false, onClick: this.pregunta42botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta42.botonDSeleccionado === true ? true : false, onClick: this.pregunta42botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-43 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '43. Me gusta planear cuidadosamente las actividades en las que participo.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta43.botonASeleccionado === true ? true : false, onClick: this.pregunta43botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta43.botonBSeleccionado === true ? true : false, onClick: this.pregunta43botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta43.botonCSeleccionado === true ? true : false, onClick: this.pregunta43botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta43.botonDSeleccionado === true ? true : false, onClick: this.pregunta43botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-44 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '44. Disfruto los eventos sociales.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta44.botonASeleccionado === true ? true : false, onClick: this.pregunta44botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta44.botonBSeleccionado === true ? true : false, onClick: this.pregunta44botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta44.botonCSeleccionado === true ? true : false, onClick: this.pregunta44botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta44.botonDSeleccionado === true ? true : false, onClick: this.pregunta44botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-45 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '45. Se me dificulta identificar las intenciones de las personas.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta45.botonASeleccionado === true ? true : false, onClick: this.pregunta45botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta45.botonBSeleccionado === true ? true : false, onClick: this.pregunta45botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta45.botonCSeleccionado === true ? true : false, onClick: this.pregunta45botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta45.botonDSeleccionado === true ? true : false, onClick: this.pregunta45botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-46 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '46. Me provocan ansiedad las situaciones nuevas para m\xED.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta46.botonASeleccionado === true ? true : false, onClick: this.pregunta46botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta46.botonBSeleccionado === true ? true : false, onClick: this.pregunta46botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta46.botonCSeleccionado === true ? true : false, onClick: this.pregunta46botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta46.botonDSeleccionado === true ? true : false, onClick: this.pregunta46botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-47 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '47. Disfruto de conocer gente nueva.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta47.botonASeleccionado === true ? true : false, onClick: this.pregunta47botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta47.botonBSeleccionado === true ? true : false, onClick: this.pregunta47botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta47.botonCSeleccionado === true ? true : false, onClick: this.pregunta47botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta47.botonDSeleccionado === true ? true : false, onClick: this.pregunta47botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-48 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '48. Tengo habilidades diplom\xE1ticas.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta48.botonASeleccionado === true ? true : false, onClick: this.pregunta48botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta48.botonBSeleccionado === true ? true : false, onClick: this.pregunta48botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta48.botonCSeleccionado === true ? true : false, onClick: this.pregunta48botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta48.botonDSeleccionado === true ? true : false, onClick: this.pregunta48botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-49 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '49. No soy bueno recordando los cumplea\xF1os de otras personas.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta49.botonASeleccionado === true ? true : false, onClick: this.pregunta49botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta49.botonBSeleccionado === true ? true : false, onClick: this.pregunta49botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta49.botonCSeleccionado === true ? true : false, onClick: this.pregunta49botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta49.botonDSeleccionado === true ? true : false, onClick: this.pregunta49botonD })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'pregunta-50 aq-box-1' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            { className: 'aq-question' },
+            '50. Se me facilita participar en juegos con ni\xF1os fingiendo otros roles.'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'aq-box-2' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'a. Coincido totalmente', primary: this.state.pregunta50.botonASeleccionado === true ? true : false, onClick: this.pregunta50botonA }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'b. Coincido parcialmente', primary: this.state.pregunta50.botonBSeleccionado === true ? true : false, onClick: this.pregunta50botonB }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'c. Parcialmente en desacuerdo', primary: this.state.pregunta50.botonCSeleccionado === true ? true : false, onClick: this.pregunta50botonC }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, { className: 'aq-button', label: 'd. Totalmente en desacuerdo', primary: this.state.pregunta50.botonDSeleccionado === true ? true : false, onClick: this.pregunta50botonD })
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

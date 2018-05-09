@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import request from 'superagent';
 import { 
   BrowserRouter as Router,
-  // HashRouter as Router,
   Switch,
   Route,
   Link,
@@ -162,8 +161,7 @@ class App extends Component {
   render() {
     // console.log(this.state)
     return (
-      <MuiThemeProvider>
-        {/*<Router>*/}
+      <div>
           { this.state.loggedOut ===  !true 
             ?  
               <div>
@@ -197,8 +195,7 @@ class App extends Component {
                 />
               </div>
           }
-        {/*</Router>*/}
-      </MuiThemeProvider>
+      </div>
     );
   }
 }
@@ -242,7 +239,9 @@ class App extends Component {
 
 ReactDOM.render(
     <Router>
-      <App/>
+      <MuiThemeProvider>
+        <App/>
+      </MuiThemeProvider>
     </Router>, document.getElementById('app-container'));
 
 
