@@ -6938,6 +6938,7 @@ var App = function (_Component4) {
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
         _this4.setState({
           user: data.body,
+          // userId: data.body.id,
           loggedOut: false,
           display: ''
         });
@@ -6957,6 +6958,7 @@ var App = function (_Component4) {
 
     _this4.state = {
       user: [],
+      userId: '',
       loggedOut: true,
       display: 'none'
     };
@@ -6967,6 +6969,7 @@ var App = function (_Component4) {
     var _this5 = this;
 
     __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
+      console.log(data);
       if (typeof data.body.email === 'string') {
         _this5.setState({
           user: data.body,
@@ -6980,7 +6983,9 @@ var App = function (_Component4) {
   };
 
   App.prototype.render = function render() {
-    // console.log(this.state)
+    // console.log('##########')
+    // console.log(this.state.user.id)
+    // console.log('##########')
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
@@ -6991,6 +6996,7 @@ var App = function (_Component4) {
           'div',
           { className: 'app-header-container' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], {
+            currentId: this.state.user.id,
             currentUser: this.state.user.email,
             fnActualizarStatePorUserLogout: this.actualizarStatePorUserLogout,
             displaynone: this.state.display
@@ -24329,22 +24335,29 @@ var Header = function (_Component) {
       { className: 'header-container' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'header-user-container' },
-        this.props.currentUser
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
         { className: 'header-botones-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.props.currentId === 2 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: this.props.display },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_material_ui_RaisedButton___default.a, {
-            className: 'header-button',
-            label: 'Men\xFA',
-            onClick: this.handleToggle
-          })
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          { className: 'grid' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: this.props.display },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_material_ui_RaisedButton___default.a, {
+              className: 'header-button',
+              label: 'Men\xFA',
+              onClick: this.handleToggle
+            })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: this.props.display },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_material_ui_RaisedButton___default.a, {
+              className: 'header-button',
+              label: 'Log Out',
+              onClick: this.logout
+            })
+          )
+        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: this.props.display },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_material_ui_RaisedButton___default.a, {
@@ -31917,12 +31930,7 @@ var AllAnswersCuestionarioAQ = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'td',
               { className: 'tdStyle' },
-              'Id Answer'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'td',
-              { className: 'tdStyle' },
-              'Time Stamp'
+              'Fecha'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'td',
@@ -31991,11 +31999,6 @@ var CuestionarioAQAnswerIndividual = function (_Component) {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'tr',
       null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'td',
-        { className: 'tdStyle' },
-        info.id
-      ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'td',
         { className: 'tdStyle' },

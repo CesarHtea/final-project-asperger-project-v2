@@ -112,6 +112,7 @@ class App extends Component {
 
     this.state = {
       user: [],
+      userId: '',
       loggedOut: true,
       display: 'none',
     };
@@ -121,6 +122,7 @@ class App extends Component {
     request
       .get(`${API_URL}/auth/current`)
       .then((data) => {
+        console.log(data)
         if (typeof data.body.email === 'string') {
           this.setState({
             user: data.body,
@@ -140,6 +142,7 @@ class App extends Component {
       .then((data) => {
         this.setState({
           user: data.body,
+          // userId: data.body.id,
           loggedOut: false,
           display: ''
         })
@@ -159,7 +162,9 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state)
+    // console.log('##########')
+    // console.log(this.state.user.id)
+    // console.log('##########')
     return (
       <div>
           { this.state.loggedOut ===  !true 
@@ -167,7 +172,8 @@ class App extends Component {
               <div>
                 <div className='app-header-container'>
                   <Header
-                    currentUser={this.state.user.email} 
+                    currentId={this.state.user.id}
+                    currentUser={this.state.user.email}
                     fnActualizarStatePorUserLogout={this.actualizarStatePorUserLogout}
                     displaynone={this.state.display}
                   />

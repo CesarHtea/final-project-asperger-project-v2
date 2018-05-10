@@ -1,7 +1,7 @@
 const data = [{
-  superAdmin: false
-  admin: false
-  psicologo: false
+  superAdmin: false,
+  admin: false,
+  psicologo: false,
 }]
 
 exports.seed = function(knex, Promise) {

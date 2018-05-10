@@ -63,8 +63,7 @@ class AllAnswersCuestionarioAQ extends Component {
         <table className='table'>
           <thead>
             <tr>
-              <td className='tdStyle'>Id Answer</td>
-              <td className='tdStyle'>Time Stamp</td>
+              <td className='tdStyle'>Fecha</td>
               <td className='tdStyle'>User Id (Px)</td>
               <td className='tdStyle'>Cociente de autismo</td>
               <td>Interpretacion</td>

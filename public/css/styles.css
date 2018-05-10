@@ -3,10 +3,12 @@
 }
 
 body {
-  /*background: url("/images/Trees.png") ;*/
+  background: url("/images/Trees.png") ;
 }
 
-/* DISPLAY */
+/****** 
+DISPLAY 
+******/
 
 .none {
   display: none;
@@ -20,24 +22,33 @@ body {
 HEADER
 *****/ 
 
+
 .app-header-container {
   position: fixed;
   top: 0;
   left:0;
   width: 100%;
   z-index: 0;
-  background-color: white;
+  /*background-color: turquoise ;*/
+  /*opacity: 0.35;*/
+}
 }
 
 .header-container {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  background-co/*lor: turquoise ;
+  opacity: 0.35;*/
 }
 
 .header-user-container {
   margin: 12px;
   display: flex;
-  justify-content: flex-end  
+  justify-content: flex-end;  
+}
+
+.micro-header-user-container {
+  border: 1px solid red;
 }
 
 .header-botones-container {
@@ -101,7 +112,7 @@ CUESTIONARIO AQ
   max-width: 100%;
   padding: 30px;
   margin: 30px;
-  margin-top: 150px;
+  /*margin-top: 150px;*/
   display: flex;
   justify-content: center;
 }
@@ -133,6 +144,7 @@ CUESTIONARIO AQ
 
 .aq-button {
   margin: 12px;
+  z-index: 0;
 }
 
 .aq-enviar-text-material-ui-paper {
@@ -147,7 +159,7 @@ ALL ANSWERS CUESTIONARIO AQ
 **************************/
 
 .all-answers-cuestionario-AQ-container {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .table {

@@ -36,28 +36,33 @@ class Header extends Component {
     render() {
     return (
       <div className='header-container'>
-        <div className='header-user-container'>{this.props.currentUser}</div>
         <div className='header-botones-container'>
-          <div className={this.props.display}>
-            <RaisedButton
-              className='header-button'
-              label="Menú"
-              onClick={this.handleToggle}
-            />
-          </div>
-          {/* <Link to='/userLogIn' className='no-decoration-text'>
-            <RaisedButton
-              className='header-button'
-              label="Sign In / Log In"
-            />
-          </Link> */}
-          <div className={this.props.display}>
-            <RaisedButton
-              className='header-button'
-              label="Log Out"
-              onClick={this.logout}
-            />
-          </div>
+          { this.props.currentId === 2
+           ? <div className='grid'>
+              <div className={this.props.display}>
+                <RaisedButton
+                  className='header-button'
+                  label="Menú"
+                   onClick={this.handleToggle}
+                />
+              </div>
+              <div className={this.props.display}>
+                  <RaisedButton
+                    className='header-button'
+                    label="Log Out"
+                    onClick={this.logout}
+                  />
+              </div>
+            </div>
+
+           : <div className={this.props.display}>
+              <RaisedButton
+                className='header-button'
+                label="Log Out"
+                onClick={this.logout}
+               />
+            </div>
+          }
           <Drawer
             docked={false}
             width={300}

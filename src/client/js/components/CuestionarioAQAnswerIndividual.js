@@ -10,7 +10,6 @@ class CuestionarioAQAnswerIndividual extends Component {
 
   	return (
   	  <tr>
-        <td className='tdStyle'>{info.id}</td>
         <td className='tdStyle'>{info.createdAt}</td>
         <td className='tdStyle'>{info.userId}</td>
         <td className='tdStyle'>{info.sumaTotal}</td>
