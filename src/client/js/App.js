@@ -127,7 +127,7 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.user.id ===  3
+         { this.state.loggedOut ===  !true && this.state.user.id > 2
              ?  
               <div>
                 <div className='app-header-container'>

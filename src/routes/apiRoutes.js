@@ -1,6 +1,15 @@
 const Router = require('express').Router
 const apiRouter = Router()
 
+const isUserAuthenticated = require('../modules/isUserAuthenticated')
+
+const getPrivilegesByUserId = require('../modules/typeOfUserCRUDfns.js')
+
+const {
+  getAllAnswersCuestionarioAQ,
+  sendNewAnswerInAllAnswersCuestionarioAQ
+} = require('../modules/cuestionarioAQTableCRUDfns')
+
 const {
   getRegisteredUsers
 //   ,
@@ -10,13 +19,6 @@ const {
 //   updateUnGrupoDeTalentos,
 //   deleteUnGrupoDeTalentos
 } = require('../modules/talentosTableCRUDfns')
-
-const {
-  getAllAnswersCuestionarioAQ,
-  sendNewAnswerInAllAnswersCuestionarioAQ
-} = require('../modules/cuestionarioAQTableCRUDfns')
-
-const isUserAuthenticated = require('../modules/isUserAuthenticated')
 
 // apiRouter
 //   .get('/talentos', getTalentos)
@@ -30,6 +32,9 @@ apiRouter
   .post('/allAnswersCuestionarioAQ', isUserAuthenticated, sendNewAnswerInAllAnswersCuestionarioAQ)
 
 apiRouter
-  .get('/registeredUsers', getRegisteredUsers)
+  .get('/registeredUsers', isUserAuthenticated, getRegisteredUsers)
+
+apiRouter
+  .get('/typeOfUser/:id', getPrivileges)
 
 module.exports = apiRouter
