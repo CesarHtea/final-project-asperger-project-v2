@@ -1,9 +1,9 @@
 const Router = require('express').Router
 const apiRouter = Router()
 
-const isUserAuthenticated = require('../modules/isUserAuthenticated')
+const TypeOfUser = require('../models/TypeOfUser');
 
-const getPrivilegesByUserId = require('../modules/typeOfUserCRUDfns.js')
+const isUserAuthenticated = require('../modules/isUserAuthenticated')
 
 const {
   getAllAnswersCuestionarioAQ,
@@ -27,6 +27,21 @@ const {
 //   .put('/talentos/:id', isUserAuthenticated, updateUnGrupoDeTalentos)
 //   .delete('/talentos/:id', isUserAuthenticated, deleteUnGrupoDeTalentos)
 
+getPrivilegesByUserId = function getPrivilegesByUserId(req, res) {
+  const id = parseInt(req.params.id)
+  TypeOfUser
+    .query()
+    .findById(id)
+    .then(function(privileges) {
+      res.json(privileges).status(200)
+    })
+    .catch(function(e) {
+      res.json({
+        error: e
+      }).status(500)
+    })
+  }
+
 apiRouter
   .get('/allAnswersCuestionarioAQ', isUserAuthenticated, getAllAnswersCuestionarioAQ)
   .post('/allAnswersCuestionarioAQ', isUserAuthenticated, sendNewAnswerInAllAnswersCuestionarioAQ)
@@ -35,6 +50,6 @@ apiRouter
   .get('/registeredUsers', isUserAuthenticated, getRegisteredUsers)
 
 apiRouter
-  .get('/typeOfUser/:id', getPrivileges)
+  .get('/typeOfUser/:id', getPrivilegesByUserId)
 
 module.exports = apiRouter

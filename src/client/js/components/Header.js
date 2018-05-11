@@ -39,11 +39,11 @@ class Header extends Component {
 
         <div className='header-botones-container'>
 
-          { this.props.currentId === 1 ?
+          { this.props.admin === 1 ?
            
              <div className='grid'>
 
-                <div className={this.props.display}>
+                <div>
                   <Link to='/registeredUsers'>
                     <RaisedButton
                       className='header-button'
@@ -53,7 +53,7 @@ class Header extends Component {
                   </Link>
                 </div>
               
-                <div className={this.props.display}>
+                <div>
                   <RaisedButton
                     className='header-button'
                     label="Menú"
@@ -78,11 +78,11 @@ class Header extends Component {
 
           }
 
-          { this.props.currentId === 2 ?
+          { this.props.psico === 1 ?
            
              <div className='grid'>
               
-                <div className={this.props.display}>
+                <div>
                   <RaisedButton
                     className='header-button'
                     label="Menú"
@@ -105,7 +105,7 @@ class Header extends Component {
 
           }
 
-          <div className={this.props.display}>
+          <div>
             <RaisedButton
               className='header-button'
               label="Log Out"

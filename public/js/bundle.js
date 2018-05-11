@@ -7330,10 +7330,20 @@ var App = function (_Component) {
     _this.actualizarStatePorUserLogin = function () {
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
         _this.setState({
-          user: data.body,
-          // userId: data.body.id,
+          user: data.body.email,
+          userId: data.body.id,
           loggedOut: false,
           display: ''
+        });
+
+        __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/api/typeOfUser/' + data.body.id).then(function (data) {
+          _this.setState({
+            admin: data.body.admin,
+            psico: data.body.psicologo,
+            px: data.body.px
+          });
+        }).catch(function (e) {
+          console.log(e);
         });
       }).catch(function (e) {
         console.log(e);
@@ -7349,8 +7359,6 @@ var App = function (_Component) {
     };
 
     _this.state = {
-      user: [],
-      userId: '',
       loggedOut: true,
       display: 'none'
     };
@@ -7375,21 +7383,21 @@ var App = function (_Component) {
   };
 
   App.prototype.render = function render() {
-    // console.log('##########')
-    // console.log(this.state.user.id)
-    // console.log('##########')
+    console.log('==== state consoleado desde render() ====');
+    console.log(this.state);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
-      this.state.loggedOut === !true && this.state.user.id === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      this.state.loggedOut === !true && this.state.admin === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'app-header-container' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], {
-            currentId: this.state.user.id,
-            currentUser: this.state.user.email,
+            currentId: this.state.userId,
+            currentUser: this.state.user,
+            admin: this.state.admin,
             fnActualizarStatePorUserLogout: this.actualizarStatePorUserLogout,
             displaynone: this.state.display
           })
@@ -7404,15 +7412,16 @@ var App = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_12__components_RegisteredUsers__["a" /* default */] })
         )
       ) : null,
-      this.state.loggedOut === !true && this.state.user.id === 2 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      this.state.loggedOut === !true && this.state.psico === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'app-header-container' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], {
-            currentId: this.state.user.id,
-            currentUser: this.state.user.email,
+            currentId: this.state.userId,
+            currentUser: this.state.userl,
+            psico: this.state.psico,
             fnActualizarStatePorUserLogout: this.actualizarStatePorUserLogout,
             displaynone: this.state.display
           })
@@ -7427,15 +7436,16 @@ var App = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_12__components_RegisteredUsers__["a" /* default */] })
         )
       ) : null,
-      this.state.loggedOut === !true && this.state.user.id > 2 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      this.state.loggedOut === !true && this.state.px === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'app-header-container' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], {
-            currentId: this.state.user.id,
-            currentUser: this.state.user.email,
+            currentId: this.state.userId,
+            currentUser: this.state.user,
+            px: this.state.px,
             fnActualizarStatePorUserLogout: this.actualizarStatePorUserLogout,
             displaynone: this.state.display
           })
@@ -24700,12 +24710,12 @@ var Header = function (_Component) {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'header-botones-container' },
-        this.props.currentId === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.props.admin === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'grid' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: this.props.display },
+            null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
               { to: '/registeredUsers' },
@@ -24718,7 +24728,7 @@ var Header = function (_Component) {
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: this.props.display },
+            null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_material_ui_RaisedButton___default.a, {
               className: 'header-button',
               label: 'Men\xFA',
@@ -24765,12 +24775,12 @@ var Header = function (_Component) {
             )
           )
         ) : null,
-        this.props.currentId === 2 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.props.psico === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'grid' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: this.props.display },
+            null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_material_ui_RaisedButton___default.a, {
               className: 'header-button',
               label: 'Men\xFA',
@@ -24801,7 +24811,7 @@ var Header = function (_Component) {
         ) : null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: this.props.display },
+          null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_material_ui_RaisedButton___default.a, {
             className: 'header-button',
             label: 'Log Out',

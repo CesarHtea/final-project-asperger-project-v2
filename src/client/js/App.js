@@ -30,8 +30,6 @@ class App extends Component {
     super();
 
     this.state = {
-      user: [],
-      userId: '',
       loggedOut: true,
       display: 'none',
     };
@@ -60,15 +58,29 @@ class App extends Component {
       .get(`${API_URL}/auth/current`)
       .then((data) => {
         this.setState({
-          user: data.body,
-          // userId: data.body.id,
+          user: data.body.email,
+          userId: data.body.id,
           loggedOut: false,
           display: ''
         })
+
+        request
+          .get(`${API_URL}/api/typeOfUser/${data.body.id}`)
+          .then((data) => {
+            this.setState({
+              admin: data.body.admin,
+              psico: data.body.psicologo,
+              px: data.body.px
+            })
+          })
+          .catch(function(e){
+            console.log(e)
+          });
+
       })
       .catch(function(e){
         console.log(e)
-      })
+      });
   };    
 
   actualizarStatePorUserLogout = (loggedOut) => {
@@ -80,18 +92,18 @@ class App extends Component {
   }
 
   render() {
-    // console.log('##########')
-    // console.log(this.state.user.id)
-    // console.log('##########')
+    console.log('==== state consoleado desde render() ====')
+    console.log(this.state)
     return (
       <div>
-          { this.state.loggedOut ===  !true && this.state.user.id ===  1
+          { this.state.loggedOut ===  !true && this.state.admin ===  1
             ?  
               <div>
                 <div className='app-header-container'>
                   <Header
-                    currentId={this.state.user.id}
-                    currentUser={this.state.user.email}
+                    currentId={this.state.userId}
+                    currentUser={this.state.user}
+                    admin={this.state.admin}
                     fnActualizarStatePorUserLogout={this.actualizarStatePorUserLogout}
                     displaynone={this.state.display}
                   />
@@ -106,13 +118,14 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.user.id ===  2
+         { this.state.loggedOut ===  !true && this.state.psico ===  1
              ?  
               <div>
                 <div className='app-header-container'>
                   <Header
-                    currentId={this.state.user.id}
-                    currentUser={this.state.user.email}
+                    currentId={this.state.userId}
+                    currentUser={this.state.userl}
+                    psico={this.state.psico}
                     fnActualizarStatePorUserLogout={this.actualizarStatePorUserLogout}
                     displaynone={this.state.display}
                   />
@@ -127,13 +140,14 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.user.id > 2
+         { this.state.loggedOut ===  !true && this.state.px === 1
              ?  
               <div>
                 <div className='app-header-container'>
                   <Header
-                    currentId={this.state.user.id}
-                    currentUser={this.state.user.email}
+                    currentId={this.state.userId}
+                    currentUser={this.state.user}
+                    px={this.state.px}
                     fnActualizarStatePorUserLogout={this.actualizarStatePorUserLogout}
                     displaynone={this.state.display}
                   />

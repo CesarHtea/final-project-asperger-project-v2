@@ -5,12 +5,16 @@ exports.up = function(knex, Promise) {
     .createTable('datosPersonales', function(t) {
     	t.increments();
     	t.timestamp('createdAt')
-        .notNullable()
-        .defaultTo(knex.fn.now());
+          .notNullable()
+          .defaultTo(knex.fn.now());
     	t.string('nombre');
     	t.string('apellido');
     	t.string('sexo');
     	t.decimal('edad')
+        t.date('fechaNacimiento');
+        t.text('domicilio');
+        t.decimal('telefonoFijo');
+        t.decimal('telefonoMovil');
     }); 
 };
 
