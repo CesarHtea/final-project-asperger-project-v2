@@ -6,7 +6,7 @@ import CuestionarioAQAnswerIndividual from './CuestionarioAQAnswerIndividual'
 
 const API_URL = `http://localhost:3000`
 
-class AllAnswersCuestionarioAQ extends Component {
+class CuestionarioAQAllAnswers extends Component {
   
   constructor() {
     super();
@@ -83,4 +83,4 @@ class AllAnswersCuestionarioAQ extends Component {
 
 }
 
-export default AllAnswersCuestionarioAQ;
+export default CuestionarioAQAllAnswers;

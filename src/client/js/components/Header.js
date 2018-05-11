@@ -36,47 +36,84 @@ class Header extends Component {
     render() {
     return (
       <div className='header-container'>
+
         <div className='header-botones-container'>
-          { this.props.currentId === 2
+
+          { this.props.currentId === 1 ?
            
-           ? <div className='grid'>
-              <div className={this.props.display}>
-                <RaisedButton
-                  className='header-button'
-                  label="Menú"
-                   onClick={this.handleToggle}
-                />
-              </div>
-              <div className={this.props.display}>
+             <div className='grid'>
+
+                <div className={this.props.display}>
+                  <Link to='/registeredUsers'>
+                    <RaisedButton
+                      className='header-button'
+                      label="Permisos de Acceso"
+                       // onClick={this.handleToggle}
+                    />
+                  </Link>
+                </div>
+              
+                <div className={this.props.display}>
                   <RaisedButton
                     className='header-button'
-                    label="Log Out"
-                    onClick={this.logout}
+                    label="Menú"
+                     onClick={this.handleToggle}
                   />
-              </div>
-              <Drawer
-                docked={false}
-                width={300}
-                openSecondary={true}
-                open={this.state.open}
-                onRequestChange={(open) => this.setState({open})}
-              >
-                <Link to='/cuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Cuestionario AQ (usuario Px)</MenuItem></Link>
-                <Link to='/allAnswersCuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>AllAnswersCuestionarioAQ (Psi)</MenuItem></Link>
-                <Link to='/registeredUsers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>RegisteredUsers (admin)</MenuItem></Link>
-              </Drawer>
+                </div>
+                <Drawer
+                  docked={false}
+                  width={300}
+                  openSecondary={true}
+                  open={this.state.open}
+                  onRequestChange={(open) => this.setState({open})}
+                >
+                  <Link to='/cuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Cuestionario AQ (usuario Px)</MenuItem></Link>
+                  <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>AllAnswersCuestionarioAQ (Psi)</MenuItem></Link>
+                  <Link to='/registeredUsers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>RegisteredUsers (admin)</MenuItem></Link>
+                </Drawer>
+                
             </div>
 
-           : <div className={this.props.display}>
-              <RaisedButton
-                className='header-button'
-                label="Log Out"
-                onClick={this.logout}
-               />
-            </div>
+            :  null
+
           }
 
-        </div>  
+          { this.props.currentId === 2 ?
+           
+             <div className='grid'>
+              
+                <div className={this.props.display}>
+                  <RaisedButton
+                    className='header-button'
+                    label="Menú"
+                     onClick={this.handleToggle}
+                  />
+                </div>
+                <Drawer
+                  docked={false}
+                  width={300}
+                  openSecondary={true}
+                  open={this.state.open}
+                  onRequestChange={(open) => this.setState({open})}
+                >
+                 <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>AllAnswersCuestionarioAQ (Psi)</MenuItem></Link>
+                </Drawer>
+
+            </div>
+
+            :  null
+
+          }
+
+          <div className={this.props.display}>
+            <RaisedButton
+              className='header-button'
+              label="Log Out"
+              onClick={this.logout}
+            />
+          </div>
+            
+        </div>
       </div>
     );
   }

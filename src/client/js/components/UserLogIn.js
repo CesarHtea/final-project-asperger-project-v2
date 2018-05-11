@@ -22,7 +22,7 @@ class UserLogin extends Component {
       .post(`${API_URL}/auth/login`)
       .send(userData)
       .then(response => {
-        alert(`Welcome ${response.body.email}`)
+        // alert(`Welcome ${response.body.email}`)
         this.props.fnActualizarStatePorUserLogin()
         // this.props.history.push('/') 
       })
