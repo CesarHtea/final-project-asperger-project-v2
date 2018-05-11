@@ -16,8 +16,6 @@ const {
 } = require('./src/helpers/passport-local--sessionActions')
 //---
 
-
-
 const connectToDatabase = require('./src/database/connection')
 const knexFile = require('./knexfile')
 

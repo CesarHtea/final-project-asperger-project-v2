@@ -353,6 +353,7 @@ class CuestionarioAQ extends Component {
     else if ( sumaTotal <= 31 ) { interpretacionCuestionarioAQ = '23-31 = Número de características autistas por encima del promedio.' }
     else if ( sumaTotal <= 50 ) { interpretacionCuestionarioAQ = '32-50 = Número alto de características autistas (Promedio de la mayoría para el espectro de la condición de autismo es de 35). ' }
 
+// Interpetacion del Cuestionario AQ
 // 0-10= Número bajo de características autistas.
 // 11-22= Número promedio de características autistas. (Promedio para hombres 17, promedio para mujeres 15).
 // 23-31= Número de características autistas por encima del promedio.

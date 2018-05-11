@@ -52,7 +52,7 @@ const data = [{
   pregunta50: 4,
   sumaTotal: 39,
   interpretacionAQ: '32-50 = Número alto de características autistas (Promedio de la mayoría para el espectro de la condición de autismo es de 35).', 
-  userId: 1
+  userId: 3
 },{
   fecha: '',
   pregunta1: 4,
@@ -107,7 +107,7 @@ const data = [{
   pregunta50: 4,
   sumaTotal: 42,
   interpretacionAQ: '32-50 = Número alto de características autistas (Promedio de la mayoría para el espectro de la condición de autismo es de 35).', 
-  userId: 1
+  userId: 4
 },{
   fecha: '',
   pregunta1: 4,
@@ -162,7 +162,7 @@ const data = [{
   pregunta50: 4,
   sumaTotal: 36,  
   interpretacionAQ: '32-50 = Número alto de características autistas (Promedio de la mayoría para el espectro de la condición de autismo es de 35).', 
-  userId: 1  
+  userId: 5  
 },{
   fecha: '',
   pregunta1: 4,
@@ -217,7 +217,7 @@ const data = [{
   pregunta50: 4,
   sumaTotal: 42,  
   interpretacionAQ: '32-50 = Número alto de características autistas (Promedio de la mayoría para el espectro de la condición de autismo es de 35).', 
-  userId: 1  
+  userId: 6  
 },{
   fecha: '',
   pregunta1: 4,
@@ -272,7 +272,7 @@ const data = [{
   pregunta50: 2,
   sumaTotal: 30,  
   interpretacionAQ: '23-31 = Número de características autistas por encima del promedio.', 
-  userId: 1  
+  userId: 7  
 }]
 
 exports.seed = function(knex, Promise) {

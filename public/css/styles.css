@@ -6,6 +6,19 @@ body {
   background: url("/images/Trees.png") ;
 }
 
+
+/* SECTIONS:
+
+* DISPLAY
+* HEADER
+* MENU 
+* SIGN IN & LOG IN 
+* CUESTIONARIO AQ 
+* ALL ANSWERS CUESTIONARIO AQ (TABLA)
+
+*/
+
+
 /****** 
 DISPLAY 
 ******/
@@ -29,16 +42,11 @@ HEADER
   left:0;
   width: 100%;
   z-index: 0;
-  /*background-color: turquoise ;*/
-  /*opacity: 0.35;*/
-}
 }
 
 .header-container {
   display: flex;
   flex-direction: column;
-  background-co/*lor: turquoise ;
-  opacity: 0.35;*/
 }
 
 .header-user-container {
@@ -60,7 +68,9 @@ HEADER
   margin: 12px;
 }
 
-/* MENU */
+/***
+MENU 
+***/
 
 .no-decoration-text {
   text-decoration: none;
@@ -112,7 +122,6 @@ CUESTIONARIO AQ
   max-width: 100%;
   padding: 30px;
   margin: 30px;
-  /*margin-top: 150px;*/
   display: flex;
   justify-content: center;
 }
@@ -154,9 +163,9 @@ CUESTIONARIO AQ
   display: flex;
 }
 
-/************************** 
-ALL ANSWERS CUESTIONARIO AQ 
-**************************/
+/**********************************
+ALL ANSWERS CUESTIONARIO AQ (TABLA)
+**********************************/
 
 .all-answers-cuestionario-AQ-container {
   margin-top: 100px;

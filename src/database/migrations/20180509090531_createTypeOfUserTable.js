@@ -4,9 +4,9 @@ exports.up = function(knex, Promise) {
     .schema
     .createTable('typeOfUser', function(t) {
       t.increments();
-      t.bool('superAdmin');
       t.bool('admin');
-      t.bool('psicologo')
+      t.bool('psicologo');
+      t.bool('px')
     })  
 };
 

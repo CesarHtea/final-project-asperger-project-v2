@@ -38,6 +38,7 @@ class Header extends Component {
       <div className='header-container'>
         <div className='header-botones-container'>
           { this.props.currentId === 2
+           
            ? <div className='grid'>
               <div className={this.props.display}>
                 <RaisedButton
@@ -53,6 +54,17 @@ class Header extends Component {
                     onClick={this.logout}
                   />
               </div>
+              <Drawer
+                docked={false}
+                width={300}
+                openSecondary={true}
+                open={this.state.open}
+                onRequestChange={(open) => this.setState({open})}
+              >
+                <Link to='/cuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Cuestionario AQ (usuario Px)</MenuItem></Link>
+                <Link to='/allAnswersCuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>AllAnswersCuestionarioAQ (Psi)</MenuItem></Link>
+                <Link to='/registeredUsers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>RegisteredUsers (admin)</MenuItem></Link>
+              </Drawer>
             </div>
 
            : <div className={this.props.display}>
@@ -63,24 +75,7 @@ class Header extends Component {
                />
             </div>
           }
-          <Drawer
-            docked={false}
-            width={300}
-            openSecondary={true}
-            open={this.state.open}
-            onRequestChange={(open) => this.setState({open})}
-          >
-            {/* <Link to='/public' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Public</MenuItem></Link>
-            {/* <Link to='/protected' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Protected</MenuItem></Link> */}
-            {/* <Link to='/protectedVault' className='no-decoration-text'><MenuItem onClick={this.handleClose}>ProtectedVault</MenuItem></Link> */}
-            <Link to='/cuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Cuestionario AQ (usuario Px)</MenuItem></Link>
-            <Link to='/allAnswersCuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>AllAnswersCuestionarioAQ (Psi)</MenuItem></Link>
-            {/* <Link to='/newElement' className='no-decoration-text'><MenuItem onClick={this.handleClose}>NewElement</MenuItem></Link> */}
-            <Link to='/registeredUsers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>RegisteredUsers (admin)</MenuItem></Link>
-            {/* <Link to='/newUserSignIn' className='no-decoration-text'><MenuItem onClick={this.handleClose}>NewUserSignIn</MenuItem></Link> */}
-            {/* <Link to='/currentUser' className='no-decoration-text'><MenuItem onClick={this.handleClose}>CurrentUser</MenuItem></Link> */}
-            
-          </Drawer>
+
         </div>  
       </div>
     );

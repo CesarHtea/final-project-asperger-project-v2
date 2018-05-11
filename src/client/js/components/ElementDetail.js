@@ -91,12 +91,4 @@ class Detail extends Component {
   }
 }
 
-// Para factorizar las partes del codigo que se repiten, podria quedar asi:
-// ...
-// .deleteQuote()
-// .getAllQuote()
-// .then()
-// .catch()
-// ...
-
 export default withRouter(Detail)

@@ -1,3 +1,6 @@
+// en este archivo esta un ejemplo de todos los verbos CRUD, 
+// se debe borrar este archivo en la version entregable de la app
+
 const Talentos = require('../models/Talentos');
 const RegisteredUsers = require('../models/RegisteredUsers')
 
