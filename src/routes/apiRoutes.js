@@ -27,6 +27,17 @@ const {
 //   .put('/talentos/:id', isUserAuthenticated, updateUnGrupoDeTalentos)
 //   .delete('/talentos/:id', isUserAuthenticated, deleteUnGrupoDeTalentos)
 
+getAllTypeOfUsers = function getAllTypeOfUsers(req, res) {
+  TypeOfUser
+    .query()
+    .then(function(data) {
+      res.json(data)
+    })
+    .catch(function(e){
+      console.log(e)
+    })
+  }
+
 getPrivilegesByUserId = function getPrivilegesByUserId(req, res) {
   const id = parseInt(req.params.id)
   TypeOfUser
@@ -35,12 +46,74 @@ getPrivilegesByUserId = function getPrivilegesByUserId(req, res) {
     .then(function(privileges) {
       res.json(privileges).status(200)
     })
+    .catch(function(e){
+      console.log(e)
+    })
+  }
+
+updateTypeOfUser = function updateTypeOfUser(req,res) {
+  const id = parseInt(req.params.id)
+  const newData = req.body
+
+  TypeOfUser
+    .query()
+    .updateAndFetchById(id, newData)
+    .then(function(typeOfUserUpdated) {
+      res.json(typeOfUserUpdated).status(200)
+    })
     .catch(function(e) {
       res.json({
         error: e
       }).status(500)
     })
-  }
+
+}
+
+// ******************
+// ******************
+
+// function deleteTweet(req, res) {
+//   const tweetId = parseInt(req.params.tweetId)
+
+//   Tweet
+//     .query()
+//     .deleteById(tweetId)
+//     .then(function(rowsDeleted) {
+//       res.json({
+//         tweetsDeleted: rowsDeleted
+//       }).status(200)
+//     })
+// }
+
+//   deleteQuote = quoteId => {
+//     request
+//       .delete(`${API_URL}/api/quotes/${quoteId}`)
+//       .then(() => {
+//         console.log('quote eliminada.')
+//     })
+
+//     request
+//       .get(`${API_URL}/api/quotes`)
+//       .then((data) => {
+//         this.setState({
+//           quotes: data.body
+//         })
+//       })
+  
+//       .catch(function(e){
+//         console.log(e)
+//       })
+//   }
+
+
+// apiRouter
+//   .put('/tweets/:tweetId', updateTweet)
+//   .delete('/tweets/:tweetId', deleteTweet)
+
+
+// ***********
+// ******************
+
 
 apiRouter
   .get('/allAnswersCuestionarioAQ', isUserAuthenticated, getAllAnswersCuestionarioAQ)
@@ -50,6 +123,8 @@ apiRouter
   .get('/registeredUsers', isUserAuthenticated, getRegisteredUsers)
 
 apiRouter
-  .get('/typeOfUser/:id', getPrivilegesByUserId)
+  .get('/typeOfUser', isUserAuthenticated, getAllTypeOfUsers)
+  .get('/typeOfUser/:id', isUserAuthenticated, getPrivilegesByUserId)
+  .put('/typeOfUser/:id', updateTypeOfUser)
 
 module.exports = apiRouter

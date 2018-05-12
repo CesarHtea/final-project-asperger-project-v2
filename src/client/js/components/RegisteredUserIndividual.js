@@ -2,18 +2,23 @@ import React, { Component } from 'react'
 import Toggle from 'material-ui/Toggle';
 
 class RegisteredUserIndividual extends Component {
+
   render() {
+
   	const { info } = this.props
 
  	return (
+
   	  <tr>
 	    <td>{ info.email }</td>
 	    <td className='tdStyle'>
 	      <div className='type-of-users-toggle'>
 	        <div>
 	          <Toggle
-	            // label="Simple"
+	            // admin
+	            disabled={this.props.disabled}
 	            defaultToggled={false}
+	            onToggle={ (e) => { this.props.fn(info) } }
 	          />
 	        </div>
 	      </div>
@@ -22,7 +27,8 @@ class RegisteredUserIndividual extends Component {
 	      <div className='type-of-users-toggle'>
 	        <div>
 	          <Toggle
-	            // label="Simple"
+	            // psicologo
+	            disabled={this.props.disabled}
 	            defaultToggled={false}
 	          />
 	        </div>
@@ -32,7 +38,8 @@ class RegisteredUserIndividual extends Component {
 	      <div className='type-of-users-toggle'>
 	        <div>
 	          <Toggle
-	            // label="Simple"
+	            // px
+	            disabled={this.props.disabled}
 	            defaultToggled={false}
 	          />
 	        </div>

@@ -92,8 +92,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('==== state consoleado desde render() ====')
-    console.log(this.state)
     return (
       <div>
           { this.state.loggedOut ===  !true && this.state.admin ===  1

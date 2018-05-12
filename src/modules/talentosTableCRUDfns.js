@@ -1,5 +1,5 @@
 // en este archivo esta un ejemplo de todos los verbos CRUD, 
-// se debe borrar este archivo en la version entregable de la app
+// se debe borrar de este archivo las funciones no ocupadas
 
 const Talentos = require('../models/Talentos');
 const RegisteredUsers = require('../models/RegisteredUsers')
@@ -7,7 +7,9 @@ const RegisteredUsers = require('../models/RegisteredUsers')
 exports.getRegisteredUsers = function getTalentos(req, res) {
   RegisteredUsers
     .query()
+    .select('id')
     .select('email')
+    .eager('typeOfUser')
     .then(function(data) {
       res.json(data)
     })
