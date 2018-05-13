@@ -69,6 +69,24 @@ updateTypeOfUser = function updateTypeOfUser(req,res) {
 
 }
 
+registerNewSetOfPrivilegesForNewUser = function registerNewSetOfPrivilegesForNewUser(req, res) {
+
+  TypeOfUser
+    .query()
+    .insert(req.body)
+    .then(function(newSetOfPrivilegesForNewUser) {
+      res.json(newSetOfPrivilegesForNewUser).status(200)
+    })
+    .catch(function(e) {
+      res.json({
+        error: e
+      }).status(500)
+    })
+
+// ******************
+
+}
+
 // ******************
 // ******************
 
@@ -123,8 +141,9 @@ apiRouter
   .get('/registeredUsers', isUserAuthenticated, getRegisteredUsers)
 
 apiRouter
+  .post('/typeOfUser', registerNewSetOfPrivilegesForNewUser)
   .get('/typeOfUser', isUserAuthenticated, getAllTypeOfUsers)
   .get('/typeOfUser/:id', isUserAuthenticated, getPrivilegesByUserId)
-  .put('/typeOfUser/:id', updateTypeOfUser)
+  .put('/typeOfUser/:id', isUserAuthenticated, updateTypeOfUser)
 
 module.exports = apiRouter

@@ -21,8 +21,24 @@ class NewUserSignIn extends Component {
     request
       .post(`${API_URL}/auth/register`)
       .send(newUserData)
-      .then(response => {
+      .then(response => {        
         alert('Nuevo usuario registrado. Intenta Log In')
+        // console.log(response.body.id)
+//------------- esto hay que meterlo en signin
+        // request
+        //   .post(`${API_URL}/api/registerNewSetOfPrivilegesForNewUser`)
+        //   .send({
+        //      userId: response.body.id,
+        //      admin: 1,
+        //      psicologo: 1
+        //      px: 1
+        //   })
+        //   .then( function() { } )
+        //   .catch(function (e) {
+        //     console.log(e)
+        //   })
+        // }
+//--------------
       })
       .catch(function(e) {
         console.log(e)
@@ -41,7 +57,7 @@ class NewUserSignIn extends Component {
                 <TextField
                   hintText='Your email'
                   floatingLabelText='Your email'
-                  defaultValue='admin@aspergerproject.com'
+                  defaultValue='x@aspergerproject.com'
                   name='signinEmail'
                 />
               </div>
@@ -50,7 +66,7 @@ class NewUserSignIn extends Component {
                   hintText='Password Field'
                   floatingLabelText='Password'
                   type='password'
-                  defaultValue='admin'
+                  defaultValue='x'
                   name='signinPassword'
                 />
               </div>

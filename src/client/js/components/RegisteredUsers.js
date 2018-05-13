@@ -16,7 +16,8 @@ class AllRegisteredUsers extends Component {
     this.state = {
       users: [],
       disabled: true,
-      mensajeResponsabilidad: 'Habilite este interruptor para modificar los permisos de usuario:' 
+      mensajeResponsabilidad: 'Habilite este interruptor para modificar los permisos de usuario:',
+      ultimoCambioRealizado: '' 
     };
   }
 
@@ -33,8 +34,9 @@ class AllRegisteredUsers extends Component {
       })
   };
 
-  habilitarToogles = () => {
+  apagarToogleDeSeguridad = () => {
     if ( this.state.disabled === true ) {
+      alert('RECUERDE: "Un gran poder conlleva una gran responsabilidad".');
       this.setState({
         disabled: false,
         mensajeResponsabilidad: 'RECUERDE: "Un gran poder conlleva una gran responsabilidad". Cada persona sólo puede pertenecer a un tipo de usuario'
@@ -47,59 +49,80 @@ class AllRegisteredUsers extends Component {
     }
   }
 
-  cambiarPermisoDeUsuario = info => {
-    // console.log('---consoleado desde Registered Users Parent')
-    // console.log('se supone que cacha el valor del userId---')
-    // console.log(info)
-    console.log('id:' + info.id)
-    // console.log(info.typeOfUser)
-    // console.log('admin:' + info.typeOfUser[0].admin)
-    // console.log('psico:' + info.typeOfUser[0].psicolog)
-    // console.log('px:' + info.typeOfUser[0].px)
-    // usar un metodo put par actualizar el valor del permiso
-
+  cambiarPermisoDeUsuarioAAdmin = info => {
     request
       .put(`${API_URL}/api/typeOfUser/${info.id}`)
       .send({
          admin: 1,
-         psicologo: 1,
-         px: 1
+         psicologo: 0,
+         px: 0
       })
-      .then(function() {
-        alert('Permisos de Usuario, actualizando...')
-        // this.props.history.push('/')
-      })
+      .then( function(res) { } )
       .catch(function(e) {
         console.log(e)
       })
+    request
+    .get(`${API_URL}/api/registeredUsers`)
+    .then((data) => {
+      this.setState({
+        users: [...data.body],
+        ultimoCambioRealizado: 'admon'
+      })
+    })
+    .catch(function(e){
+      console.log(e)
+    })    
   }
 
-// esto hay que meterlo en login
+  cambiarPermisoDeUsuarioAPsicologo = info => {
+    request
+      .put(`${API_URL}/api/typeOfUser/${info.id}`)
+      .send({
+         admin: 0,
+         psicologo: 1,
+         px: 0
+      })
+      .then( function() { } )
+      .catch(function(e) {
+        console.log(e)
+      })
+    request
+      .get(`${API_URL}/api/registeredUsers`)
+      .then((data) => {
+        this.setState({
+          users: [...data.body],
+          ultimoCambioRealizado: 'psico'
+        })
+      })
+      .catch(function(e){
+        console.log(e)
+      })
+  } 
 
-    // request
-    //   .post(`${API_URL}/api/typeOfUser`)
-    //   .send({
-    //      admin: 1,
-    //      psicologo: 1
-    //      px: 1
-    //   })
-    //   .then(function() {
-    //     alert('Permisos de Usuario, actualizando...')
-    //   })
-    //   .catch(function (e) {
-    //     console.log(e)
-    //   })
-    // }
-
-// ******************
-// ******************
-
-
-// *****************
-// ******************
-
-
-
+  cambiarPermisoDeUsuarioAPx = info => {
+    request
+      .put(`${API_URL}/api/typeOfUser/${info.id}`)
+      .send({
+         admin: 0,
+         psicologo: 0,
+         px: 1
+      })
+      .then( function() { } )
+      .catch(function(e) {
+        console.log(e)
+      })
+    request
+      .get(`${API_URL}/api/registeredUsers`)
+      .then((data) => {
+        this.setState({
+          users: [...data.body],
+          ultimoCambioRealizado: 'px'
+        })
+      })
+      .catch(function(e){
+        console.log(e)
+      })
+  }
 
   render() {
     return (
@@ -111,7 +134,7 @@ class AllRegisteredUsers extends Component {
               <Toggle
                 // label="Simple"
                 defaultToggled={false}
-                onToggle={ (e) => { this.habilitarToogles()} }
+                onToggle={ (e) => { this.apagarToogleDeSeguridad()} }
               />
             </div>
           </div>
@@ -131,7 +154,9 @@ class AllRegisteredUsers extends Component {
                     key={index}
                     info={user} 
                     disabled={this.state.disabled}
-                    fn={this.cambiarPermisoDeUsuario} 
+                    cambiarPermisoDeUsuarioAAdmin={this.cambiarPermisoDeUsuarioAAdmin}
+                    cambiarPermisoDeUsuarioAPsicologo={this.cambiarPermisoDeUsuarioAPsicologo}
+                    cambiarPermisoDeUsuarioAPx={this.cambiarPermisoDeUsuarioAPx}
                   />
                 )
               })}

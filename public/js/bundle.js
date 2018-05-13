@@ -32325,6 +32325,22 @@ var NewUserSignIn = function (_Component) {
 
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/auth/register').send(newUserData).then(function (response) {
         alert('Nuevo usuario registrado. Intenta Log In');
+        // console.log(response.body.id)
+        //------------- esto hay que meterlo en signin
+        // request
+        //   .post(`${API_URL}/api/registerNewSetOfPrivilegesForNewUser`)
+        //   .send({
+        //      userId: response.body.id,
+        //      admin: 1,
+        //      psicologo: 1
+        //      px: 1
+        //   })
+        //   .then( function() { } )
+        //   .catch(function (e) {
+        //     console.log(e)
+        //   })
+        // }
+        //--------------
       }).catch(function (e) {
         console.log(e);
         alert('Al parecer el usuario ya esta registrado. Intenta Log In o intenta registrarte con otro mail');
@@ -32360,7 +32376,7 @@ var NewUserSignIn = function (_Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default.a, {
                 hintText: 'Your email',
                 floatingLabelText: 'Your email',
-                defaultValue: 'admin@aspergerproject.com',
+                defaultValue: 'x@aspergerproject.com',
                 name: 'signinEmail'
               })
             ),
@@ -32371,7 +32387,7 @@ var NewUserSignIn = function (_Component) {
                 hintText: 'Password Field',
                 floatingLabelText: 'Password',
                 type: 'password',
-                defaultValue: 'admin',
+                defaultValue: 'x',
                 name: 'signinPassword'
               })
             ),
@@ -33618,8 +33634,9 @@ var AllRegisteredUsers = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, _Component.call(this));
 
-    _this.habilitarToogles = function () {
+    _this.apagarToogleDeSeguridad = function () {
       if (_this.state.disabled === true) {
+        alert('RECUERDE: "Un gran poder conlleva una gran responsabilidad".');
         _this.setState({
           disabled: false,
           mensajeResponsabilidad: 'RECUERDE: "Un gran poder conlleva una gran responsabilidad". Cada persona sólo puede pertenecer a un tipo de usuario'
@@ -33632,24 +33649,55 @@ var AllRegisteredUsers = function (_Component) {
       }
     };
 
-    _this.cambiarPermisoDeUsuario = function (info) {
-      // console.log('---consoleado desde Registered Users Parent')
-      // console.log('se supone que cacha el valor del userId---')
-      // console.log(info)
-      console.log('id:' + info.id);
-      // console.log(info.typeOfUser)
-      // console.log('admin:' + info.typeOfUser[0].admin)
-      // console.log('psico:' + info.typeOfUser[0].psicolog)
-      // console.log('px:' + info.typeOfUser[0].px)
-      // usar un metodo put par actualizar el valor del permiso
-
+    _this.cambiarPermisoDeUsuarioAAdmin = function (info) {
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.put(API_URL + '/api/typeOfUser/' + info.id).send({
         admin: 1,
+        psicologo: 0,
+        px: 0
+      }).then(function (res) {}).catch(function (e) {
+        console.log(e);
+      });
+      __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.get(API_URL + '/api/registeredUsers').then(function (data) {
+        _this.setState({
+          users: [].concat(data.body),
+          ultimoCambioRealizado: 'admon'
+        });
+      }).catch(function (e) {
+        console.log(e);
+      });
+    };
+
+    _this.cambiarPermisoDeUsuarioAPsicologo = function (info) {
+      __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.put(API_URL + '/api/typeOfUser/' + info.id).send({
+        admin: 0,
         psicologo: 1,
+        px: 0
+      }).then(function () {}).catch(function (e) {
+        console.log(e);
+      });
+      __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.get(API_URL + '/api/registeredUsers').then(function (data) {
+        _this.setState({
+          users: [].concat(data.body),
+          ultimoCambioRealizado: 'psico'
+        });
+      }).catch(function (e) {
+        console.log(e);
+      });
+    };
+
+    _this.cambiarPermisoDeUsuarioAPx = function (info) {
+      __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.put(API_URL + '/api/typeOfUser/' + info.id).send({
+        admin: 0,
+        psicologo: 0,
         px: 1
-      }).then(function () {
-        alert('Permisos de Usuario, actualizando...');
-        // this.props.history.push('/')
+      }).then(function () {}).catch(function (e) {
+        console.log(e);
+      });
+      __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.get(API_URL + '/api/registeredUsers').then(function (data) {
+        _this.setState({
+          users: [].concat(data.body),
+          ultimoCambioRealizado: 'px'
+        });
       }).catch(function (e) {
         console.log(e);
       });
@@ -33658,7 +33706,8 @@ var AllRegisteredUsers = function (_Component) {
     _this.state = {
       users: [],
       disabled: true,
-      mensajeResponsabilidad: 'Habilite este interruptor para modificar los permisos de usuario:'
+      mensajeResponsabilidad: 'Habilite este interruptor para modificar los permisos de usuario:',
+      ultimoCambioRealizado: ''
     };
     return _this;
   }
@@ -33674,31 +33723,6 @@ var AllRegisteredUsers = function (_Component) {
       console.log(e);
     });
   };
-
-  // esto hay que meterlo en login
-
-  // request
-  //   .post(`${API_URL}/api/typeOfUser`)
-  //   .send({
-  //      admin: 1,
-  //      psicologo: 1
-  //      px: 1
-  //   })
-  //   .then(function() {
-  //     alert('Permisos de Usuario, actualizando...')
-  //   })
-  //   .catch(function (e) {
-  //     console.log(e)
-  //   })
-  // }
-
-  // ******************
-  // ******************
-
-
-  // *****************
-  // ******************
-
 
   AllRegisteredUsers.prototype.render = function render() {
     var _this3 = this;
@@ -33726,7 +33750,7 @@ var AllRegisteredUsers = function (_Component) {
           // label="Simple"
           , { defaultToggled: false,
             onToggle: function onToggle(e) {
-              _this3.habilitarToogles();
+              _this3.apagarToogleDeSeguridad();
             }
           })
         )
@@ -33770,7 +33794,9 @@ var AllRegisteredUsers = function (_Component) {
               key: index,
               info: user,
               disabled: _this3.state.disabled,
-              fn: _this3.cambiarPermisoDeUsuario
+              cambiarPermisoDeUsuarioAAdmin: _this3.cambiarPermisoDeUsuarioAAdmin,
+              cambiarPermisoDeUsuarioAPsicologo: _this3.cambiarPermisoDeUsuarioAPsicologo,
+              cambiarPermisoDeUsuarioAPx: _this3.cambiarPermisoDeUsuarioAPx
             });
           })
         )
@@ -33836,9 +33862,9 @@ var RegisteredUserIndividual = function (_Component) {
 												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_Toggle___default.a
 												// admin
 												, { disabled: this.props.disabled,
-														defaultToggled: false,
+														defaultToggled: this.props.info.typeOfUser[0].admin,
 														onToggle: function onToggle(e) {
-																_this2.props.fn(info);
+																_this2.props.cambiarPermisoDeUsuarioAAdmin(info);
 														}
 												})
 										)
@@ -33856,7 +33882,10 @@ var RegisteredUserIndividual = function (_Component) {
 												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_Toggle___default.a
 												// psicologo
 												, { disabled: this.props.disabled,
-														defaultToggled: false
+														defaultToggled: this.props.info.typeOfUser[0].psicologo,
+														onToggle: function onToggle(e) {
+																_this2.props.cambiarPermisoDeUsuarioAPsicologo(info);
+														}
 												})
 										)
 								)
@@ -33873,7 +33902,10 @@ var RegisteredUserIndividual = function (_Component) {
 												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_Toggle___default.a
 												// px
 												, { disabled: this.props.disabled,
-														defaultToggled: false
+														defaultToggled: this.props.info.typeOfUser[0].px,
+														onToggle: function onToggle(e) {
+																_this2.props.cambiarPermisoDeUsuarioAPx(info);
+														}
 												})
 										)
 								)

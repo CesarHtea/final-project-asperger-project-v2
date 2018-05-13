@@ -17,8 +17,8 @@ class RegisteredUserIndividual extends Component {
 	          <Toggle
 	            // admin
 	            disabled={this.props.disabled}
-	            defaultToggled={false}
-	            onToggle={ (e) => { this.props.fn(info) } }
+	            defaultToggled={this.props.info.typeOfUser[0].admin}
+	            onToggle={ (e) => { this.props.cambiarPermisoDeUsuarioAAdmin(info) } }
 	          />
 	        </div>
 	      </div>
@@ -29,7 +29,8 @@ class RegisteredUserIndividual extends Component {
 	          <Toggle
 	            // psicologo
 	            disabled={this.props.disabled}
-	            defaultToggled={false}
+	            defaultToggled={this.props.info.typeOfUser[0].psicologo}
+	            onToggle={ (e) => { this.props.cambiarPermisoDeUsuarioAPsicologo(info) } }
 	          />
 	        </div>
 	      </div>
@@ -40,7 +41,8 @@ class RegisteredUserIndividual extends Component {
 	          <Toggle
 	            // px
 	            disabled={this.props.disabled}
-	            defaultToggled={false}
+	            defaultToggled={this.props.info.typeOfUser[0].px}
+	            onToggle={ (e) => { this.props.cambiarPermisoDeUsuarioAPx(info) } }
 	          />
 	        </div>
 	      </div>
