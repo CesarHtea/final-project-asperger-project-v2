@@ -68,8 +68,9 @@ class Header extends Component {
                   onRequestChange={(open) => this.setState({open})}
                 >
                   <Link to='/cuestionarioAQ' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Cuestionario AQ (usuario Px)</MenuItem></Link>
-                  <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>AllAnswersCuestionarioAQ (Psi)</MenuItem></Link>
-                  <Link to='/registeredUsers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>RegisteredUsers (admin)</MenuItem></Link>
+                  <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>CuestionarioAQ (Todas las respuestas)</MenuItem></Link>
+                  <Link to='/cuestionarioAQAllAnswersStadistics' className='no-decoration-text'><MenuItem onClick={this.handleClose}>CuestionarioAQ (Estadísticas)</MenuItem></Link>
+                  <Link to='/registeredUsers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Permisos de usuario</MenuItem></Link>
                 </Drawer>
                 
             </div>
@@ -96,7 +97,7 @@ class Header extends Component {
                   open={this.state.open}
                   onRequestChange={(open) => this.setState({open})}
                 >
-                 <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>AllAnswersCuestionarioAQ (Psi)</MenuItem></Link>
+                 <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>CuestionarioAQ (Todas las respuestas)</MenuItem></Link>
                 </Drawer>
 
             </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 
-import Paper from 'material-ui/Paper';
+// import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -23,22 +23,19 @@ class NewUserSignIn extends Component {
       .send(newUserData)
       .then(response => {        
         alert('Nuevo usuario registrado. Intenta Log In')
-        // console.log(response.body.id)
-//------------- esto hay que meterlo en signin
-        // request
-        //   .post(`${API_URL}/api/registerNewSetOfPrivilegesForNewUser`)
-        //   .send({
-        //      userId: response.body.id,
-        //      admin: 1,
-        //      psicologo: 1
-        //      px: 1
-        //   })
-        //   .then( function() { } )
-        //   .catch(function (e) {
-        //     console.log(e)
-        //   })
-        // }
-//--------------
+        const newUserId = response.body.id
+        request
+          .post(`${API_URL}/api/typeOfUser`)
+          .send({
+             userId: newUserId,
+             admin: 0,
+             psicologo: 0,
+             px: 1
+          })
+          .then( function() { } )
+          .catch(function (e) {
+            console.log(e)
+          })
       })
       .catch(function(e) {
         console.log(e)
@@ -49,9 +46,9 @@ class NewUserSignIn extends Component {
   render() {
     return (
       <div className='grid'>
-        <Paper className='login-material-ui-paper' zDepth={5} >
+        {/* <Paper className='login-material-ui-paper' zDepth={5} > */}
           <div className='login-form-container'>
-            <h2 className='login-title'>Registrarme (Sign In)</h2>
+            <h2 className='login-title'>Registrarme</h2>
             <form className='form' onSubmit={ (e) => { this.createNewUser(e) } }>
               <div>
                 <TextField
@@ -74,10 +71,11 @@ class NewUserSignIn extends Component {
                 className='login-button'
                 label="Signin"
                 type='submit'
+                primary={true}
               />
             </form>
           </div>
-        </Paper> 
+        {/*</Paper> */}
       </div>
     )
   }

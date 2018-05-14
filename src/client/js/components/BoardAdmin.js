@@ -5,7 +5,7 @@ class BoardAdmin extends Component {
   render() {
     return (
       <div>	
-        <h1>Board del Admin</h1>
+        <h1>Board del Administrador</h1>
       </div>
     )
   }

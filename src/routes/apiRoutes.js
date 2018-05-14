@@ -77,15 +77,21 @@ registerNewSetOfPrivilegesForNewUser = function registerNewSetOfPrivilegesForNew
     .then(function(newSetOfPrivilegesForNewUser) {
       res.json(newSetOfPrivilegesForNewUser).status(200)
     })
-    .catch(function(e) {
-      res.json({
-        error: e
-      }).status(500)
-    })
-
-// ******************
-
 }
+
+// function createNewTweet(req, res) {
+//   // console.log(req.body)
+
+//   // { "description": "..."}
+
+//   Tweet
+//     .query()
+//     .insert(req.body) // INSERT INTO...
+//     .then(function(newTweet) {
+//       // console.log('Tweet saved.')
+//       res.json(newTweet).status(200)
+//     })
+// }
 
 // ******************
 // ******************
@@ -141,7 +147,7 @@ apiRouter
   .get('/registeredUsers', isUserAuthenticated, getRegisteredUsers)
 
 apiRouter
-  .post('/typeOfUser', registerNewSetOfPrivilegesForNewUser)
+  .post('/typeOfUser', isUserAuthenticated, registerNewSetOfPrivilegesForNewUser)
   .get('/typeOfUser', isUserAuthenticated, getAllTypeOfUsers)
   .get('/typeOfUser/:id', isUserAuthenticated, getPrivilegesByUserId)
   .put('/typeOfUser/:id', isUserAuthenticated, updateTypeOfUser)

@@ -10,17 +10,22 @@ import {
 } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Paper from 'material-ui/Paper';
+// import Divider from 'material-ui/Divider';
 
 import Header from './components/Header';
 import BoardAdmin from './components/BoardAdmin';
 import BoardPsico from './components/BoardPsico';
 import BoardPx from './components/BoardPx';
 import CuestionarioAQAllAnswers from './components/CuestionarioAQAllAnswers';
+import CuestionarioAQAllAnswersStadistics from './components/CuestionarioAQAllAnswersStadistics';
 import ElementDetail from './components/ElementDetail';
 import UserSignIn from './components/UserSignIn';
 import RegisteredUsers from './components/RegisteredUsers';
 import UserLogIn from './components/UserLogIn';
 import CuestionarioAQ from './components/CuestionarioAQ'
+
+
 
 const API_URL = 'http://localhost:3000'
 
@@ -109,9 +114,13 @@ class App extends Component {
                 <Switch>
                   <Route exact path='/' component={BoardAdmin} />
                   <Route exact path='/cuestionarioAQAllAnswers' component={CuestionarioAQAllAnswers} />
+                  <Route exact path='/cuestionarioAQAllAnswersStadistics' component={CuestionarioAQAllAnswersStadistics} />
                   <Route path='/talentos/:talentosId' component={ElementDetail} />
                   <Route path='/cuestionarioAQ' component={CuestionarioAQ} />
                   <Route exact path='/registeredUsers' component={RegisteredUsers} />
+
+
+
                 </Switch>
               </div>
             : null 
@@ -162,11 +171,20 @@ class App extends Component {
          }
          { this.state.loggedOut ===  true
             ?
-              <div className='app-login-signin-paper-container'>
-                <UserSignIn />
-                <UserLogIn 
-                  fnActualizarStatePorUserLogin={this.actualizarStatePorUserLogin}
-                />
+              <div className='portada-container'>
+                <div className='portada'>
+                   <h3>"Creí vivir en un pueblo fantasma, <br />hasta que me di cuenta que el fantasma era yo".</h3>
+                   <p>~ Dr. Armando Hernández Cruz</p>
+                </div>
+                <div className='app-login-signin-paper-container'>
+                  <Paper className='login-material-ui-paper' zDepth={5} >
+                    <UserLogIn 
+                      fnActualizarStatePorUserLogin={this.actualizarStatePorUserLogin}
+                    />
+                    {/* <Divider /> */}
+                    <UserSignIn />
+                  </Paper>
+                </div>
               </div>
             : null 
           }

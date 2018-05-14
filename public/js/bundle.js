@@ -702,7 +702,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Paper = __webpack_require__(261);
+var _Paper = __webpack_require__(252);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
@@ -2941,7 +2941,7 @@ var _warning = __webpack_require__(9);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _supports = __webpack_require__(258);
+var _supports = __webpack_require__(259);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -6179,7 +6179,7 @@ module.exports = { "default": __webpack_require__(248), __esModule: true };
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(255), __esModule: true };
+module.exports = { "default": __webpack_require__(253), __esModule: true };
 
 /***/ }),
 /* 117 */
@@ -7305,16 +7305,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_styles_MuiThemeProvider__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_styles_MuiThemeProvider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_material_ui_styles_MuiThemeProvider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Header__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_BoardAdmin__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_BoardPsico__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_BoardPx__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_CuestionarioAQAllAnswers__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_ElementDetail__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_UserSignIn__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_RegisteredUsers__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_UserLogIn__ = __webpack_require__(310);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_CuestionarioAQ__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_material_ui_Paper__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_material_ui_Paper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_material_ui_Paper__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Header__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_BoardAdmin__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_BoardPsico__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_BoardPx__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_CuestionarioAQAllAnswers__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_CuestionarioAQAllAnswersStadistics__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_ElementDetail__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_UserSignIn__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_RegisteredUsers__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_UserLogIn__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_CuestionarioAQ__ = __webpack_require__(311);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -7326,6 +7329,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
+// import Divider from 'material-ui/Divider';
 
 
 
@@ -7414,7 +7420,7 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'app-header-container' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_Header__["a" /* default */], {
             currentId: this.state.userId,
             currentUser: this.state.user,
             admin: this.state.admin,
@@ -7425,11 +7431,12 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Switch */],
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_6__components_BoardAdmin__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/cuestionarioAQAllAnswers', component: __WEBPACK_IMPORTED_MODULE_9__components_CuestionarioAQAllAnswers__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/talentos/:talentosId', component: __WEBPACK_IMPORTED_MODULE_10__components_ElementDetail__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/cuestionarioAQ', component: __WEBPACK_IMPORTED_MODULE_14__components_CuestionarioAQ__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_12__components_RegisteredUsers__["a" /* default */] })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_BoardAdmin__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/cuestionarioAQAllAnswers', component: __WEBPACK_IMPORTED_MODULE_10__components_CuestionarioAQAllAnswers__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/cuestionarioAQAllAnswersStadistics', component: __WEBPACK_IMPORTED_MODULE_11__components_CuestionarioAQAllAnswersStadistics__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/talentos/:talentosId', component: __WEBPACK_IMPORTED_MODULE_12__components_ElementDetail__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/cuestionarioAQ', component: __WEBPACK_IMPORTED_MODULE_16__components_CuestionarioAQ__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_14__components_RegisteredUsers__["a" /* default */] })
         )
       ) : null,
       this.state.loggedOut === !true && this.state.psico === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -7438,7 +7445,7 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'app-header-container' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_Header__["a" /* default */], {
             currentId: this.state.userId,
             currentUser: this.state.userl,
             psico: this.state.psico,
@@ -7449,11 +7456,11 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Switch */],
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_7__components_BoardPsico__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/cuestionarioAQAllAnswers', component: __WEBPACK_IMPORTED_MODULE_9__components_CuestionarioAQAllAnswers__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/talentos/:talentosId', component: __WEBPACK_IMPORTED_MODULE_10__components_ElementDetail__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/cuestionarioAQ', component: __WEBPACK_IMPORTED_MODULE_14__components_CuestionarioAQ__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_12__components_RegisteredUsers__["a" /* default */] })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_8__components_BoardPsico__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/cuestionarioAQAllAnswers', component: __WEBPACK_IMPORTED_MODULE_10__components_CuestionarioAQAllAnswers__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/talentos/:talentosId', component: __WEBPACK_IMPORTED_MODULE_12__components_ElementDetail__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/cuestionarioAQ', component: __WEBPACK_IMPORTED_MODULE_16__components_CuestionarioAQ__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_14__components_RegisteredUsers__["a" /* default */] })
         )
       ) : null,
       this.state.loggedOut === !true && this.state.px === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -7462,7 +7469,7 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'app-header-container' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_Header__["a" /* default */], {
             currentId: this.state.userId,
             currentUser: this.state.user,
             px: this.state.px,
@@ -7473,20 +7480,44 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Switch */],
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_8__components_BoardPx__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/cuestionarioAQAllAnswers', component: __WEBPACK_IMPORTED_MODULE_9__components_CuestionarioAQAllAnswers__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/talentos/:talentosId', component: __WEBPACK_IMPORTED_MODULE_10__components_ElementDetail__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/cuestionarioAQ', component: __WEBPACK_IMPORTED_MODULE_14__components_CuestionarioAQ__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_12__components_RegisteredUsers__["a" /* default */] })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_9__components_BoardPx__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/cuestionarioAQAllAnswers', component: __WEBPACK_IMPORTED_MODULE_10__components_CuestionarioAQAllAnswers__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/talentos/:talentosId', component: __WEBPACK_IMPORTED_MODULE_12__components_ElementDetail__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/cuestionarioAQ', component: __WEBPACK_IMPORTED_MODULE_16__components_CuestionarioAQ__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/registeredUsers', component: __WEBPACK_IMPORTED_MODULE_14__components_RegisteredUsers__["a" /* default */] })
         )
       ) : null,
       this.state.loggedOut === true ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'app-login-signin-paper-container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_11__components_UserSignIn__["a" /* default */], null),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13__components_UserLogIn__["a" /* default */], {
-          fnActualizarStatePorUserLogin: this.actualizarStatePorUserLogin
-        })
+        { className: 'portada-container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'portada' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h3',
+            null,
+            '"Cre\xED vivir en un pueblo fantasma, ',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+            'hasta que me di cuenta que el fantasma era yo".'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            null,
+            '~ Dr. Armando Hern\xE1ndez Cruz'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'app-login-signin-paper-container' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_5_material_ui_Paper___default.a,
+            { className: 'login-material-ui-paper', zDepth: 5 },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_15__components_UserLogIn__["a" /* default */], {
+              fnActualizarStatePorUserLogin: this.actualizarStatePorUserLogin
+            }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_13__components_UserSignIn__["a" /* default */], null)
+          )
+        )
       ) : null
     );
   };
@@ -24660,6 +24691,223 @@ exports.default = new Typography();
 
 /***/ }),
 /* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends2 = __webpack_require__(11);
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = __webpack_require__(10);
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _getPrototypeOf = __webpack_require__(5);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(6);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(7);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _simpleAssign = __webpack_require__(8);
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _propTypes3 = __webpack_require__(25);
+
+var _propTypes4 = _interopRequireDefault(_propTypes3);
+
+var _transitions = __webpack_require__(12);
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function getStyles(props, context) {
+  var rounded = props.rounded,
+      circle = props.circle,
+      transitionEnabled = props.transitionEnabled,
+      zDepth = props.zDepth;
+  var _context$muiTheme = context.muiTheme,
+      baseTheme = _context$muiTheme.baseTheme,
+      paper = _context$muiTheme.paper,
+      borderRadius = _context$muiTheme.borderRadius;
+
+  return {
+    root: {
+      color: paper.color,
+      backgroundColor: paper.backgroundColor,
+      transition: transitionEnabled && _transitions2.default.easeOut(),
+      boxSizing: 'border-box',
+      fontFamily: baseTheme.fontFamily,
+      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
+      boxShadow: paper.zDepthShadows[zDepth - 1], // No shadow for 0 depth papers
+      borderRadius: circle ? '50%' : rounded ? borderRadius : '0px'
+    }
+  };
+}
+
+var Paper = function (_Component) {
+  (0, _inherits3.default)(Paper, _Component);
+
+  function Paper() {
+    (0, _classCallCheck3.default)(this, Paper);
+    return (0, _possibleConstructorReturn3.default)(this, (Paper.__proto__ || (0, _getPrototypeOf2.default)(Paper)).apply(this, arguments));
+  }
+
+  (0, _createClass3.default)(Paper, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          children = _props.children,
+          circle = _props.circle,
+          rounded = _props.rounded,
+          style = _props.style,
+          transitionEnabled = _props.transitionEnabled,
+          zDepth = _props.zDepth,
+          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'circle', 'rounded', 'style', 'transitionEnabled', 'zDepth']);
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+      var styles = getStyles(this.props, this.context);
+
+      return _react2.default.createElement('div', (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }), children);
+    }
+  }]);
+  return Paper;
+}(_react.Component);
+
+Paper.defaultProps = {
+  circle: false,
+  rounded: true,
+  transitionEnabled: true,
+  zDepth: 1
+};
+Paper.contextTypes = {
+  muiTheme: _propTypes2.default.object.isRequired
+};
+Paper.propTypes = process.env.NODE_ENV !== "production" ? {
+  /**
+   * Children passed into the paper element.
+   */
+  children: _propTypes2.default.node,
+  /**
+   * Set to true to generate a circular paper container.
+   */
+  circle: _propTypes2.default.bool,
+  /**
+   * By default, the paper container will have a border radius.
+   * Set this to false to generate a container with sharp corners.
+   */
+  rounded: _propTypes2.default.bool,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _propTypes2.default.object,
+  /**
+   * Set to false to disable CSS transitions for the paper element.
+   */
+  transitionEnabled: _propTypes2.default.bool,
+  /**
+   * This number represents the zDepth of the paper shadow.
+   */
+  zDepth: _propTypes4.default.zDepth
+} : {};
+exports.default = Paper;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(254);
+module.exports = __webpack_require__(14).Object.assign;
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(21);
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(255) });
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+
+var getKeys = __webpack_require__(40);
+var gOPS = __webpack_require__(75);
+var pIE = __webpack_require__(48);
+var toObject = __webpack_require__(37);
+var IObject = __webpack_require__(104);
+var $assign = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__(30)(function () {
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var S = Symbol();
+  var K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function (k) {
+    B[k] = k;
+  });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source) {
+  // eslint-disable-line no-unused-vars
+  var T = toObject(target);
+  var aLen = arguments.length;
+  var index = 1;
+  var getSymbols = gOPS.f;
+  var isEnum = pIE.f;
+  while (aLen > index) {
+    var S = IObject(arguments[index++]);
+    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) {
+      if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+    }
+  }return T;
+} : $assign;
+
+/***/ }),
+/* 256 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24668,7 +24916,7 @@ exports.default = new Typography();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_superagent__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_superagent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_superagent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_Drawer__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_Drawer__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_Drawer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_material_ui_Drawer__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_MenuItem__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_MenuItem___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_material_ui_MenuItem__);
@@ -24781,7 +25029,16 @@ var Header = function (_Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_4_material_ui_MenuItem___default.a,
                 { onClick: this.handleClose },
-                'AllAnswersCuestionarioAQ (Psi)'
+                'CuestionarioAQ (Todas las respuestas)'
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+              { to: '/cuestionarioAQAllAnswersStadistics', className: 'no-decoration-text' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_4_material_ui_MenuItem___default.a,
+                { onClick: this.handleClose },
+                'CuestionarioAQ (Estad\xEDsticas)'
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -24790,7 +25047,7 @@ var Header = function (_Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_4_material_ui_MenuItem___default.a,
                 { onClick: this.handleClose },
-                'RegisteredUsers (admin)'
+                'Permisos de usuario'
               )
             )
           )
@@ -24824,7 +25081,7 @@ var Header = function (_Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_4_material_ui_MenuItem___default.a,
                 { onClick: this.handleClose },
-                'AllAnswersCuestionarioAQ (Psi)'
+                'CuestionarioAQ (Todas las respuestas)'
               )
             )
           )
@@ -24848,7 +25105,7 @@ var Header = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Header);
 
 /***/ }),
-/* 253 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24859,7 +25116,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Drawer = __webpack_require__(254);
+var _Drawer = __webpack_require__(258);
 
 var _Drawer2 = _interopRequireDefault(_Drawer);
 
@@ -24870,7 +25127,7 @@ function _interopRequireDefault(obj) {
 exports.default = _Drawer2.default;
 
 /***/ }),
-/* 254 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24932,7 +25189,7 @@ var _transitions = __webpack_require__(12);
 
 var _transitions2 = _interopRequireDefault(_transitions);
 
-var _Overlay = __webpack_require__(259);
+var _Overlay = __webpack_require__(260);
 
 var _Overlay2 = _interopRequireDefault(_Overlay);
 
@@ -25357,69 +25614,7 @@ exports.default = Drawer;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 255 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(256);
-module.exports = __webpack_require__(14).Object.assign;
-
-/***/ }),
-/* 256 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(21);
-
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(257) });
-
-/***/ }),
-/* 257 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// 19.1.2.1 Object.assign(target, source, ...)
-
-var getKeys = __webpack_require__(40);
-var gOPS = __webpack_require__(75);
-var pIE = __webpack_require__(48);
-var toObject = __webpack_require__(37);
-var IObject = __webpack_require__(104);
-var $assign = Object.assign;
-
-// should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(30)(function () {
-  var A = {};
-  var B = {};
-  // eslint-disable-next-line no-undef
-  var S = Symbol();
-  var K = 'abcdefghijklmnopqrst';
-  A[S] = 7;
-  K.split('').forEach(function (k) {
-    B[k] = k;
-  });
-  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-}) ? function assign(target, source) {
-  // eslint-disable-line no-unused-vars
-  var T = toObject(target);
-  var aLen = arguments.length;
-  var index = 1;
-  var getSymbols = gOPS.f;
-  var isEnum = pIE.f;
-  while (aLen > index) {
-    var S = IObject(arguments[index++]);
-    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
-    var length = keys.length;
-    var j = 0;
-    var key;
-    while (length > j) {
-      if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
-    }
-  }return T;
-} : $assign;
-
-/***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25473,7 +25668,7 @@ var passiveOption = exports.passiveOption = function () {
 exports.default = {};
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25527,7 +25722,7 @@ var _transitions = __webpack_require__(12);
 
 var _transitions2 = _interopRequireDefault(_transitions);
 
-var _AutoLockScrolling = __webpack_require__(260);
+var _AutoLockScrolling = __webpack_require__(261);
 
 var _AutoLockScrolling2 = _interopRequireDefault(_AutoLockScrolling);
 
@@ -25621,7 +25816,7 @@ exports.default = Overlay;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25751,161 +25946,6 @@ AutoLockScrolling.propTypes = process.env.NODE_ENV !== "production" ? {
   lock: _propTypes2.default.bool.isRequired
 } : {};
 exports.default = AutoLockScrolling;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 261 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = __webpack_require__(11);
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = __webpack_require__(10);
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = __webpack_require__(5);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(6);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(7);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = __webpack_require__(8);
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _propTypes3 = __webpack_require__(25);
-
-var _propTypes4 = _interopRequireDefault(_propTypes3);
-
-var _transitions = __webpack_require__(12);
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function getStyles(props, context) {
-  var rounded = props.rounded,
-      circle = props.circle,
-      transitionEnabled = props.transitionEnabled,
-      zDepth = props.zDepth;
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      paper = _context$muiTheme.paper,
-      borderRadius = _context$muiTheme.borderRadius;
-
-  return {
-    root: {
-      color: paper.color,
-      backgroundColor: paper.backgroundColor,
-      transition: transitionEnabled && _transitions2.default.easeOut(),
-      boxSizing: 'border-box',
-      fontFamily: baseTheme.fontFamily,
-      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
-      boxShadow: paper.zDepthShadows[zDepth - 1], // No shadow for 0 depth papers
-      borderRadius: circle ? '50%' : rounded ? borderRadius : '0px'
-    }
-  };
-}
-
-var Paper = function (_Component) {
-  (0, _inherits3.default)(Paper, _Component);
-
-  function Paper() {
-    (0, _classCallCheck3.default)(this, Paper);
-    return (0, _possibleConstructorReturn3.default)(this, (Paper.__proto__ || (0, _getPrototypeOf2.default)(Paper)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(Paper, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          circle = _props.circle,
-          rounded = _props.rounded,
-          style = _props.style,
-          transitionEnabled = _props.transitionEnabled,
-          zDepth = _props.zDepth,
-          other = (0, _objectWithoutProperties3.default)(_props, ['children', 'circle', 'rounded', 'style', 'transitionEnabled', 'zDepth']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context);
-
-      return _react2.default.createElement('div', (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }), children);
-    }
-  }]);
-  return Paper;
-}(_react.Component);
-
-Paper.defaultProps = {
-  circle: false,
-  rounded: true,
-  transitionEnabled: true,
-  zDepth: 1
-};
-Paper.contextTypes = {
-  muiTheme: _propTypes2.default.object.isRequired
-};
-Paper.propTypes = process.env.NODE_ENV !== "production" ? {
-  /**
-   * Children passed into the paper element.
-   */
-  children: _propTypes2.default.node,
-  /**
-   * Set to true to generate a circular paper container.
-   */
-  circle: _propTypes2.default.bool,
-  /**
-   * By default, the paper container will have a border radius.
-   * Set this to false to generate a container with sharp corners.
-   */
-  rounded: _propTypes2.default.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _propTypes2.default.object,
-  /**
-   * Set to false to disable CSS transitions for the paper element.
-   */
-  transitionEnabled: _propTypes2.default.bool,
-  /**
-   * This number represents the zDepth of the paper shadow.
-   */
-  zDepth: _propTypes4.default.zDepth
-} : {};
-exports.default = Paper;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
@@ -31787,7 +31827,7 @@ var BoardAdmin = function (_Component) {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h1',
         null,
-        'Board del Admin'
+        'Board del Administrador'
       )
     );
   };
@@ -31825,7 +31865,7 @@ var BoardPsico = function (_Component) {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'h1',
       null,
-      'Board del Psico'
+      'Board del Psicologo'
     );
   };
 
@@ -31841,13 +31881,16 @@ var BoardPsico = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_material_ui_Paper__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_material_ui_Paper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_material_ui_Paper__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -31865,39 +31908,156 @@ var BoardPx = function (_Component) {
 				return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'div',
 						null,
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'h1',
-								null,
-								'Board del Paciente'
-						),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('h1', null),
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 								'div',
 								{ className: 'board-px-papers-container' },
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										__WEBPACK_IMPORTED_MODULE_1_material_ui_Paper___default.a,
-										{ className: 'board-px-material-ui-paper', zDepth: 5, circle: true },
+										__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+										{ to: '/cuestionarioAQ', className: 'no-decoration-text' },
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-												'div',
-												{ className: 'board-px--mini-paper-tittle' },
+												__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
+												{ className: 'board-px-material-ui-paper-card' },
 												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-														'p',
-														null,
-														'un paper'
+														'div',
+														{ className: 'board-px-mini-paper-tittle-container' },
+														__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+																'h1',
+																{ className: 'board-px-mini-paper-tittle' },
+																'AQ'
+														)
 												),
 												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-														'p',
-														null,
-														'titulo'
+														'div',
+														{ className: 'board-px-mini-paper-subtittle-container' },
+														__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+																'h3',
+																{ className: 'board-px-mini-paper-subtittle' },
+																'Coeficiente del ',
+																__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+																'espectro autista'
+														)
 												)
 										)
 								),
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-										__WEBPACK_IMPORTED_MODULE_1_material_ui_Paper___default.a,
-										{ className: 'board-px-material-ui-paper', zDepth: 5, circle: true },
+										__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
+										{ className: 'board-px-material-ui-paper-card' },
 										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 												'div',
-												{ className: 'board-px--mini-paper-tittle' },
-												'otro paper'
+												{ className: 'board-px-mini-paper-tittle-container' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'h1',
+														{ className: 'board-px-mini-paper-tittle' },
+														'EQ'
+												)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h3',
+												{ className: 'board-px-mini-paper-subtittle' },
+												'Coeficiente ',
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+												'de empat\xEDa'
+										)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
+										{ className: 'board-px-material-ui-paper-card' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'board-px-mini-paper-tittle-container' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'h1',
+														{ className: 'board-px-mini-paper-tittle' },
+														'SRS'
+												)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h3',
+												{ className: 'board-px-mini-paper-subtittle' },
+												'Escala de ',
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+												'sensibilidad social'
+										)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
+										{ className: 'board-px-material-ui-paper-card' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'board-px-mini-paper-tittle-container' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'h1',
+														{ className: 'board-px-mini-paper-tittle' },
+														'SQ'
+												)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h3',
+												{ className: 'board-px-mini-paper-subtittle' },
+												'Coeficiente de',
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+												'sistematizaci\xF3n'
+										)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
+										{ className: 'board-px-material-ui-paper-card' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'board-px-mini-paper-tittle-container' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'h1',
+														{ className: 'board-px-mini-paper-tittle' },
+														'PDQ-4+'
+												)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h3',
+												{ className: 'board-px-mini-paper-subtittle' },
+												'Cuestionario ',
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+												'de personalidad'
+										)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
+										{ className: 'board-px-material-ui-paper-card' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'board-px-mini-paper-tittle-container' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'h1',
+														{ className: 'board-px-mini-paper-tittle' },
+														'BAI'
+												)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h3',
+												{ className: 'board-px-mini-paper-subtittle' },
+												'Inventario de ',
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+												'ansiedad de Beck'
+										)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
+										{ className: 'board-px-material-ui-paper-card' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'board-px-mini-paper-tittle-container' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'h1',
+														{ className: 'board-px-mini-paper-tittle' },
+														'BDI-II'
+												)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h3',
+												{ className: 'board-px-mini-paper-subtittle' },
+												'Inventario de ',
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+												'depresi\xF3n de Beck'
 										)
 								)
 						)
@@ -31919,11 +32079,15 @@ var BoardPx = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_superagent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CuestionarioAQAnswerIndividual__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_Paper__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_Paper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_material_ui_Paper__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -31982,54 +32146,58 @@ var CuestionarioAQAllAnswers = function (_Component) {
   // }
 
   CuestionarioAQAllAnswers.prototype.render = function render() {
-    // console.log(this.state.allAnswersCuestionarioAQ)
+    console.log(this.state.allAnswersCuestionarioAQ);
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'all-answers-cuestionario-AQ-container' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h1',
-        null,
-        'All answers to AQ Questionnaire - Coeficiente del Espectro '
+        { className: 'all-answers-cuestionario-AQ-title' },
+        'Coeficiente del Espectro (Respuesta de todos los Px) '
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'table',
-        { className: 'table' },
+        __WEBPACK_IMPORTED_MODULE_3_material_ui_Paper___default.a,
+        { className: 'all-answers-cuestionario-AQ-paper-material-ui', zDepth: 5 },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'thead',
-          null,
+          'table',
+          { className: 'table' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'tr',
+            'thead',
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'td',
-              { className: 'tdStyle' },
-              'Fecha'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'td',
-              { className: 'tdStyle' },
-              'User Id (Px)'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'td',
-              { className: 'tdStyle' },
-              'Cociente de autismo'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'td',
+              'tr',
               null,
-              'Interpretacion'
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'td',
+                { className: 'tdStyle' },
+                'Fecha'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'td',
+                { className: 'tdStyle' },
+                'User Id (Px)'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'td',
+                { className: 'tdStyle' },
+                'Cociente de autismo'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'td',
+                null,
+                'Interpretacion'
+              )
             )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'tbody',
+            null,
+            this.state.allAnswersCuestionarioAQ.slice(0).reverse().map(function (answer, i) {
+              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__CuestionarioAQAnswerIndividual__["a" /* default */], { key: i, info: answer });
+            }),
+            ';'
           )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'tbody',
-          null,
-          this.state.allAnswersCuestionarioAQ.slice(0).reverse().map(function (answer, i) {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__CuestionarioAQAnswerIndividual__["a" /* default */], { key: i, info: answer });
-          }),
-          ';'
         )
       )
     );
@@ -32281,12 +32449,10 @@ var Detail = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_superagent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_TextField__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_TextField__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_TextField___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_material_ui_TextField__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -32296,7 +32462,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-
+// import Paper from 'material-ui/Paper';
 
 
 
@@ -32325,22 +32491,15 @@ var NewUserSignIn = function (_Component) {
 
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/auth/register').send(newUserData).then(function (response) {
         alert('Nuevo usuario registrado. Intenta Log In');
-        // console.log(response.body.id)
-        //------------- esto hay que meterlo en signin
-        // request
-        //   .post(`${API_URL}/api/registerNewSetOfPrivilegesForNewUser`)
-        //   .send({
-        //      userId: response.body.id,
-        //      admin: 1,
-        //      psicologo: 1
-        //      px: 1
-        //   })
-        //   .then( function() { } )
-        //   .catch(function (e) {
-        //     console.log(e)
-        //   })
-        // }
-        //--------------
+        var newUserId = response.body.id;
+        __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/api/typeOfUser').send({
+          userId: newUserId,
+          admin: 0,
+          psicologo: 0,
+          px: 1
+        }).then(function () {}).catch(function (e) {
+          console.log(e);
+        });
       }).catch(function (e) {
         console.log(e);
         alert('Al parecer el usuario ya esta registrado. Intenta Log In o intenta registrarte con otro mail');
@@ -32355,48 +32514,45 @@ var NewUserSignIn = function (_Component) {
       'div',
       { className: 'grid' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
-        { className: 'login-material-ui-paper', zDepth: 5 },
+        'div',
+        { className: 'login-form-container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'login-form-container' },
+          'h2',
+          { className: 'login-title' },
+          'Registrarme'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'form',
+          { className: 'form', onSubmit: function onSubmit(e) {
+              _this2.createNewUser(e);
+            } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            { className: 'login-title' },
-            'Registrarme (Sign In)'
+            'div',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_material_ui_TextField___default.a, {
+              hintText: 'Your email',
+              floatingLabelText: 'Your email',
+              defaultValue: 'x@aspergerproject.com',
+              name: 'signinEmail'
+            })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'form',
-            { className: 'form', onSubmit: function onSubmit(e) {
-                _this2.createNewUser(e);
-              } },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default.a, {
-                hintText: 'Your email',
-                floatingLabelText: 'Your email',
-                defaultValue: 'x@aspergerproject.com',
-                name: 'signinEmail'
-              })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default.a, {
-                hintText: 'Password Field',
-                floatingLabelText: 'Password',
-                type: 'password',
-                defaultValue: 'x',
-                name: 'signinPassword'
-              })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton___default.a, {
-              className: 'login-button',
-              label: 'Signin',
-              type: 'submit'
+            'div',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_material_ui_TextField___default.a, {
+              hintText: 'Password Field',
+              floatingLabelText: 'Password',
+              type: 'password',
+              defaultValue: 'x',
+              name: 'signinPassword'
             })
-          )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, {
+            className: 'login-button',
+            label: 'Signin',
+            type: 'submit',
+            primary: true
+          })
         )
       )
     );
@@ -34698,12 +34854,10 @@ exports.default = EnhancedSwitch;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_superagent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_material_ui_Paper__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_TextField__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_TextField__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_material_ui_TextField___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_material_ui_TextField__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -34713,7 +34867,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-
+// import Paper from 'material-ui/Paper';
 
 
 
@@ -34758,49 +34912,46 @@ var UserLogin = function (_Component) {
       'div',
       { className: 'grid' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2_material_ui_Paper___default.a,
-        { className: 'login-material-ui-paper', zDepth: 5 },
+        'div',
+        { className: 'login-form-container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'login-form-container' },
+          'h2',
+          { className: 'login-title' },
+          'Ingresar'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'form',
+          { className: 'form', onSubmit: function onSubmit(e) {
+              _this2.login(e);
+            } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            { className: 'login-title' },
-            'Ingresar (Log In)'
+            'div',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_material_ui_TextField___default.a, {
+              hintText: 'Your user (email)',
+              floatingLabelText: 'Your user (email)',
+              type: 'text',
+              name: 'email',
+              defaultValue: 'paciente@aspergerproject.com'
+            })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'form',
-            { className: 'form', onSubmit: function onSubmit(e) {
-                _this2.login(e);
-              } },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default.a, {
-                hintText: 'Your user (email)',
-                floatingLabelText: 'Your user (email)',
-                type: 'text',
-                name: 'email',
-                defaultValue: 'admin@aspergerproject.com'
-              })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_TextField___default.a, {
-                hintText: 'Password',
-                floatingLabelText: 'Password',
-                type: 'password',
-                name: 'password',
-                defaultValue: 'admin'
-              })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_material_ui_RaisedButton___default.a, {
-              className: 'login-button',
-              label: 'Login',
-              type: 'submit'
+            'div',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_material_ui_TextField___default.a, {
+              hintText: 'Password',
+              floatingLabelText: 'Password',
+              type: 'password',
+              name: 'password',
+              defaultValue: 'paciente'
             })
-          )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_RaisedButton___default.a, {
+            className: 'login-button',
+            label: 'Login',
+            type: 'submit',
+            primary: true
+          })
         )
       )
     );
@@ -36703,6 +36854,64 @@ var CuestionarioAQ = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (CuestionarioAQ);
+
+/***/ }),
+/* 312 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_superagent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_superagent__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var CuestionarioAQAllAnswersStadistics = function (_Component) {
+  _inherits(CuestionarioAQAllAnswersStadistics, _Component);
+
+  function CuestionarioAQAllAnswersStadistics() {
+    _classCallCheck(this, CuestionarioAQAllAnswersStadistics);
+
+    var _this = _possibleConstructorReturn(this, _Component.call(this));
+
+    _this.state = {
+      allAnswersCuestionarioAQ: []
+    };
+    return _this;
+  }
+
+  CuestionarioAQAllAnswersStadistics.prototype.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.get(API_URL + '/api/allAnswersCuestionarioAQ').then(function (data) {
+      _this2.setState({
+        allAnswersCuestionarioAQ: data.body
+      });
+    }).catch(function (e) {
+      console.log(e);
+    });
+  };
+
+  CuestionarioAQAllAnswersStadistics.prototype.render = function render() {
+    console.log(this.state.allAnswersCuestionarioAQ);
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h1',
+      null,
+      'See console'
+    );
+  };
+
+  return CuestionarioAQAllAnswersStadistics;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (CuestionarioAQAllAnswersStadistics);
 
 /***/ })
 /******/ ]);

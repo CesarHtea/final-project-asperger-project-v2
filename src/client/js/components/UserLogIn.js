@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 
-import Paper from 'material-ui/Paper';
+// import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -35,9 +35,9 @@ class UserLogin extends Component {
   render() {
     return (
       <div className='grid'>
-        <Paper className='login-material-ui-paper' zDepth={5} >
+        {/* <Paper className='login-material-ui-paper' zDepth={5} > */}
           <div className='login-form-container'>       
-            <h2 className='login-title'>Ingresar (Log In)</h2>
+            <h2 className='login-title'>Ingresar</h2>
             
             <form className='form' onSubmit={ (e) => { this.login(e) } }>
               <div>
@@ -46,7 +46,7 @@ class UserLogin extends Component {
                   floatingLabelText='Your user (email)'
                   type='text'
                   name='email'
-                  defaultValue='admin@aspergerproject.com'
+                  defaultValue='paciente@aspergerproject.com'
                 />
               </div>
               <div>
@@ -55,17 +55,18 @@ class UserLogin extends Component {
                   floatingLabelText='Password'
                   type='password'
                   name='password'
-                  defaultValue='admin'
+                  defaultValue='paciente'
                 />
               </div>
                 <RaisedButton
                   className='login-button'
                   label='Login'
                   type='submit'
+                  primary={true}
                 />
             </form>
           </div>
-        </Paper>
+        {/* </Paper> */}
        </div>
   	)
   }
