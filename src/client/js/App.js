@@ -24,6 +24,7 @@ import UserSignIn from './components/UserSignIn';
 import RegisteredUsers from './components/RegisteredUsers';
 import UserLogIn from './components/UserLogIn';
 import CuestionarioAQ from './components/CuestionarioAQ'
+import NoMatch from './components/NoMatch'
 
 
 
@@ -88,7 +89,7 @@ class App extends Component {
       });
   };    
 
-  actualizarStatePorUserLogout = (loggedOut) => {
+  actualizarStatePorUserLogout = (loggedOut) => { 
     this.setState({
       user: [],
       display: 'none',
@@ -97,6 +98,8 @@ class App extends Component {
   }
 
   render() {
+    // console.log('----- enviado desde App ----')
+    // console.log(this.state)
     return (
       <div>
           { this.state.loggedOut ===  !true && this.state.admin ===  1
@@ -118,9 +121,7 @@ class App extends Component {
                   <Route path='/talentos/:talentosId' component={ElementDetail} />
                   <Route path='/cuestionarioAQ' component={CuestionarioAQ} />
                   <Route exact path='/registeredUsers' component={RegisteredUsers} />
-
-
-
+                  <Route component={NoMatch} />
                 </Switch>
               </div>
             : null 
@@ -143,6 +144,7 @@ class App extends Component {
                   <Route path='/talentos/:talentosId' component={ElementDetail} />
                   <Route path='/cuestionarioAQ' component={CuestionarioAQ} />
                   <Route exact path='/registeredUsers' component={RegisteredUsers} />
+                  <Route component={NoMatch} />
                 </Switch>
               </div>
             : null 
@@ -165,6 +167,7 @@ class App extends Component {
                   <Route path='/talentos/:talentosId' component={ElementDetail} />
                   <Route path='/cuestionarioAQ' component={CuestionarioAQ} />
                   <Route exact path='/registeredUsers' component={RegisteredUsers} />
+                  <Route component={NoMatch} />
                 </Switch>
               </div>
             : null 

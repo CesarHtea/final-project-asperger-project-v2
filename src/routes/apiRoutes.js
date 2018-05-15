@@ -147,7 +147,7 @@ apiRouter
   .get('/registeredUsers', isUserAuthenticated, getRegisteredUsers)
 
 apiRouter
-  .post('/typeOfUser', isUserAuthenticated, registerNewSetOfPrivilegesForNewUser)
+  .post('/typeOfUser', registerNewSetOfPrivilegesForNewUser)
   .get('/typeOfUser', isUserAuthenticated, getAllTypeOfUsers)
   .get('/typeOfUser/:id', isUserAuthenticated, getPrivilegesByUserId)
   .put('/typeOfUser/:id', isUserAuthenticated, updateTypeOfUser)

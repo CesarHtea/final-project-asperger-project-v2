@@ -24,11 +24,10 @@ class UserLogin extends Component {
       .then(response => {
         // alert(`Welcome ${response.body.email}`)
         this.props.fnActualizarStatePorUserLogin()
-        // this.props.history.push('/') 
       })
       .catch(function(e) {
         console.log(e)
-        alert("Sorry, try again or sign in");
+        alert("Hola, por favor intenta de nuevo. Si eres usuario nuevo, registrate.");
       })
   }
 
@@ -46,7 +45,7 @@ class UserLogin extends Component {
                   floatingLabelText='Your user (email)'
                   type='text'
                   name='email'
-                  defaultValue='paciente@aspergerproject.com'
+                  defaultValue='admin@aspergerproject.com'
                 />
               </div>
               <div>
@@ -55,7 +54,7 @@ class UserLogin extends Component {
                   floatingLabelText='Password'
                   type='password'
                   name='password'
-                  defaultValue='paciente'
+                  defaultValue='admin'
                 />
               </div>
                 <RaisedButton

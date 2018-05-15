@@ -266,6 +266,10 @@ BOARD DEL PACIENTE
   flex-wrap: wrap;
 }
 
+.board-px-card-not-available {
+  color: lightgray;
+}
+
 .board-px-material-ui-paper-card {
   margin: 20px;
   width: 350px;

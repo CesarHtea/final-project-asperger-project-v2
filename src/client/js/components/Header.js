@@ -31,6 +31,7 @@ class Header extends Component {
       .catch(function(e){
         console.log(e)
       })
+
   }
 
     render() {

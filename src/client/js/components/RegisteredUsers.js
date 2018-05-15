@@ -22,6 +22,7 @@ class AllRegisteredUsers extends Component {
   }
 
   componentDidMount() {
+    // esta peticion es para renderizar usuarios
     request
       .get(`${API_URL}/api/registeredUsers`)
       .then((data) => {
@@ -71,7 +72,9 @@ class AllRegisteredUsers extends Component {
     })
     .catch(function(e){
       console.log(e)
-    })    
+    })
+  alert('Actualizacion de permiso realizado en usuario' + info.email);    
+  this.props.history.push('/')
   }
 
   cambiarPermisoDeUsuarioAPsicologo = info => {
@@ -97,6 +100,8 @@ class AllRegisteredUsers extends Component {
       .catch(function(e){
         console.log(e)
       })
+    alert('Actualizacion de permiso realizado en usuario' + info.email);    
+    this.props.history.push('/')
   } 
 
   cambiarPermisoDeUsuarioAPx = info => {
@@ -122,47 +127,49 @@ class AllRegisteredUsers extends Component {
       .catch(function(e){
         console.log(e)
       })
+    alert('Actualizacion de permiso realizado en usuario' + info.email);    
+    this.props.history.push('/')
   }
 
   render() {
     return (
-      <Paper className='permisos-de-usuarios-table-paper-container' zDepth={5}>
-          <h1>PERMISOS DE USUARIO</h1>
-          <div className='type-of-users-toggle-warning type-of-users-toggle'>
-            <div>{this.state.mensajeResponsabilidad}</div>
-            <div>
-              <Toggle
-                // label="Simple"
-                defaultToggled={false}
-                onToggle={ (e) => { this.apagarToogleDeSeguridad()} }
-              />
+        <Paper className='permisos-de-usuarios-table-paper-container' zDepth={5}>
+            <h1>PERMISOS DE USUARIO</h1>
+            <div className='type-of-users-toggle-warning type-of-users-toggle'>
+              <div>{this.state.mensajeResponsabilidad}</div>
+              <div>
+                <Toggle
+                  // label="Simple"
+                  defaultToggled={false}
+                  onToggle={ (e) => { this.apagarToogleDeSeguridad()} }
+                />
+              </div>
             </div>
-          </div>
-          <table className='table'>
-            <thead>
-              <tr>
-                <td>Registered Users</td>
-                <td className='tdStyle'>Admon</td>
-                <td className='tdStyle'>Psi</td>
-                <td className='tdStyle'>Paciente</td>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.users.slice(0).reverse().map((user, index) => {
-                return ( 
-                  <RegisteredUserIndividual
-                    key={index}
-                    info={user} 
-                    disabled={this.state.disabled}
-                    cambiarPermisoDeUsuarioAAdmin={this.cambiarPermisoDeUsuarioAAdmin}
-                    cambiarPermisoDeUsuarioAPsicologo={this.cambiarPermisoDeUsuarioAPsicologo}
-                    cambiarPermisoDeUsuarioAPx={this.cambiarPermisoDeUsuarioAPx}
-                  />
-                )
-              })}
-            </tbody>
-          </table>
-      </Paper>
+            <table className='table'>
+              <thead>
+                <tr>
+                  <td>Registered Users</td>
+                  <td className='tdStyle'>Admon</td>
+                  <td className='tdStyle'>Psi</td>
+                  <td className='tdStyle'>Paciente</td>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.users.slice(0).reverse().map((user, index) => {
+                  return ( 
+                    <RegisteredUserIndividual
+                      key={index}
+                      info={user} 
+                      disabled={this.state.disabled}
+                      cambiarPermisoDeUsuarioAAdmin={this.cambiarPermisoDeUsuarioAAdmin}
+                      cambiarPermisoDeUsuarioAPsicologo={this.cambiarPermisoDeUsuarioAPsicologo}
+                      cambiarPermisoDeUsuarioAPx={this.cambiarPermisoDeUsuarioAPx}
+                    />
+                  )
+                })}
+              </tbody>
+            </table>
+        </Paper>
     )
   }
 }
