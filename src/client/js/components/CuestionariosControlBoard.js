@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 
-import RegisteredUserIndividual from './RegisteredUserIndividual'
+import CuestionariosControlBoardElementoIndividual from './CuestionariosControlBoardElementoIndividual'
 
 import Paper from 'material-ui/Paper';
 import Toggle from 'material-ui/Toggle';
@@ -15,9 +15,7 @@ class CuestionariosControlBoard extends Component {
 
     this.state = {
       users: [],
-      disabled: true,
-      mensajeResponsabilidad: 'Habilite este interruptor para modificar los permisos de usuario:',
-      ultimoCambioRealizado: '' 
+      ultimoCambioRealizado: ''
     };
   }
 
@@ -35,28 +33,19 @@ class CuestionariosControlBoard extends Component {
       })
   };
 
-  apagarToogleDeSeguridad = () => {
-    if ( this.state.disabled === true ) {
-      alert('RECUERDE: "Un gran poder conlleva una gran responsabilidad".');
-      this.setState({
-        disabled: false,
-        mensajeResponsabilidad: 'RECUERDE: "Un gran poder conlleva una gran responsabilidad". Cada persona sólo puede pertenecer a un tipo de usuario'
-      })
-    } else {
-      this.setState({
-        disabled: true,
-        mensajeResponsabilidad: 'Habilite este interruptor para modificar los permisos de usuario:'
-      })
-    }
-  }
-
   cambiarPermisoDeUsuarioAAdmin = info => {
     request
-      .put(`${API_URL}/api/typeOfUser/${info.id}`)
+      .put(`${API_URL}/api/formulariosBoard/${info.id}`)
       .send({
-         admin: 1,
-         psicologo: 0,
-         px: 0
+        aqCoeficienteDelEspectro: '',
+        eqCoeficienteDeEmpatia: '',
+        srsEscalaDeSensibilidadSocial: '',
+        sqCoeficienteDeSistematizacion: '',
+        pdq4CuestionarioDePersonalidad: '',
+        historiaDelDesarrollo: '',
+        historiaDelDesarrolloVersionPadres: '',
+        inventarioDeAnsiedadDeBeck: '',
+        inventarioDeDepresionDeBeck: ''
       })
       .then(function(res) { } )
       .catch(function(e) {
@@ -134,33 +123,23 @@ class CuestionariosControlBoard extends Component {
   render() {
     return (
         <Paper className='permisos-de-usuarios-table-paper-container' zDepth={5}>
-            <h1>ANTES PERMISOS DE USUARIO, AHORA HABILITACION DE CUESTIONARIOS</h1>
-            <div className='type-of-users-toggle-warning type-of-users-toggle'>
-              <div>{this.state.mensajeResponsabilidad}</div>
-              <div>
-                <Toggle
-                  // label="Simple"
-                  defaultToggled={false}
-                  onToggle={ (e) => { this.apagarToogleDeSeguridad()} }
-                />
-              </div>
-            </div>
+            <h1>HABILITACION DE CUESTIONARIOS</h1>
             <table className='table'>
               <thead>
                 <tr>
-                  <td>Registered Users</td>
+                  <td>Tests habilitados</td>
                   <td className='tdStyle'>Admon</td>
                   <td className='tdStyle'>Psi</td>
                   <td className='tdStyle'>Paciente</td>
+                  <td className='tdStyle'>Aqui va un test</td>
                 </tr>
               </thead>
               <tbody>
                 {this.state.users.slice(0).reverse().map((user, index) => {
                   return ( 
-                    <RegisteredUserIndividual
+                    <CuestionariosControlBoardElementoIndividual
                       key={index}
                       info={user} 
-                      disabled={this.state.disabled}
                       cambiarPermisoDeUsuarioAAdmin={this.cambiarPermisoDeUsuarioAAdmin}
                       cambiarPermisoDeUsuarioAPsicologo={this.cambiarPermisoDeUsuarioAPsicologo}
                       cambiarPermisoDeUsuarioAPx={this.cambiarPermisoDeUsuarioAPx}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent';
+import { withRouter } from 'react-router'
 
 import RegisteredUserIndividual from './RegisteredUserIndividual'
 
@@ -174,4 +175,4 @@ class AllRegisteredUsers extends Component {
   }
 }
 
-export default AllRegisteredUsers;
+export default withRouter(AllRegisteredUsers);

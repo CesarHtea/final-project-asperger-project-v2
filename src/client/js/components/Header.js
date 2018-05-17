@@ -31,7 +31,6 @@ class Header extends Component {
       .catch(function(e){
         console.log(e)
       })
-
   }
 
     render() {
@@ -99,7 +98,7 @@ class Header extends Component {
                   onRequestChange={(open) => this.setState({open})}
                 >
                  <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>CuestionarioAQ (Todas las respuestas)</MenuItem></Link>
-                 <Link to='/cuestionariosControlBoard' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Habilitar / deshabilitar cuestionarios por usuario</MenuItem></Link>
+                 <Link to='/cuestionariosControlBoard' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Cuestionarios habilitados</MenuItem></Link>
                 </Drawer>
 
             </div>

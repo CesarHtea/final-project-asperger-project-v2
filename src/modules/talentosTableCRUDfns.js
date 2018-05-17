@@ -9,7 +9,9 @@ exports.getRegisteredUsers = function getTalentos(req, res) {
     .query()
     .select('id')
     .select('email')
-    .eager('typeOfUser')
+    .eager('[typeOfUser, score]')
+    // .eager('typeOfUser')
+    // .eager('score')
     .then(function(data) {
       res.json(data)
     })

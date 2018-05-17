@@ -68,7 +68,6 @@ class App extends Component {
           loggedOut: false,
           display: ''
         })
-
         request
           .get(`${API_URL}/api/typeOfUser/${data.body.id}`)
           .then((data) => {
