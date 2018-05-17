@@ -15,7 +15,12 @@ const devConfig = {
   }
 };
 
+const prodConfig = Object.asign({}, devConfig, {
+  client: 'pg',
+  connection: process.env.DATABASE_URL
+})
+
 module.exports = {
   development: devConfig,
-  production: {}
+  production: prodConfig
 };
