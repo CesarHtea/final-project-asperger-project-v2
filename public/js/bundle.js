@@ -8249,7 +8249,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -25143,7 +25144,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var Header = function (_Component) {
   _inherits(Header, _Component);
@@ -32314,7 +32316,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = `http://localhost:3000`
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var CuestionarioAQAllAnswers = function (_Component) {
   _inherits(CuestionarioAQAllAnswers, _Component);
@@ -32518,7 +32521,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var PieChart = __webpack_require__(302).Pie;
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = `http://localhost:3000`
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var CuestionarioAQAllAnswersStadistics = function (_Component) {
     _inherits(CuestionarioAQAllAnswersStadistics, _Component);
@@ -37030,7 +37034,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var Detail = function (_Component) {
   _inherits(Detail, _Component);
@@ -37197,7 +37202,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var NewUserSignIn = function (_Component) {
   _inherits(NewUserSignIn, _Component);
@@ -38527,7 +38533,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var AllRegisteredUsers = function (_Component) {
   _inherits(AllRegisteredUsers, _Component);
@@ -39628,7 +39635,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var UserLogin = function (_Component) {
   _inherits(UserLogin, _Component);
@@ -39743,7 +39751,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var CuestionarioAQ = function (_Component) {
   _inherits(CuestionarioAQ, _Component);
@@ -41639,7 +41648,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var CuestionariosControlBoard = function (_Component) {
   _inherits(CuestionariosControlBoard, _Component);

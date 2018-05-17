@@ -3,7 +3,8 @@ import request from 'superagent'
 
 import { withRouter } from 'react-router-dom'
 
-const API_URL = 'http://localhost:3000'
+// const API_URL = 'http://localhost:3000'
+const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class Detail extends Component {
   constructor() {
