@@ -1,54 +1,75 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 
+const PieChart = require("react-chartjs").Pie;
+
 const API_URL = `http://localhost:3000`
 
 class CuestionarioAQAllAnswersStadistics extends Component {
 
-  constructor() {
-    super();
+//   constructor() {
+//     super();
 
-    this.state = {
-      allAnswersCuestionarioAQ: []
-    };
-  }
+//     this.state = {
+//       allAnswersCuestionarioAQ: []
+//     };
+//   }
 
-  componentDidMount() {
-    request
-      .get(`${API_URL}/api/allAnswersCuestionarioAQ`)
-      .then((data) => {
-        this.setState({
-          allAnswersCuestionarioAQ: data.body
-        })
-      })
-      .catch(function(e){
-        console.log(e)
-      })
-  };
+//   componentDidMount() {
+//     request
+//       .get(`${API_URL}/api/allAnswersCuestionarioAQ`)
+//       .then((data) => {
+//         this.setState({
+//           allAnswersCuestionarioAQ: data.body
+//         })
+//       })
+//       .catch(function(e){
+//         console.log(e)
+//       })
+//   };
 
-  // funcionX = () => {
-  //   console.log('se activo la funcion X desde render')
-  //   let answerACounter = 0
-  //   let rawData = this.state.allAnswersCuestionarioAQ
-  //   // console.log('----- consoleado desde funcionX -----')
-  //   // console.log(rawData)
-  //   // console.log(answerACounter)
-  //   // console.log('----- rawData lenght desde funcion X')
-  //   // console.log(rawData.length)
+//   funcionX = () => {
+//     console.log('se activo la funcion X desde render()')
+    
+//     let rawData = this.state.allAnswersCuestionarioAQ
 
-  //   for ( let i = 0 ; i < rawData.length ; i++ ) {
-  //     console.log('pero ya me acorde')
-  //     console.log(rawData[i].pregunta2)
-  //   }
+//     let pregunta1ACounter = 0;
+//     let pregunta1BCounter = 0;
+//     let pregunta1CCounter = 0;
+//     let pregunta1DCounter = 0;
+    
+//     for ( let i = 0 ; i < rawData.length ; i++ ) {
+//       if ( rawData[i].pregunta1 === 1 ) { pregunta1ACounter += 1 }
+//       else if ( rawData[i].pregunta1 === 2 ) { pregunta1BCounter +=1 }
+//       else if ( rawData[i].pregunta1 === 3 ) { pregunta1CCounter +=1 }
+//       else if ( rawData[i].pregunta1 === 4 ) { pregunta1DCounter +=1 }
+//     }
+//     console.log('pregunta1ACounter: '+ pregunta1ACounter)
+//     console.log('pregunta1BCounter: '+ pregunta1BCounter)
+//     console.log('pregunta1CCounter: '+ pregunta1CCounter)
+//     console.log('pregunta1DCounter: '+ pregunta1DCounter)
+//   }
 
+  // render() {
+  //   this.funcionX()
+  //   return (
+  //     <div>
+  //       <h1>See console</h1>
+  //       <PieChart 
+  //         data={
+  //           datasets: [{
+  //             data: [10, 20, 30]
+  //           }],
+  //           labels: [
+  //              'Red',
+  //              'Yellow',
+  //              'Blue'
+  //           ]
+  //         }
+  //       />
+  //     </div>
+  //   )
   // }
-
-  render() {
-    this.funcionX()
-    return (
-      <h1>See console</h1>
-    )
-  }
 
 }
 

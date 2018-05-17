@@ -2,6 +2,7 @@ const Router = require('express').Router
 const apiRouter = Router()
 
 const TypeOfUser = require('../models/TypeOfUser');
+const FormulariosDisplayControlBoard = require('../models/FormulariosDisplayControlBoard');
 
 const isUserAuthenticated = require('../modules/isUserAuthenticated')
 
@@ -79,22 +80,64 @@ registerNewSetOfPrivilegesForNewUser = function registerNewSetOfPrivilegesForNew
     })
 }
 
-// function createNewTweet(req, res) {
-//   // console.log(req.body)
+// ********************************
 
-//   // { "description": "..."}
 
-//   Tweet
-//     .query()
-//     .insert(req.body) // INSERT INTO...
-//     .then(function(newTweet) {
-//       // console.log('Tweet saved.')
-//       res.json(newTweet).status(200)
-//     })
-// }
+getAllFormulariosDisplayOfUsers = function getAllFormulariosDisplayOfUsers(req, res) {
+  FormulariosDisplayControlBoard
+    .query()
+    .then(function(data) {
+      res.json(data)
+    })
+    .catch(function(e){
+      console.log(e)
+    })
+  }
 
-// ******************
-// ******************
+registerNewFormulariosDisplayForNewUser = function registerNewFormulariosDisplayForNewUser(req, res) {
+  FormulariosDisplayControlBoard
+    .query()
+    .insert(req.body)
+    .then(function(newSetOfFormulariosDisplayForNewUser) {
+      res.json(newSetOfFormulariosDisplayForNewUser).status(200)
+    })
+}
+
+
+getFormulariosDisplayByUserId = function getFormulariosDisplayByUserId(req, res) {
+  const id = parseInt(req.params.id)
+  FormulariosDisplayControlBoard
+    .query()
+    .findById(id)
+    .then(function(formulariosDisplayControl) {
+      res.json(formulariosDisplayControl).status(200)
+    })
+    .catch(function(e){
+      console.log(e)
+    })
+  }
+
+updateFormulariosDisplayOfUser = function updateFormulariosDisplayOfUser(req,res) {
+  const id = parseInt(req.params.id)
+  const newData = req.body
+
+  FormulariosDisplayControlBoard
+    .query()
+    .updateAndFetchById(id, newData)
+    .then(function(formulariosDisplayUpdated) {
+      res.json(formulariosDisplayUpdated).status(200)
+    })
+    .catch(function(e) {
+      res.json({
+        error: e
+      }).status(500)
+    })
+
+}
+
+
+// *******************************
+
 
 // function deleteTweet(req, res) {
 //   const tweetId = parseInt(req.params.tweetId)
@@ -131,7 +174,6 @@ registerNewSetOfPrivilegesForNewUser = function registerNewSetOfPrivilegesForNew
 
 
 // apiRouter
-//   .put('/tweets/:tweetId', updateTweet)
 //   .delete('/tweets/:tweetId', deleteTweet)
 
 
@@ -147,9 +189,15 @@ apiRouter
   .get('/registeredUsers', isUserAuthenticated, getRegisteredUsers)
 
 apiRouter
-  .post('/typeOfUser', registerNewSetOfPrivilegesForNewUser)
   .get('/typeOfUser', isUserAuthenticated, getAllTypeOfUsers)
   .get('/typeOfUser/:id', isUserAuthenticated, getPrivilegesByUserId)
+  .post('/typeOfUser', registerNewSetOfPrivilegesForNewUser)
   .put('/typeOfUser/:id', isUserAuthenticated, updateTypeOfUser)
+
+apiRouter
+  .get('/formulariosBoard', isUserAuthenticated, getAllFormulariosDisplayOfUsers)
+  .get('/formulariosBoard/:id', isUserAuthenticated, getFormulariosDisplayByUserId)
+  .post('/formulariosBoard', registerNewFormulariosDisplayForNewUser)
+  .put('/formulariosBoard/:id', isUserAuthenticated, updateFormulariosDisplayOfUser)
 
 module.exports = apiRouter

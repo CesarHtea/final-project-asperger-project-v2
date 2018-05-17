@@ -11,10 +11,10 @@ exports.up = function(knex, Promise) {
     	t.string('apellido');
     	t.string('sexo');
     	t.decimal('edad')
-        t.date('fechaNacimiento');
-        t.text('domicilio');
-        t.decimal('telefonoFijo');
-        t.decimal('telefonoMovil');
+      t.string('fechaNacimiento');
+      t.text('domicilio');
+      t.decimal('telefonoFijo');
+      t.decimal('telefonoMovil');
     }); 
 };
 

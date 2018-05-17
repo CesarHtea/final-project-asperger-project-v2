@@ -99,6 +99,7 @@ class Header extends Component {
                   onRequestChange={(open) => this.setState({open})}
                 >
                  <Link to='/cuestionarioAQAllAnswers' className='no-decoration-text'><MenuItem onClick={this.handleClose}>CuestionarioAQ (Todas las respuestas)</MenuItem></Link>
+                 <Link to='/cuestionariosControlBoard' className='no-decoration-text'><MenuItem onClick={this.handleClose}>Habilitar / deshabilitar cuestionarios por usuario</MenuItem></Link>
                 </Drawer>
 
             </div>
@@ -108,13 +109,12 @@ class Header extends Component {
           }
 
           <div>
-            <RaisedButton
-              className='header-button'
-              label="Log Out"
-              onClick={this.logout}
-            />
+              <RaisedButton
+                className='header-button'
+                label="Log Out"
+                onClick={this.logout}
+              />
           </div>
-            
         </div>
       </div>
     );

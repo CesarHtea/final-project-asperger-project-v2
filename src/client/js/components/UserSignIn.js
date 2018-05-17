@@ -36,6 +36,24 @@ class NewUserSignIn extends Component {
           .catch(function (e) {
             console.log(e)
           })
+        request
+          .post(`${API_URL}/api/formulariosBoard`)
+          .send({
+             userId: newUserId,
+             aqCoeficienteDelEspectro: 1,
+             eqCoeficienteDeEmpatia: 0,
+             srsEscalaDeSensibilidadSocial: 0,
+             sqCoeficienteDeSistematizacion: 0,
+             pdq4CuestionarioDePersonalidad: 0,
+             historiaDelDesarrollo: 0,
+             historiaDelDesarrolloVersionPadres: 0,
+             inventarioDeAnsiedadDeBeck: 0,
+             inventarioDeDepresionDeBeck: 0
+          })
+          .then( function() { } )
+          .catch(function (e) {
+            console.log(e)
+          })
       })
       .catch(function(e) {
         console.log(e)

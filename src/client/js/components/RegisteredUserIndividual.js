@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
+
 import Toggle from 'material-ui/Toggle';
+
 
 class RegisteredUserIndividual extends Component {
 
@@ -52,4 +55,4 @@ class RegisteredUserIndividual extends Component {
   }
 }
 
-export default RegisteredUserIndividual;
+export default withRouter(RegisteredUserIndividual);

@@ -24,9 +24,8 @@ import UserSignIn from './components/UserSignIn';
 import RegisteredUsers from './components/RegisteredUsers';
 import UserLogIn from './components/UserLogIn';
 import CuestionarioAQ from './components/CuestionarioAQ'
+import CuestionariosControlBoard from './components/CuestionariosControlBoard'
 import NoMatch from './components/NoMatch'
-
-
 
 const API_URL = 'http://localhost:3000'
 
@@ -144,6 +143,7 @@ class App extends Component {
                   <Route path='/talentos/:talentosId' component={ElementDetail} />
                   <Route path='/cuestionarioAQ' component={CuestionarioAQ} />
                   <Route exact path='/registeredUsers' component={RegisteredUsers} />
+                  <Route exact path ='/cuestionariosControlBoard' component={CuestionariosControlBoard} />
                   <Route component={NoMatch} />
                 </Switch>
               </div>

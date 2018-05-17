@@ -8,7 +8,7 @@ import Toggle from 'material-ui/Toggle';
 
 const API_URL = 'http://localhost:3000'
 
-class AllRegisteredUsers extends Component {
+class CuestionariosControlBoard extends Component {
   
   constructor() {
     super();
@@ -134,7 +134,7 @@ class AllRegisteredUsers extends Component {
   render() {
     return (
         <Paper className='permisos-de-usuarios-table-paper-container' zDepth={5}>
-            <h1>PERMISOS DE USUARIO</h1>
+            <h1>ANTES PERMISOS DE USUARIO, AHORA HABILITACION DE CUESTIONARIOS</h1>
             <div className='type-of-users-toggle-warning type-of-users-toggle'>
               <div>{this.state.mensajeResponsabilidad}</div>
               <div>
@@ -174,4 +174,4 @@ class AllRegisteredUsers extends Component {
   }
 }
 
-export default AllRegisteredUsers;
+export default CuestionariosControlBoard;
