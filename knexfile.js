@@ -15,7 +15,7 @@ const devConfig = {
   }
 };
 
-const prodConfig = Object.asign({}, devConfig, {
+const prodConfig = Object.assign({}, devConfig, {
   client: 'pg',
   connection: process.env.DATABASE_URL
 })
