@@ -3,8 +3,8 @@ import request from 'superagent';
 
 const PieChart = require("react-chartjs").Pie;
 
-const API_URL = `http://localhost:3000`
-// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+// const API_URL = `http://localhost:3000`
+const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class CuestionarioAQAllAnswersStadistics extends Component {
 

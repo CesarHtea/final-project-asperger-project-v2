@@ -5,8 +5,8 @@ import request from 'superagent';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const API_URL = 'http://localhost:3000'
-// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+// const API_URL = 'http://localhost:3000'
+const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class UserLogin extends Component {
 
