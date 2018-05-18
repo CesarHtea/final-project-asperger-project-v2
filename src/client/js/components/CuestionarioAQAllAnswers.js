@@ -55,7 +55,7 @@ class CuestionarioAQAllAnswers extends Component {
   // }
 
   render() {
-    console.log(this.state.allAnswersCuestionarioAQ)
+    // console.log(this.state.allAnswersCuestionarioAQ)
 
     return (
       <div className='all-answers-cuestionario-AQ-container'>

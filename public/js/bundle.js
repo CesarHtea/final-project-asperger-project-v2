@@ -8270,8 +8270,6 @@ var App = function (_Component) {
       });
 
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/api/typeOfUser/' + datosResponseLogin.id).then(function (data) {
-        console.log('respuesta la request de typeOfUser');
-        console.log(data.body);
         _this.setState({
           admin: data.body.admin,
           psico: data.body.psicologo,
@@ -8301,7 +8299,6 @@ var App = function (_Component) {
     var _this2 = this;
 
     __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
-      // console.log(data)
       if (typeof data.body.email === 'string') {
         _this2.setState({
           user: data.body,
@@ -8315,8 +8312,8 @@ var App = function (_Component) {
   };
 
   App.prototype.render = function render() {
-    console.log('----- state enviado desde App.render() ----');
-    console.log(this.state);
+    // console.log('----- state enviado desde App.render() ----')
+    // console.log(this.state)
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
@@ -32369,7 +32366,7 @@ var CuestionarioAQAllAnswers = function (_Component) {
   // }
 
   CuestionarioAQAllAnswers.prototype.render = function render() {
-    console.log(this.state.allAnswersCuestionarioAQ);
+    // console.log(this.state.allAnswersCuestionarioAQ)
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',

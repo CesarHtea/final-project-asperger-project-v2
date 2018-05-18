@@ -45,7 +45,6 @@ class App extends Component {
     request
       .get(`${API_URL}/auth/current`)
       .then((data) => {
-        // console.log(data)
         if (typeof data.body.email === 'string') {
           this.setState({
             user: data.body,
@@ -71,8 +70,6 @@ class App extends Component {
     request
       .get(`${API_URL}/api/typeOfUser/${datosResponseLogin.id}`)
       .then((data) => {
-        console.log('respuesta la request de typeOfUser')
-        console.log(data.body)
         this.setState({
           admin: data.body.admin,
           psico: data.body.psicologo,
@@ -93,8 +90,8 @@ class App extends Component {
   }
 
   render() {
-    console.log('----- state enviado desde App.render() ----')
-    console.log(this.state)
+    // console.log('----- state enviado desde App.render() ----')
+    // console.log(this.state)
     return (
       <div>
           { this.state.loggedOut ===  !true && this.state.admin ===  true
