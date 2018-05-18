@@ -72,20 +72,20 @@ class App extends Component {
       display: ''
     })
 
-    request
-      .get(`${API_URL}/auth/current`)
-      .then((data) => {
-        console.log('respuesta la request de current desde app.actualizarStatePorUserLogin')
-        console.log(data.body)
-        this.setState({
-          admin: data.body.admin,
-          psico: data.body.psicologo,
-          px: data.body.px
-        })
-      })
-      .catch(function(e){
-        console.log(e)
-      });
+    // request
+    //   .get(`${API_URL}/auth/current`)
+    //   .then((data) => {
+    //     console.log('respuesta la request de current desde app.actualizarStatePorUserLogin')
+    //     console.log(data.body)
+    //     this.setState({
+    //       admin: data.body.admin,
+    //       psico: data.body.psicologo,
+    //       px: data.body.px
+    //     })
+    //   })
+    //   .catch(function(e){
+    //     console.log(e)
+    //   });
 
 
     request
