@@ -27,8 +27,8 @@ import CuestionarioAQ from './components/CuestionarioAQ'
 import CuestionariosControlBoard from './components/CuestionariosControlBoard'
 import NoMatch from './components/NoMatch'
 
-const API_URL = 'http://localhost:3000'
-// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+// const API_URL = 'http://localhost:3000'
+const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class App extends Component {
 
