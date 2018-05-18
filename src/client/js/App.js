@@ -41,23 +41,23 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    request
-      .get(`${API_URL}/auth/current`)
-      .then((data) => {
-        // console.log(data)
-        if (typeof data.body.email === 'string') {
-          this.setState({
-            user: data.body,
-            loggedOut: false,
-            display: ''
-          })
-        }
-      })
-      .catch(function(e){
-        console.log(e)
-      })
-  };
+  // componentDidMount() {
+  //   request
+  //     .get(`${API_URL}/auth/current`)
+  //     .then((data) => {
+  //       // console.log(data)
+  //       if (typeof data.body.email === 'string') {
+  //         this.setState({
+  //           user: data.body,
+  //           loggedOut: false,
+  //           display: ''
+  //         })
+  //       }
+  //     })
+  //     .catch(function(e){
+  //       console.log(e)
+  //     })
+  // };
 
   actualizarStatePorUserLogin = datosResponseLogin => {
     console.log('datos recibidos en app desde login')
@@ -75,7 +75,7 @@ class App extends Component {
     request
       .get(`${API_URL}/auth/current`)
       .then((data) => {
-        console.log('respuesta la request de current')
+        console.log('respuesta la request de current desde app.actualizarStatePorUserLogin')
         console.log(data.body)
         // this.setState({
         //   admin: data.body.admin,
