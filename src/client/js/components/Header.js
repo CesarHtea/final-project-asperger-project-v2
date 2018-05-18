@@ -40,7 +40,7 @@ class Header extends Component {
 
         <div className='header-botones-container'>
 
-          { this.props.admin === 1 ?
+          { this.props.admin === true ?
            
              <div className='grid'>
 
@@ -80,7 +80,7 @@ class Header extends Component {
 
           }
 
-          { this.props.psico === 1 ?
+          { this.props.psico === true ?
            
              <div className='grid'>
               
@@ -88,7 +88,7 @@ class Header extends Component {
                   <RaisedButton
                     className='header-button'
                     label="Menú"
-                     onClick={this.handleToggle}
+                    onClick={this.handleToggle}
                   />
                 </div>
                 <Drawer

@@ -22,8 +22,6 @@ class UserLogin extends Component {
       .post(`${API_URL}/auth/login`)
       .send(userData)
       .then(response => {
-        // console.log('respuesta desde el request de login')
-        // console.log(response.body)
         alert(`Welcome ${response.body.email}`)
         const datosResponseLogin = response.body
         this.props.fnActualizarStatePorUserLogin(datosResponseLogin)

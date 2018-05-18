@@ -25187,7 +25187,7 @@ var Header = function (_Component) {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'header-botones-container' },
-        this.props.admin === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.props.admin === true ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'grid' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -25261,7 +25261,7 @@ var Header = function (_Component) {
             )
           )
         ) : null,
-        this.props.psico === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.props.psico === true ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'grid' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -39659,8 +39659,6 @@ var UserLogin = function (_Component) {
         password: e.target.password.value
       };
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/auth/login').send(userData).then(function (response) {
-        // console.log('respuesta desde el request de login')
-        // console.log(response.body)
         alert('Welcome ' + response.body.email);
         var datosResponseLogin = response.body;
         _this.props.fnActualizarStatePorUserLogin(datosResponseLogin);
