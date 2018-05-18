@@ -37199,8 +37199,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
-// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var NewUserSignIn = function (_Component) {
   _inherits(NewUserSignIn, _Component);
