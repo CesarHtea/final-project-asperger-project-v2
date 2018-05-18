@@ -101,7 +101,7 @@ class App extends Component {
     // console.log(this.state)
     return (
       <div>
-          { this.state.loggedOut ===  !true && this.state.admin ===  1
+          { this.state.loggedOut ===  !true && this.state.admin ===  true
             ?  
               <div>
                 <div className='app-header-container'>
@@ -125,7 +125,7 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.psico ===  1
+         { this.state.loggedOut ===  !true && this.state.psico ===  true
              ?  
               <div>
                 <div className='app-header-container'>
@@ -149,7 +149,7 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.px === 1
+         { this.state.loggedOut ===  !true && this.state.px === true
              ?  
               <div>
                 <div className='app-header-container'>
