@@ -8249,8 +8249,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -8260,25 +8260,39 @@ var App = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, _Component.call(this));
 
-    _this.actualizarStatePorUserLogin = function () {
+    _this.actualizarStatePorUserLogin = function (datosResponseLogin) {
+      console.log('datos recibidos en app desde login');
+      console.log(datosResponseLogin);
+      console.log('dato de id enviado a la request');
+      console.log(datosResponseLogin.id);
+
+      // this.setState({
+      //   user: datosResponseLogin.email,
+      //   userId: datosResponseLogin.id,
+      //   loggedOut: false,
+      //   display: ''
+      // })
+
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
-        console.log('--- data.body request current desde app.js linea 66 ');
+        console.log('respuesta la request de current');
         console.log(data.body);
-        _this.setState({
-          user: data.body.email,
-          userId: data.body.id,
-          loggedOut: false,
-          display: ''
-        });
-        __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/api/typeOfUser/' + data.body.id).then(function (data) {
-          _this.setState({
-            admin: data.body.admin,
-            psico: data.body.psicologo,
-            px: data.body.px
-          });
-        }).catch(function (e) {
-          console.log(e);
-        });
+        // this.setState({
+        //   admin: data.body.admin,
+        //   psico: data.body.psicologo,
+        //   px: data.body.px
+        // })
+      }).catch(function (e) {
+        console.log(e);
+      });
+
+      __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/api/typeOfUser/' + datosResponseLogin.id).then(function (data) {
+        console.log('respuesta la request de typeOfUser');
+        console.log(data.body);
+        // this.setState({
+        //   admin: data.body.admin,
+        //   psico: data.body.psicologo,
+        //   px: data.body.px
+        // })
       }).catch(function (e) {
         console.log(e);
       });
@@ -8317,8 +8331,8 @@ var App = function (_Component) {
   };
 
   App.prototype.render = function render() {
-    // console.log('----- enviado desde App ----')
-    // console.log(this.state)
+    console.log('----- state enviado desde App.render() ----');
+    console.log(this.state);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
@@ -25146,8 +25160,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var Header = function (_Component) {
   _inherits(Header, _Component);
@@ -32318,8 +32332,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = `http://localhost:3000`
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var CuestionarioAQAllAnswers = function (_Component) {
   _inherits(CuestionarioAQAllAnswers, _Component);
@@ -32523,8 +32537,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var PieChart = __webpack_require__(302).Pie;
 
-// const API_URL = `http://localhost:3000`
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var CuestionarioAQAllAnswersStadistics = function (_Component) {
     _inherits(CuestionarioAQAllAnswersStadistics, _Component);
@@ -37036,8 +37050,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var Detail = function (_Component) {
   _inherits(Detail, _Component);
@@ -37204,8 +37218,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var NewUserSignIn = function (_Component) {
   _inherits(NewUserSignIn, _Component);
@@ -38535,8 +38549,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var AllRegisteredUsers = function (_Component) {
   _inherits(AllRegisteredUsers, _Component);
@@ -39637,8 +39651,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var UserLogin = function (_Component) {
   _inherits(UserLogin, _Component);
@@ -39656,22 +39670,14 @@ var UserLogin = function (_Component) {
 
       e.preventDefault();
 
-      console.log('que valor esta agarrando e.target.email.value');
-      console.log(e.target.email.value);
-      console.log('que valor esta agarrando e.target.password.value');
-      console.log(e.target.password.value);
-
       var userData = {
         email: e.target.email.value,
         password: e.target.password.value
       };
-      console.log(userData);
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/auth/login').send(userData).then(function (response) {
-        console.log('respuesta al login');
-        console.log(response.body);
-
         alert('Welcome ' + response.body.email);
-        // this.props.fnActualizarStatePorUserLogin()
+        var datosResponseLogin = response.body;
+        _this.props.fnActualizarStatePorUserLogin(datosResponseLogin);
       }).catch(function (e) {
         console.log(e);
         alert("Hola, por favor intenta de nuevo. Si eres usuario nuevo, registrate.");
@@ -39761,8 +39767,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var CuestionarioAQ = function (_Component) {
   _inherits(CuestionarioAQ, _Component);
@@ -41658,8 +41664,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// const API_URL = 'http://localhost:3000'
-var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
+var API_URL = 'http://localhost:3000';
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 var CuestionariosControlBoard = function (_Component) {
   _inherits(CuestionariosControlBoard, _Component);

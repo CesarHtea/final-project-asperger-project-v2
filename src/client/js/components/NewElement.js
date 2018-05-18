@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import request from 'superagent'
 
-// const API_URL = 'http://localhost:3000'
-const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+const API_URL = 'http://localhost:3000'
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class NewElement extends Component {
 

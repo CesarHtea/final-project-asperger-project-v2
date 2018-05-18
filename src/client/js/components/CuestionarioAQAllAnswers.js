@@ -5,8 +5,8 @@ import CuestionarioAQAnswerIndividual from './CuestionarioAQAnswerIndividual'
 
 import Paper from 'material-ui/Paper';
 
-// const API_URL = `http://localhost:3000`
-const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+const API_URL = `http://localhost:3000`
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class CuestionarioAQAllAnswers extends Component {
   

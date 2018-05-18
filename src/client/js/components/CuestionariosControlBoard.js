@@ -6,8 +6,8 @@ import CuestionariosControlBoardElementoIndividual from './CuestionariosControlB
 import Paper from 'material-ui/Paper';
 import Toggle from 'material-ui/Toggle';
 
-// const API_URL = 'http://localhost:3000'
-const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+const API_URL = 'http://localhost:3000'
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class CuestionariosControlBoard extends Component {
   

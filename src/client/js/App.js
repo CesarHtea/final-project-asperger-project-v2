@@ -27,8 +27,8 @@ import CuestionarioAQ from './components/CuestionarioAQ'
 import CuestionariosControlBoard from './components/CuestionariosControlBoard'
 import NoMatch from './components/NoMatch'
 
-// const API_URL = 'http://localhost:3000'
-const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+const API_URL = 'http://localhost:3000'
+// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
 
 class App extends Component {
 
@@ -59,31 +59,45 @@ class App extends Component {
       })
   };
 
-  actualizarStatePorUserLogin = () => {
+  actualizarStatePorUserLogin = datosResponseLogin => {
+    console.log('datos recibidos en app desde login')
+    console.log(datosResponseLogin)
+    console.log('dato de id enviado a la request')
+    console.log(datosResponseLogin.id)
+
+    // this.setState({
+    //   user: datosResponseLogin.email,
+    //   userId: datosResponseLogin.id,
+    //   loggedOut: false,
+    //   display: ''
+    // })
+
     request
       .get(`${API_URL}/auth/current`)
       .then((data) => {
-        console.log('--- data.body request current desde app.js linea 66 ')
+        console.log('respuesta la request de current')
         console.log(data.body)
-        this.setState({
-          user: data.body.email,
-          userId: data.body.id,
-          loggedOut: false,
-          display: ''
-        })
-        request
-          .get(`${API_URL}/api/typeOfUser/${data.body.id}`)
-          .then((data) => {
-            this.setState({
-              admin: data.body.admin,
-              psico: data.body.psicologo,
-              px: data.body.px
-            })
-          })
-          .catch(function(e){
-            console.log(e)
-          });
+        // this.setState({
+        //   admin: data.body.admin,
+        //   psico: data.body.psicologo,
+        //   px: data.body.px
+        // })
+      })
+      .catch(function(e){
+        console.log(e)
+      });
 
+
+    request
+      .get(`${API_URL}/api/typeOfUser/${datosResponseLogin.id}`)
+      .then((data) => {
+        console.log('respuesta la request de typeOfUser')
+        console.log(data.body)
+        // this.setState({
+        //   admin: data.body.admin,
+        //   psico: data.body.psicologo,
+        //   px: data.body.px
+        // })
       })
       .catch(function(e){
         console.log(e)
@@ -99,8 +113,8 @@ class App extends Component {
   }
 
   render() {
-    // console.log('----- enviado desde App ----')
-    // console.log(this.state)
+    console.log('----- state enviado desde App.render() ----')
+    console.log(this.state)
     return (
       <div>
           { this.state.loggedOut ===  !true && this.state.admin ===  1
