@@ -63,6 +63,8 @@ class App extends Component {
     request
       .get(`${API_URL}/auth/current`)
       .then((data) => {
+        console.log('--- data.body request current desde app.js linea 66 ')
+        console.log(data.body)
         this.setState({
           user: data.body.email,
           userId: data.body.id,
@@ -101,7 +103,7 @@ class App extends Component {
     // console.log(this.state)
     return (
       <div>
-          { this.state.loggedOut ===  !true && this.state.admin ===  true
+          { this.state.loggedOut ===  !true && this.state.admin ===  1
             ?  
               <div>
                 <div className='app-header-container'>
@@ -125,7 +127,7 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.psico ===  true
+         { this.state.loggedOut ===  !true && this.state.psico ===  1
              ?  
               <div>
                 <div className='app-header-container'>
@@ -149,7 +151,7 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.px === true
+         { this.state.loggedOut ===  !true && this.state.px === 1
              ?  
               <div>
                 <div className='app-header-container'>

@@ -8262,6 +8262,8 @@ var App = function (_Component) {
 
     _this.actualizarStatePorUserLogin = function () {
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
+        console.log('--- data.body request current desde app.js linea 66 ');
+        console.log(data.body);
         _this.setState({
           user: data.body.email,
           userId: data.body.id,
@@ -25144,8 +25146,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var API_URL = 'http://localhost:3000';
-// const API_URL = 'https://aspergerdiagnosis.herokuapp.com'
+// const API_URL = 'http://localhost:3000'
+var API_URL = 'https://aspergerdiagnosis.herokuapp.com';
 
 var Header = function (_Component) {
   _inherits(Header, _Component);
@@ -39654,14 +39656,22 @@ var UserLogin = function (_Component) {
 
       e.preventDefault();
 
+      console.log('que valor esta agarrando e.target.email.value');
+      console.log(e.target.email.value);
+      console.log('que valor esta agarrando e.target.password.value');
+      console.log(e.target.password.value);
+
       var userData = {
         email: e.target.email.value,
         password: e.target.password.value
       };
-
+      console.log(userData);
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/auth/login').send(userData).then(function (response) {
-        // alert(`Welcome ${response.body.email}`)
-        _this.props.fnActualizarStatePorUserLogin();
+        console.log('respuesta al login');
+        console.log(response.body);
+
+        alert('Welcome ' + response.body.email);
+        // this.props.fnActualizarStatePorUserLogin()
       }).catch(function (e) {
         console.log(e);
         alert("Hola, por favor intenta de nuevo. Si eres usuario nuevo, registrate.");

@@ -14,17 +14,25 @@ class UserLogin extends Component {
 
     e.preventDefault()
 
+    console.log('que valor esta agarrando e.target.email.value')
+    console.log(e.target.email.value)
+    console.log('que valor esta agarrando e.target.password.value')
+    console.log(e.target.password.value)
+
     const userData = {
       email: e.target.email.value,
       password: e.target.password.value
     }
-
+        console.log(userData)
     request
       .post(`${API_URL}/auth/login`)
       .send(userData)
       .then(response => {
-        // alert(`Welcome ${response.body.email}`)
-        this.props.fnActualizarStatePorUserLogin()
+        console.log('respuesta al login')
+        console.log(response.body)
+
+        alert(`Welcome ${response.body.email}`)
+        // this.props.fnActualizarStatePorUserLogin()
       })
       .catch(function(e) {
         console.log(e)
