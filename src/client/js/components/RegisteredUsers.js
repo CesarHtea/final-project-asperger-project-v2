@@ -75,7 +75,7 @@ class AllRegisteredUsers extends Component {
     .catch(function(e){
       console.log(e)
     })
-  alert('Actualizacion de permiso realizado en usuario' + info.email);    
+  alert('Actualizacion de permiso realizado en usuario: ' + info.email);    
   this.props.history.push('/')
   }
 
@@ -102,7 +102,7 @@ class AllRegisteredUsers extends Component {
       .catch(function(e){
         console.log(e)
       })
-    alert('Actualizacion de permiso realizado en usuario' + info.email);    
+    alert('Actualizacion de permiso realizado en usuario: ' + info.email);    
     this.props.history.push('/')
   } 
 
@@ -129,7 +129,7 @@ class AllRegisteredUsers extends Component {
       .catch(function(e){
         console.log(e)
       })
-    alert('Actualizacion de permiso realizado en usuario' + info.email);    
+    alert('Actualizacion de permiso realizado en usuario: ' + info.email);    
     this.props.history.push('/')
   }
 

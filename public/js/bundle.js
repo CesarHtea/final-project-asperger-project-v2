@@ -38572,7 +38572,7 @@ var AllRegisteredUsers = function (_Component) {
       }).catch(function (e) {
         console.log(e);
       });
-      alert('Actualizacion de permiso realizado en usuario' + info.email);
+      alert('Actualizacion de permiso realizado en usuario: ' + info.email);
       _this.props.history.push('/');
     };
 
@@ -38592,7 +38592,7 @@ var AllRegisteredUsers = function (_Component) {
       }).catch(function (e) {
         console.log(e);
       });
-      alert('Actualizacion de permiso realizado en usuario' + info.email);
+      alert('Actualizacion de permiso realizado en usuario: ' + info.email);
       _this.props.history.push('/');
     };
 
@@ -38612,7 +38612,7 @@ var AllRegisteredUsers = function (_Component) {
       }).catch(function (e) {
         console.log(e);
       });
-      alert('Actualizacion de permiso realizado en usuario' + info.email);
+      alert('Actualizacion de permiso realizado en usuario: ' + info.email);
       _this.props.history.push('/');
     };
 
@@ -40641,7 +40641,6 @@ var CuestionarioAQ = function (_Component) {
 
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/api/allAnswersCuestionarioAQ').send(objetoParaExportarATablaCuestionarioAQ).then(function () {
         alert('Enviando informacion de CuestionarioAQ...');
-        console.log(objetoParaExportarATablaCuestionarioAQ);
       }).catch(function (e) {
         console.log(e);
       });

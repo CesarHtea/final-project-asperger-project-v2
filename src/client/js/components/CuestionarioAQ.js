@@ -421,7 +421,6 @@ class CuestionarioAQ extends Component {
       .send(objetoParaExportarATablaCuestionarioAQ)
       .then(() => {
         alert('Enviando informacion de CuestionarioAQ...')
-        console.log(objetoParaExportarATablaCuestionarioAQ)
       })
       .catch(function(e) {
         console.log(e)
