@@ -65,23 +65,23 @@ class App extends Component {
     console.log('dato de id enviado a la request')
     console.log(datosResponseLogin.id)
 
-    // this.setState({
-    //   user: datosResponseLogin.email,
-    //   userId: datosResponseLogin.id,
-    //   loggedOut: false,
-    //   display: ''
-    // })
+    this.setState({
+      user: datosResponseLogin.email,
+      userId: datosResponseLogin.id,
+      loggedOut: false,
+      display: ''
+    })
 
     request
       .get(`${API_URL}/auth/current`)
       .then((data) => {
         console.log('respuesta la request de current desde app.actualizarStatePorUserLogin')
         console.log(data.body)
-        // this.setState({
-        //   admin: data.body.admin,
-        //   psico: data.body.psicologo,
-        //   px: data.body.px
-        // })
+        this.setState({
+          admin: data.body.admin,
+          psico: data.body.psicologo,
+          px: data.body.px
+        })
       })
       .catch(function(e){
         console.log(e)
@@ -93,11 +93,11 @@ class App extends Component {
       .then((data) => {
         console.log('respuesta la request de typeOfUser')
         console.log(data.body)
-        // this.setState({
-        //   admin: data.body.admin,
-        //   psico: data.body.psicologo,
-        //   px: data.body.px
-        // })
+        this.setState({
+          admin: data.body.admin,
+          psico: data.body.psicologo,
+          px: data.body.px
+        })
       })
       .catch(function(e){
         console.log(e)

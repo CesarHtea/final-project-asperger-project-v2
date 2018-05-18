@@ -8266,21 +8266,21 @@ var App = function (_Component) {
       console.log('dato de id enviado a la request');
       console.log(datosResponseLogin.id);
 
-      // this.setState({
-      //   user: datosResponseLogin.email,
-      //   userId: datosResponseLogin.id,
-      //   loggedOut: false,
-      //   display: ''
-      // })
+      _this.setState({
+        user: datosResponseLogin.email,
+        userId: datosResponseLogin.id,
+        loggedOut: false,
+        display: ''
+      });
 
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
         console.log('respuesta la request de current desde app.actualizarStatePorUserLogin');
         console.log(data.body);
-        // this.setState({
-        //   admin: data.body.admin,
-        //   psico: data.body.psicologo,
-        //   px: data.body.px
-        // })
+        _this.setState({
+          admin: data.body.admin,
+          psico: data.body.psicologo,
+          px: data.body.px
+        });
       }).catch(function (e) {
         console.log(e);
       });
@@ -8288,11 +8288,11 @@ var App = function (_Component) {
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/api/typeOfUser/' + datosResponseLogin.id).then(function (data) {
         console.log('respuesta la request de typeOfUser');
         console.log(data.body);
-        // this.setState({
-        //   admin: data.body.admin,
-        //   psico: data.body.psicologo,
-        //   px: data.body.px
-        // })
+        _this.setState({
+          admin: data.body.admin,
+          psico: data.body.psicologo,
+          px: data.body.px
+        });
       }).catch(function (e) {
         console.log(e);
       });
