@@ -8261,10 +8261,6 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, _Component.call(this));
 
     _this.actualizarStatePorUserLogin = function (datosResponseLogin) {
-      console.log('datos recibidos en app desde login');
-      console.log(datosResponseLogin);
-      console.log('dato de id enviado a la request');
-      console.log(datosResponseLogin.id);
 
       _this.setState({
         user: datosResponseLogin.email,
@@ -8272,22 +8268,6 @@ var App = function (_Component) {
         loggedOut: false,
         display: ''
       });
-
-      // request
-      //   .get(`${API_URL}/auth/current`)
-      //   .then((data) => {
-      //     console.log('respuesta la request de current desde app.actualizarStatePorUserLogin')
-      //     console.log(data.body)
-      //     this.setState({
-      //       admin: data.body.admin,
-      //       psico: data.body.psicologo,
-      //       px: data.body.px
-      //     })
-      //   })
-      //   .catch(function(e){
-      //     console.log(e)
-      //   });
-
 
       __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/api/typeOfUser/' + datosResponseLogin.id).then(function (data) {
         console.log('respuesta la request de typeOfUser');
@@ -8317,23 +8297,22 @@ var App = function (_Component) {
     return _this;
   }
 
-  // componentDidMount() {
-  //   request
-  //     .get(`${API_URL}/auth/current`)
-  //     .then((data) => {
-  //       // console.log(data)
-  //       if (typeof data.body.email === 'string') {
-  //         this.setState({
-  //           user: data.body,
-  //           loggedOut: false,
-  //           display: ''
-  //         })
-  //       }
-  //     })
-  //     .catch(function(e){
-  //       console.log(e)
-  //     })
-  // };
+  App.prototype.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    __WEBPACK_IMPORTED_MODULE_2_superagent___default.a.get(API_URL + '/auth/current').then(function (data) {
+      // console.log(data)
+      if (typeof data.body.email === 'string') {
+        _this2.setState({
+          user: data.body,
+          loggedOut: false,
+          display: ''
+        });
+      }
+    }).catch(function (e) {
+      console.log(e);
+    });
+  };
 
   App.prototype.render = function render() {
     console.log('----- state enviado desde App.render() ----');
@@ -8341,7 +8320,7 @@ var App = function (_Component) {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
-      this.state.loggedOut === !true && this.state.admin === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      this.state.loggedOut === !true && this.state.admin === true ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8367,7 +8346,7 @@ var App = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_18__components_NoMatch__["a" /* default */] })
         )
       ) : null,
-      this.state.loggedOut === !true && this.state.psico === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      this.state.loggedOut === !true && this.state.psico === true ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8393,7 +8372,7 @@ var App = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_18__components_NoMatch__["a" /* default */] })
         )
       ) : null,
-      this.state.loggedOut === !true && this.state.px === 1 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      this.state.loggedOut === !true && this.state.px === true ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -39680,8 +39659,8 @@ var UserLogin = function (_Component) {
         password: e.target.password.value
       };
       __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.post(API_URL + '/auth/login').send(userData).then(function (response) {
-        console.log('respuesta desde el request de login');
-        console.log(response.body);
+        // console.log('respuesta desde el request de login')
+        // console.log(response.body)
         alert('Welcome ' + response.body.email);
         var datosResponseLogin = response.body;
         _this.props.fnActualizarStatePorUserLogin(datosResponseLogin);

@@ -41,29 +41,25 @@ class App extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   request
-  //     .get(`${API_URL}/auth/current`)
-  //     .then((data) => {
-  //       // console.log(data)
-  //       if (typeof data.body.email === 'string') {
-  //         this.setState({
-  //           user: data.body,
-  //           loggedOut: false,
-  //           display: ''
-  //         })
-  //       }
-  //     })
-  //     .catch(function(e){
-  //       console.log(e)
-  //     })
-  // };
+  componentDidMount() {
+    request
+      .get(`${API_URL}/auth/current`)
+      .then((data) => {
+        // console.log(data)
+        if (typeof data.body.email === 'string') {
+          this.setState({
+            user: data.body,
+            loggedOut: false,
+            display: ''
+          })
+        }
+      })
+      .catch(function(e){
+        console.log(e)
+      })
+  };
 
   actualizarStatePorUserLogin = datosResponseLogin => {
-    console.log('datos recibidos en app desde login')
-    console.log(datosResponseLogin)
-    console.log('dato de id enviado a la request')
-    console.log(datosResponseLogin.id)
 
     this.setState({
       user: datosResponseLogin.email,
@@ -71,22 +67,6 @@ class App extends Component {
       loggedOut: false,
       display: ''
     })
-
-    // request
-    //   .get(`${API_URL}/auth/current`)
-    //   .then((data) => {
-    //     console.log('respuesta la request de current desde app.actualizarStatePorUserLogin')
-    //     console.log(data.body)
-    //     this.setState({
-    //       admin: data.body.admin,
-    //       psico: data.body.psicologo,
-    //       px: data.body.px
-    //     })
-    //   })
-    //   .catch(function(e){
-    //     console.log(e)
-    //   });
-
 
     request
       .get(`${API_URL}/api/typeOfUser/${datosResponseLogin.id}`)
@@ -117,7 +97,7 @@ class App extends Component {
     console.log(this.state)
     return (
       <div>
-          { this.state.loggedOut ===  !true && this.state.admin ===  1
+          { this.state.loggedOut ===  !true && this.state.admin ===  true
             ?  
               <div>
                 <div className='app-header-container'>
@@ -141,7 +121,7 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.psico ===  1
+         { this.state.loggedOut ===  !true && this.state.psico ===  true
              ?  
               <div>
                 <div className='app-header-container'>
@@ -165,7 +145,7 @@ class App extends Component {
               </div>
             : null 
          }
-         { this.state.loggedOut ===  !true && this.state.px === 1
+         { this.state.loggedOut ===  !true && this.state.px === true
              ?  
               <div>
                 <div className='app-header-container'>
